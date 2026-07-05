@@ -1,7 +1,5 @@
-SAU_oil_diplomacy_category = {
-	icon = GFX_decision_category_generic_foreign_policy
-	
-	# Optional: Makes sure only Saudi Arabia sees this entire tab
+SAU_oil_decisions_cate = {
+	icon = generic_political_actions
 	allowed = {
 		tag = SAU
 	}

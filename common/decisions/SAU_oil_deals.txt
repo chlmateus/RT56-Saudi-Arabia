@@ -1,60 +1,58 @@
-SAU_oil_deals_category = {
-    # This defines the category header in the decision menu
-    icon = generic_exploitation
-
-    # DECISION 1: Trade Oil for Civilian Factories
-    SAU_oil_for_civs = {
-        allowed = {
-            tag = SAU
-        }
-        available = {
-            # Ensures you aren't completely resource-starved before doing this
-            has_war_support > 0.1
-        }
-
-        cost = 30 # Cost in Political Power
-        days_remove = 180 # How long the deal lasts (6 months)
-        days_cooldown = 180 # Cooldown period before you can do it again
-
-        # Modifiers applied ONLY while the decision is active
-        modifier = {
-            offmap_civilian_factories = 2    # Gives you 2 civilian factories
-            global_resources_factor = -0.20  # Gives away 20% of your total oil output
-        }
-
-        ai_will_do = {
-            factor = 1
-            modifier = {
-                factor = 0
-                has_war = yes # AI prefers keeping resources during total war
+SAU_oil_decisions_cate = {
+        # Economic Decisions (State scoped)
+        SAU_expand_ghawar = {
+            icon = generic_industry
+            available = { has_political_power > 50 }
+            cost = 75
+            fire_only_once = yes
+            complete_effect = {
+                # Target a specific state ID (replace 123 with your actual state ID)
+                679 = { add_resource = { type = oil amount = 5 } }
             }
         }
-    }
 
-    # DECISION 2: Trade Oil for Military Factories
-    SAU_oil_for_mils = {
-        allowed = {
-            tag = SAU
-        }
-        available = {
-            has_war_support > 0.1
-        }
-
-        cost = 30
-        days_remove = 180
-        days_cooldown = 180
-
-        modifier = {
-            offmap_military_factories = 2    # Gives you 2 military factories
-            global_resources_factor = -0.20  # Gives away 20% of your total oil output
-        }
-
-        ai_will_do = {
-            factor = 1
-            modifier = {
-                factor = 1.5
-                has_war = yes # AI wants weapons if fighting
+        SAU_develop_safaniya = {
+            icon = generic_industry
+            available = { has_political_power > 50 }
+            cost = 100
+            fire_only_once = yes
+            complete_effect = {
+                857 = { add_resource = { type = oil amount = 3 } }
             }
         }
-    }
+
+        SAU_build_refinery = {
+            icon = generic_industry
+            available = { has_political_power > 75 }
+            cost = 100
+            fire_only_once = yes
+            complete_effect = {
+                679 = { add_extra_state_shared_building_slots = 2 }
+            }
+        }
+
+        SAU_national_pipeline = {
+            icon = generic_industry
+            available = { has_political_power > 75 }
+            cost = 100
+            fire_only_once = yes
+            complete_effect = {
+                857 = { add_extra_state_shared_building_slots = 2 }
+            }
+        }
+
+        # Political Decisions (Country scoped - Correct)
+        SAU_royal_decree_unity = {
+            icon = generic_political_actions
+            available = { has_stability < 1.0 has_political_power > 50 }
+            cost = 50
+            complete_effect = { add_stability = 0.05 }
+        }
+
+        SAU_consolidate_tribes = {
+            icon = generic_political_actions
+            available = { has_stability < 1.0 has_political_power > 50 }
+            cost = 60
+            complete_effect = { add_stability = 0.05 }
+        }
 }
