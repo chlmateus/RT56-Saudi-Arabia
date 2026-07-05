@@ -1,4 +1,4 @@
-version="1.19.1.0"
+version="1.19.2.0"
 tags={
 	"Alternative History"
 	"Map"
@@ -11,5 +11,5 @@ dependencies={
 	"The Road to 56"
 }
 name="RT56: Saudi Arabia"
-supported_version="1.19.1.0"
+supported_version="1.19.2.0"
 remote_file_id="3747827558"
