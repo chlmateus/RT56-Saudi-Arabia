@@ -1,0 +1,47 @@
+characters = {
+    SAU_abdullah_char = {
+        name = SAU_Abdullah_bin_Abdulaziz_Al_Saud_name
+        portraits = { civilian = { large = "COS_ricardo_jiminez_oreamuno" } }
+        political_advisor = {
+            slot = political_advisor
+            idea_token = SAU_prince_idea
+            allowed = { always = yes }
+        }
+    }
+    SAU_sultan_char = {
+        name = SAU_Sultan_bin_Abdulaziz_Al_Saud_name
+        portraits = { civilian = { large = "COS_ricardo_jiminez_oreamuno" } }
+        political_advisor = {
+            slot = army_chief
+            idea_token = SAU_military_strategist_idea
+            allowed = { always = yes }
+        }
+    }
+    SAU_yamani_char = {
+        name = SAU_Ahmed_Zaki_Yamani_name
+        portraits = { civilian = { large = "COS_ricardo_jiminez_oreamuno" } }
+        political_advisor = {
+            slot = industrial_advisor
+            idea_token = SAU_oil_technocrat_idea
+            allowed = { always = yes }
+        }
+    }
+    SAU_muhammad_char = {
+        name = SAU_Muhammad_ibn_Ibrahim_Al_ash_Sheikh_name
+        portraits = { civilian = { large = "COS_ricardo_jiminez_oreamuno" } }
+        political_advisor = {
+            slot = stability_advisor
+            idea_token = SAU_religious_scholar_idea
+            allowed = { always = yes }
+        }
+    }
+    SAU_faisal_char = {
+        name = SAU_Faisal_bin_Abdulaziz_Al_Saud_name
+        portraits = { civilian = { large = "COS_ricardo_jiminez_oreamuno" } }
+        political_advisor = {
+            slot = political_advisor
+            idea_token = SAU_tribal_diplomat_idea
+            allowed = { always = yes }
+        }
+    }
+}

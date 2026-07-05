@@ -1,0 +1,83 @@
+ideas = {
+
+	SAU_prince_idea = {
+			
+			allowed = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_gain = 0.10
+			}
+	}
+
+	SAU_military_strategist_idea = {
+			
+			allowed = {
+				always = yes
+			}
+
+			modifier = {
+				land_organisation = 0.10
+			}
+	}
+
+	SAU_oil_technocrat_idea = {
+			
+			allowed = {
+				always = yes
+			}
+
+			modifier = {
+				production_efficiency_growth = 0.10
+			}
+	}
+
+	SAU_religious_scholar_idea = {
+			
+			allowed = {
+				always = yes
+			}
+
+			modifier = {
+				stability_growth = 0.05
+			}
+	}
+
+	SAU_tribal_diplomat_idea = {
+			
+			allowed = {
+				always = yes
+			}
+
+			modifier = {
+				relations_with_minor_countries_gain = 0.15
+				diplomatic_actions_cost = -0.10
+			}
+	} 
+	SAU_prince_idea = {
+        name = SAU_prince_idea
+        picture = GFX_idea_generic_political_advisor
+        modifier = { political_power_gain = 0.15 }
+    }
+    SAU_military_strategist_idea = {
+        name = SAU_military_strategist_idea
+        picture = GFX_idea_generic_army_advisor
+        modifier = { army_attack_factor = 0.05 }
+    }
+    SAU_oil_technocrat_idea = {
+        name = SAU_oil_technocrat_idea
+        picture = GFX_idea_generic_industrial_advisor
+        modifier = { production_efficiency_cap = 0.1 }
+    }
+    SAU_religious_scholar_idea = {
+        name = SAU_religious_scholar_idea
+        picture = GFX_idea_generic_political_advisor_2
+        modifier = { weekly_stability = 0.005 }
+    }
+    SAU_tribal_diplomat_idea = {
+        name = SAU_tribal_diplomat_idea
+        picture = GFX_idea_generic_political_advisor_3
+        modifier = { political_power_cost_factor = -0.1 }
+    }
+}
