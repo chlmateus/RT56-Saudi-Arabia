@@ -2627,7 +2627,7 @@ focus_tree = {
     }
     focus = {
         id = SAU_abbasid_revolution
-        icon = GFX_goal_generic_position_armies
+        icon = GFX_abbasid_rev
         cost = 10
         x = 10.75
         y = 11
@@ -2679,7 +2679,7 @@ focus_tree = {
     }
     focus = {
         id = SAU_demand_holy_submission
-        icon = Saudi_exp
+        icon = GFX_Saudi_exp
         cost = 10
         x = 10.75
         y = 14
@@ -2697,7 +2697,7 @@ focus_tree = {
     }
     focus = {
         id = SAU_sword_of_the_palestine
-        icon = GFX_goal_generic_major_war
+        icon = GFX_sword_palestine
         cost = 5
         x = 10.75
         y = 15
