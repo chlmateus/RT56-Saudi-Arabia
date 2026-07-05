@@ -3,6 +3,7 @@ spriteTypes = {
         name = "GFX_Saudi_exp_shine"
         texturefile = "gfx/interface/goals/GFX_Saudi_exp.dds"
         effectFile = "gfx/FX/buttonstate.lua"
+        noOfFrames = 1
         
         animation = {
             animationmaskfile = "gfx/interface/goals/GFX_Saudi_exp.dds"
@@ -35,6 +36,7 @@ spriteTypes = {
         name = "GFX_abbasid_rev_shine"
         texturefile = "gfx/interface/goals/GFX_abbasid_rev.dds"
         effectFile = "gfx/FX/buttonstate.lua"
+        noOfFrames = 1
         
         animation = {
             animationmaskfile = "gfx/interface/goals/GFX_abbasid_rev.dds"
@@ -67,6 +69,7 @@ spriteTypes = {
         name = "GFX_sword_palestine_shine"
         texturefile = "gfx/interface/goals/GFX_sword_palestine.dds"
         effectFile = "gfx/FX/buttonstate.lua"
+        noOfFrames = 1
         
         animation = {
             animationmaskfile = "gfx/interface/goals/GFX_sword_palestine.dds"
