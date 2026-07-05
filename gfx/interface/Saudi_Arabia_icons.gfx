@@ -1,13 +1,13 @@
 spriteTypes = {
-    spriteType = {
+    SpriteType = {
         name = "GFX_Saudi_exp"
         texturefile = "gfx/interface/goals/GFX_Saudi_exp.dds"
     }
-    spriteType = {
+    SpriteType = {
         name = "GFX_abbasid_rev"
         texturefile = "gfx/interface/goals/GFX_abbasid_rev.dds"
     }
-    spriteType = {
+    SpriteType = {
         name = "GFX_sword_palestine"
         texturefile = "gfx/interface/goals/GFX_sword_palestine.dds"
     }
