@@ -2679,7 +2679,7 @@ focus_tree = {
     }
     focus = {
         id = SAU_demand_holy_submission
-        icon = GFX_goal_generic_major_war
+        icon = Saudi_exp
         cost = 10
         x = 10.75
         y = 14
