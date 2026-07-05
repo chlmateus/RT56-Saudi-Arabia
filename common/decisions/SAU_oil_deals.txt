@@ -1,0 +1,60 @@
+SAU_oil_deals_category = {
+    # This defines the category header in the decision menu
+    icon = generic_exploitation
+
+    # DECISION 1: Trade Oil for Civilian Factories
+    SAU_oil_for_civs = {
+        allowed = {
+            tag = SAU
+        }
+        available = {
+            # Ensures you aren't completely resource-starved before doing this
+            has_war_support > 0.1
+        }
+
+        cost = 30 # Cost in Political Power
+        days_remove = 180 # How long the deal lasts (6 months)
+        days_cooldown = 180 # Cooldown period before you can do it again
+
+        # Modifiers applied ONLY while the decision is active
+        modifier = {
+            offmap_civilian_factories = 2    # Gives you 2 civilian factories
+            global_resources_factor = -0.20  # Gives away 20% of your total oil output
+        }
+
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 0
+                has_war = yes # AI prefers keeping resources during total war
+            }
+        }
+    }
+
+    # DECISION 2: Trade Oil for Military Factories
+    SAU_oil_for_mils = {
+        allowed = {
+            tag = SAU
+        }
+        available = {
+            has_war_support > 0.1
+        }
+
+        cost = 30
+        days_remove = 180
+        days_cooldown = 180
+
+        modifier = {
+            offmap_military_factories = 2    # Gives you 2 military factories
+            global_resources_factor = -0.20  # Gives away 20% of your total oil output
+        }
+
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 1.5
+                has_war = yes # AI wants weapons if fighting
+            }
+        }
+    }
+}

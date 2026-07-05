@@ -1,0 +1,427 @@
+ideas = {
+	country = {
+
+		# =================================================================
+		# 1. POLITICAL & TRIBAL PATH IDEAS
+		# =================================================================
+
+		SAU_support_from_loyal_tribes = {
+			allowed = { always = yes }
+			picture = generic_pp_gain
+			modifier = {
+				stability_factor = 0.10
+				weekly_manpower = 50
+			}
+		}
+
+		SAU_diplomacy_in_the_sand_idea = {
+			allowed = { always = yes }
+			picture = generic_diplomacy
+			modifier = {
+				political_power_factor = 0.05
+				improve_relation_maintain_cost_factor = -0.15
+			}
+		}
+
+		SAU_hakimovs_influence = {
+			allowed = { always = yes }
+			picture = generic_soviet_politics
+			modifier = {
+				drift_communism = 0.02
+				subversive_activites_upkeep = -0.10
+			}
+		}
+
+		PER_restore_constitutionalism = {
+			allowed = { always = yes }
+			picture = generic_constitutional_monarchy
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.10
+			}
+		}
+
+		SAU_mandatory_zakat = {
+			allowed = { always = yes }
+			picture = generic_goods_red_bonus
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				consumer_goods_expected_value = -0.02
+			}
+		}
+
+		SAU_force_tribes_to_settle = {
+			allowed = { always = yes }
+			picture = generic_manpower_bonus
+			modifier = {
+				stability_factor = -0.05
+				conscription = 0.01
+				local_resources_factor = 0.05
+			}
+		}
+
+		SAU_benefits_from_the_hajj = {
+			allowed = { always = yes }
+			picture = generic_research_bonus
+			modifier = {
+				political_power_factor = 0.15
+				consumer_goods_expected_value = -0.03
+			}
+		}
+
+		SAU_abdulaziz_idea = {
+			allowed = { always = yes }
+			picture = generic_king_idea
+			modifier = {
+				stability_factor = 0.15
+				political_power_factor = 0.10
+				war_support_factor = 0.05
+			}
+		}
+
+		# =================================================================
+		# 2. DIPLOMACY & FOREIGN ALIGNMENT IDEAS
+		# =================================================================
+
+		neutrality_idea = {
+			allowed = { always = yes }
+			picture = generic_isolationism
+			modifier = {
+				generate_wargoal_tension_limit = 0.50
+				join_faction_tension_limit = 0.50
+			}
+		}
+
+		AFG_censorship = {
+			allowed = { always = yes }
+			picture = generic_intel_bonus
+			modifier = {
+				stability_factor = 0.10
+				foreign_subversive_activites_factor = -0.25
+			}
+		}
+
+		SAU_increase_oil_exports_to_the_allies = {
+			allowed = { always = yes }
+			picture = generic_production_bonus
+			modifier = {
+				trade_opinion_factor = 0.20
+				local_resources_factor = 0.10
+			}
+		}
+
+		SAU_volunteer_corps = {
+			allowed = { always = yes }
+			picture = generic_volunteer_expeditionary_bonus
+			modifier = {
+				send_volunteer_divisions_required_tension = -0.20
+				send_volunteers_size_limit = 2
+			}
+		}
+
+		# =================================================================
+		# 3. MILITARY TREE IDEAS (LEGACY CHAINS & BUFFS)
+		# =================================================================
+
+		SAU_desert_buff1 = {
+			allowed = { always = yes }
+			picture = generic_infantry_bonus
+			modifier = {
+				army_infantry_attack_factor = 0.10
+				army_infantry_defence_factor = 0.05
+			}
+		}
+
+		# Legacy of 1934 Progression Chain
+		SAU_legacy_of_1934 = {
+			allowed = { always = yes }
+			picture = generic_disorganized_army
+			modifier = {
+				land_doctrine_cost_factor = 0.25
+				army_org_factor = -0.10
+				training_time_factor = 0.15
+			}
+		}
+
+		SAU_legacy_of_1934_2 = {
+			allowed = { always = yes }
+			picture = generic_disorganized_army
+			modifier = {
+				land_doctrine_cost_factor = 0.10
+				army_org_factor = -0.05
+			}
+		}
+
+		SAU_legacy_of_1934_3 = {
+			allowed = { always = yes }
+			picture = generic_infantry_bonus
+			modifier = {
+				land_doctrine_cost_factor = -0.05
+				army_org_factor = 0.05
+			}
+		}
+
+		SAU_legacy_of_1934_4 = {
+			allowed = { always = yes }
+			picture = generic_infantry_bonus
+			modifier = {
+				land_doctrine_cost_factor = -0.15
+				army_org_factor = 0.10
+				experience_gain_army_factor = 0.10
+			}
+		}
+
+		inventive_leadership_spirit = {
+			allowed = { always = yes }
+			picture = generic_officer_corps
+			modifier = {
+				leader_cost_factor = -0.20
+				experience_gain_army_factor = 0.05
+			}
+		}
+
+		SAU_creative_generals = {
+			allowed = { always = yes }
+			picture = generic_officer_corps
+			modifier = {
+				max_commander_level = 1
+				monthly_commander_xp_gain_factor = 0.15
+			}
+		}
+
+		SAU_incorporate_nomad_tactics1 = {
+			allowed = { always = yes }
+			picture = generic_cavalry_bonus
+			modifier = {
+				cavalry_attack_factor = 0.15
+				cavalry_speed_factor = 0.10
+				motorized_attack_factor = 0.05
+			}
+		}
+
+		SAU_romanticize_army1 = {
+			allowed = { always = yes }
+			picture = generic_war_support_bonus
+			modifier = {
+				war_support_factor = 0.10
+				conscription_factor = 0.05
+			}
+		}
+
+		SAU_general_army_buff1 = {
+			allowed = { always = yes }
+			picture = generic_infantry_bonus
+			modifier = {
+				army_core_defence_factor = 0.10
+				army_morale_factor = 0.05
+			}
+		}
+
+		political_commissars_focus = {
+			allowed = { always = yes }
+			picture = generic_commissar
+			modifier = {
+				army_morale_factor = 0.15
+				stability_factor = -0.05
+			}
+		}
+
+		AFG_five_year_plan_idea = {
+			allowed = { always = yes }
+			picture = generic_production_bonus
+			modifier = {
+				industry_free_repaired_factor = 0.15
+				production_speed_industrial_complex_factor = 0.10
+			}
+		}
+
+		SAU_awoken_generation = {
+			allowed = { always = yes }
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = 0.02
+				training_time_factor = -0.10
+			}
+		}
+
+		# =================================================================
+		# 4. FASCIST / ISOLATIONIST PATH IDEAS
+		# =================================================================
+
+		SAU_spread_islamic_teachings = {
+			allowed = { always = yes }
+			picture = generic_pp_gain
+			modifier = {
+				drift_fascism = 0.02
+				subversive_activites_upkeep = -0.15
+			}
+		}
+
+		SAU_restore_old_traditions = {
+			allowed = { always = yes }
+			picture = generic_isolationism
+			modifier = {
+				stability_factor = 0.15
+				research_speed_factor = -0.05
+			}
+		}
+
+		deterrence = {
+			allowed = { always = yes }
+			picture = generic_propaganda
+			modifier = {
+				enemy_wargoal_justification = 0.30
+				army_core_defence_factor = 0.15
+			}
+		}
+
+		# =================================================================
+		# 5. GENERAL INDUSTRIAL SPINE IDEAS
+		# =================================================================
+
+		SAU_resource_prospecting_spirit = {
+			allowed = { always = yes }
+			picture = generic_production_bonus
+			modifier = {
+				local_resources_factor = 0.15
+			}
+		}
+
+		SAU_industrial_efficiency_spirit = {
+			allowed = { always = yes }
+			picture = generic_production_bonus
+			modifier = {
+				industrial_capacity_factory = 0.10
+				line_change_production_efficiency_factor = 0.10
+			}
+		}
+
+		SAU_transport_network_spirit = {
+			allowed = { always = yes }
+			picture = generic_production_bonus
+			modifier = {
+				production_speed_infrastructure_factor = 0.20
+				army_speed_factor = 0.05
+			}
+		}
+
+		SAU_ordnance_workshops_spirit = {
+			allowed = { always = yes }
+			picture = generic_artillery_bonus
+			modifier = {
+				production_speed_arms_factory_factor = 0.10
+				out_of_supply_factor = -0.10
+			}
+		}
+
+		SAU_mechanized_tools_spirit = {
+			allowed = { always = yes }
+			picture = generic_production_bonus
+			modifier = {
+				production_efficiency_cap = 0.05
+				research_speed_factor = 0.05
+			}
+		}
+
+		# =================================================================
+		# 6. TOOLTIP TARGET IDEAS (FOR SHOW_IDEAS_TOOLTIP MECHANICS)
+		# =================================================================
+
+		aioc_sau = {
+			allowed = { always = yes }
+			picture = generic_production_bonus
+			modifier = {
+				civilian_factory_use_gain_factor = -0.02
+			}
+		}
+
+		brabag_sau = {
+			allowed = { always = yes }
+			picture = generic_production_bonus
+			modifier = {
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+
+		standard_oil_california_sau = {
+			allowed = { always = yes }
+			picture = generic_production_bonus
+			modifier = {
+				local_resources_factor = 0.20
+			}
+		}
+
+        sau_corporate_partnership = {
+            picture = idea_generic_foreign_investment
+            
+            allowed = {
+                always = yes
+            }
+            
+            # -1 means it cannot be manually removed by the player using Political Power
+            removal_cost = -1 
+            
+            modifier = {
+                # Boosts oil and resource output due to Western drilling tech
+                resource_extraction_efficiency = 0.15 
+                
+                # Faster construction of factories funded by foreign capital
+                production_speed_industrial_complex_factor = 0.10 
+                
+                # Corporate investments lower the burden on local consumer goods
+                consumer_goods_expected_value = -0.03 
+                
+                # Slight stability penalty reflecting public backlash over foreign reliance
+                stability_factor = -0.05 
+            }
+        }
+        SAU_transport_network_spirit = {
+            allowed = {
+                always = yes
+            }
+            picture = generic_infrastructure_bonus
+            modifier = {
+                production_speed_infrastructure_factor = 0.15
+                infrastructure_construction_cost_factor = -0.10
+                army_speed_factor = 0.05
+            }
+        }
+
+        # Military Right Wing - Ordnance Focus
+        SAU_ordnance_workshops_spirit = {
+            allowed = {
+                always = yes
+            }
+            picture = generic_production_bonus
+            modifier = {
+                production_speed_arms_factory_factor = 0.10
+                industrial_capacity_factory = 0.05
+            }
+        }
+
+        # Military Right Wing - Mechanized Focus
+        SAU_mechanized_tools_spirit = {
+            allowed = {
+                always = yes
+            }
+            picture = generic_research_bonus
+            modifier = {
+                production_factory_max_efficiency_factor = 0.10
+                line_change_production_efficiency_factor = 0.15
+            }
+        }
+
+        # Oil/Resource Industry Path (Mutually Exclusive with Western Giants)
+        sau_nationalization_output = {
+            allowed = {
+                always = yes
+            }
+            picture = generic_oil_bonus
+            modifier = {
+                local_resources_factor = 0.25 # Substantial boost to your domestic oil output
+                industry_free_convoys_factor = 0.10
+                political_power_gain = -0.05 # Bureaucratic overhead penalty
+            }
+        }
+	}
+}
