@@ -53,4 +53,12 @@ characters = {
             allowed = { always = yes }
         }
     }
+    SAU_abbasid_leader = {
+        name = SAU_Al_Mansur_Al_Abbasi_leader_name
+        portraits = { civilian = { large = "COS_ricardo_jiminez_oreamuno" } }
+        country_leader = {
+            ideology = despotism
+            expire = "1965.1.1"
+        }
+    }
 }

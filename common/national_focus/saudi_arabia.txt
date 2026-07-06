@@ -2637,6 +2637,11 @@ focus_tree = {
         completion_reward = {
             add_stability = 0.15
             add_war_support = 0.10
+            create_country_leader = {
+                name = SAU_Al_Mansur_Al_Abbasi_leader_name
+                expire = "1965.1.1"
+                ideology = despotism
+            }
         }
     }
     focus = {
