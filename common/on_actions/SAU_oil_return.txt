@@ -1,0 +1,45 @@
+on_actions = {
+    on_daily_SAU = {
+        effect = {
+            # 1. Return Oil from Civ Trade
+            if = {
+                limit = {
+                    has_country_flag = SAU_oil_for_civs_active
+                    NOT = { has_country_flag = SAU_oil_for_civs_cooldown }
+                }
+                679 = { add_resource = { type = oil amount = 20 } }
+                clr_country_flag = SAU_oil_for_civs_active
+            }
+
+            # 2. Return Oil from Mil Trade
+            if = {
+                limit = {
+                    has_country_flag = SAU_oil_for_mils_active
+                    NOT = { has_country_flag = SAU_oil_for_mils_cooldown }
+                }
+                679 = { add_resource = { type = oil amount = 25 } }
+                clr_country_flag = SAU_oil_for_mils_active
+            }
+
+            # 3. Return Oil from Research Trade
+            if = {
+                limit = {
+                    has_country_flag = SAU_oil_for_research_active
+                    NOT = { has_country_flag = SAU_oil_for_research_cooldown }
+                }
+                679 = { add_resource = { type = oil amount = 15 } }
+                clr_country_flag = SAU_oil_for_research_active
+            }
+
+            # 4. Return Oil from Stability Trade
+            if = {
+                limit = {
+                    has_country_flag = SAU_oil_for_stability_active
+                    NOT = { has_country_flag = SAU_oil_for_stability_cooldown }
+                }
+                679 = { add_resource = { type = oil amount = 10 } }
+                clr_country_flag = SAU_oil_for_stability_active
+            }
+        }
+    }
+}

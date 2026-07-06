@@ -51,10 +51,12 @@
  SAU_legacy_of_khorasan_desc: "Evoking the ancient warrior spirits of Khorasan, our military theorists will master the arts of land warfare to cement our eastern conquests."
  SAU_restoration_of_the_golden_age: "Restoration of the Golden Age"
  SAU_restoration_of_the_golden_age_desc: "The fragmented worlds of Islam are finally reunited. The Neo-Abbasid Caliphate stands supreme, initiating a glorious new Golden Age of science, power, and global dominance."
- SAU_caliphate_oil_monopoly: "Caliphate Oil Monopoly"
- SAU_caliphate_oil_monopoly_desc: "By controlling the primary oil fields of the Middle East and North Africa, the Caliphate now holds an absolute monopoly over the lifeblood of global industry."
- SAU_revive_the_gold_dinar: "Revive the Gold Dinar"
- SAU_revive_the_gold_dinar_desc: "We discard volatile, foreign fiat currencies and establish the Gold Dinar as our sovereign monetary standard, completely dominating international trade markets."
+  SAU_caliphate_oil_monopoly: "Caliphate Oil Monopoly"
+  SAU_caliphate_oil_monopoly_desc: "By controlling the primary oil fields of the Middle East and North Africa, the Caliphate now holds an absolute monopoly over the lifeblood of global industry."
+  SAU_unlock_oil_decisions: "Unlock Oil Trading Decisions"
+  SAU_unlock_oil_decisions_desc: "With our oil monopoly secured and established, we now possess the authority and leverage to engage in sweeping international oil trade agreements. Foreign powers shall compete desperately for access to our black gold, allowing us to negotiate tremendous concessions in exchange for guaranteed supply."
+  SAU_revive_the_gold_dinar: "Revive the Gold Dinar"
+  SAU_revive_the_gold_dinar_desc: "We discard volatile, foreign fiat currencies and establish the Gold Dinar as our sovereign monetary standard, completely dominating international trade markets."
  SAU_weaponize_the_black_gold: "Weaponize the Black Gold"
  SAU_weaponize_the_black_gold_desc: "Let the global majors tremble. Our oil is a weapon; those who oppose our geopolitical ambitions will find themselves completely cut off from energy supplies."
  SAU_the_eastern_push: "The Eastern Push"
@@ -333,4 +335,16 @@
  SAU_expand_bureaucracy_desc: "Streamline government processes to gain political influence."
  SAU_diplomatic_oil_leverage: "Diplomatic Oil Leverage"
  SAU_diplomatic_oil_leverage_desc: "Use our oil reserves to exert diplomatic pressure."
+ # Oil Trade Decisions
+ SAU_trade_oil_for_civs: "Barter Oil Reserves for Civilian Infrastructure"
+ SAU_trade_oil_for_civs_desc: "Sign sweeping international trade concessions. We will export large quantities of raw oil in exchange for turnkey civilian factories. Note: This will temporarily disrupt local extraction operations."
+ SAU_trade_oil_for_mils: "Trade Oil Rights for Military Factories"
+ SAU_trade_oil_for_mils_desc: "Leverage our resource extraction rights to foreign weapon syndicates in exchange for immediate local arms factory configurations. Note: This will temporarily halt regular production."
+ SAU_trade_oil_for_research: "Fund Modern Academies via Oil Concessions"
+ SAU_trade_oil_for_research_desc: "Pledge our resource profits directly to international technical universities to permanently expand our state research capabilities, causing a brief disruption to extraction."
+ SAU_trade_oil_for_stability: "Subsidize Domestic Commodities with Oil Dividends"
+ SAU_trade_oil_for_stability_desc: "Divert a small measure of our oil production capacity to fund domestic subsidies, calming the public and restoring deep faith in national stability."
+
+ # Modifiers
+ SAU_temporary_oil_shutdown: "Temporary Oil Extraction Disruption"
     

@@ -2820,6 +2820,17 @@ focus_tree = {
         }
     }
     focus = {
+        id = SAU_unlock_oil_decisions
+        icon = GFX_goal_generic_construction
+        cost = 5
+        x = 24.125
+        y = 13.75
+        prerequisite = { focus = SAU_caliphate_oil_monopoly }
+        completion_reward = {
+            set_country_flag = SAU_unlock_oil_decisions_done
+        }
+    }
+    focus = {
         id = SAU_revive_the_gold_dinar
         icon = GFX_focus_generic_industry_3
         cost = 7

@@ -1,58 +1,134 @@
 SAU_oil_decisions_cate = {
-        # Economic Decisions (State scoped)
-        SAU_expand_ghawar = {
-            icon = generic_industry
-            available = { has_political_power > 50 }
-            cost = 75
-            fire_only_once = yes
-            complete_effect = {
-                # Target a specific state ID (replace 123 with your actual state ID)
-                679 = { add_resource = { type = oil amount = 5 } }
-            }
-        }
+	# Economic Decisions (State scoped)
+	SAU_expand_ghawar = {
+		icon = generic_industry
+		available = { has_political_power > 50 }
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			# Target a specific state ID (replace 123 with your actual state ID)
+			679 = { add_resource = { type = oil amount = 5 } }
+		}
+	}
 
-        SAU_develop_safaniya = {
-            icon = generic_industry
-            available = { has_political_power > 50 }
-            cost = 100
-            fire_only_once = yes
-            complete_effect = {
-                857 = { add_resource = { type = oil amount = 3 } }
-            }
-        }
+	SAU_develop_safaniya = {
+		icon = generic_industry
+		available = { has_political_power > 50 }
+		cost = 100
+		fire_only_once = yes
+		complete_effect = {
+			857 = { add_resource = { type = oil amount = 3 } }
+		}
+	}
 
-        SAU_build_refinery = {
-            icon = generic_industry
-            available = { has_political_power > 75 }
-            cost = 100
-            fire_only_once = yes
-            complete_effect = {
-                679 = { add_extra_state_shared_building_slots = 2 }
-            }
-        }
+	SAU_build_refinery = {
+		icon = generic_industry
+		available = { has_political_power > 75 }
+		cost = 100
+		fire_only_once = yes
+		complete_effect = {
+			679 = { add_extra_state_shared_building_slots = 2 }
+		}
+	}
 
-        SAU_national_pipeline = {
-            icon = generic_industry
-            available = { has_political_power > 75 }
-            cost = 100
-            fire_only_once = yes
-            complete_effect = {
-                857 = { add_extra_state_shared_building_slots = 2 }
-            }
-        }
+	SAU_national_pipeline = {
+		icon = generic_industry
+		available = { has_political_power > 75 }
+		cost = 100
+		fire_only_once = yes
+		complete_effect = {
+			857 = { add_extra_state_shared_building_slots = 2 }
+		}
+	}
 
-        # Political Decisions (Country scoped - Correct)
-        SAU_royal_decree_unity = {
-            icon = generic_political_actions
-            available = { has_stability < 1.0 has_political_power > 50 }
-            cost = 50
-            complete_effect = { add_stability = 0.05 }
-        }
+	# Political Decisions (Country scoped - Correct)
+	SAU_royal_decree_unity = {
+		icon = generic_political_actions
+		available = { has_stability < 1.0 has_political_power > 50 }
+		cost = 50
+		complete_effect = { add_stability = 0.05 }
+	}
 
-        SAU_consolidate_tribes = {
-            icon = generic_political_actions
-            available = { has_stability < 1.0 has_political_power > 50 }
-            cost = 60
-            complete_effect = { add_stability = 0.05 }
-        }
+	SAU_consolidate_tribes = {
+		icon = generic_political_actions
+		available = { has_stability < 1.0 has_political_power > 50 }
+		cost = 60
+		complete_effect = { add_stability = 0.05 }
+	}
+
+	# Oil Trade Decisions (No Political Power Cost, 80-day timed execution)
+	# Requires SAU_unlock_oil_decisions focus to be completed
+	
+	SAU_trade_oil_for_civs = {
+		icon = generic_trade
+		available = { 
+			NOT = { has_country_flag = SAU_oil_for_civs_flag }
+			has_country_flag = SAU_unlock_oil_decisions_done
+		}
+		cost = 0
+		days_remove = 80
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = SAU_oil_for_civs_flag
+			679 = { add_resource = { type = oil amount = -20 } }
+		}
+		remove_effect = {
+			679 = { add_building_construction = { type = industrial_complex level = 5 instant_build = yes } }
+		}
+	}
+
+	SAU_trade_oil_for_mils = {
+		icon = generic_production
+		available = { 
+			NOT = { has_country_flag = SAU_oil_for_mils_flag }
+			has_country_flag = SAU_unlock_oil_decisions_done
+		}
+		cost = 0
+		days_remove = 80
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = SAU_oil_for_mils_flag
+			679 = { add_resource = { type = oil amount = -25 } }
+		}
+		remove_effect = {
+			679 = { add_building_construction = { type = arms_factory level = 8 instant_build = yes } }
+		}
+	}
+
+	SAU_trade_oil_for_research = {
+		icon = generic_research
+		available = { 
+			NOT = { has_country_flag = SAU_oil_for_research_flag }
+			has_country_flag = SAU_unlock_oil_decisions_done
+		}
+		cost = 0
+		days_remove = 80
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = SAU_oil_for_research_flag
+			679 = { add_resource = { type = oil amount = -15 } }
+		}
+		remove_effect = {
+			add_research_slot = 1
+		}
+	}
+
+	SAU_trade_oil_for_stability = {
+		icon = generic_stability
+		available = { 
+			NOT = { has_country_flag = SAU_oil_for_stability_flag }
+			has_stability < 0.8
+			has_country_flag = SAU_unlock_oil_decisions_done
+		}
+		cost = 0
+		days_remove = 80
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = SAU_oil_for_stability_flag
+			679 = { add_resource = { type = oil amount = -10 } }
+		}
+		remove_effect = {
+			add_stability = 0.15
+		}
+	}
 }
