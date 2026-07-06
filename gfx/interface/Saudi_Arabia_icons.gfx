@@ -2,19 +2,13 @@ spriteTypes = {
     SpriteType = {
         name = "GFX_Saudi_exp"
         texturefile = "gfx/interface/goals/GFX_Saudi_exp.dds"
-        noOfFrames = 1
-        legacy_lazy_load = no
     }
     SpriteType = {
         name = "GFX_abbasid_rev"
         texturefile = "gfx/interface/goals/GFX_abbasid_rev.dds"
-        noOfFrames = 1
-        legacy_lazy_load = no
     }
     SpriteType = {
         name = "GFX_sword_palestine"
         texturefile = "gfx/interface/goals/GFX_sword_palestine.dds"
-        noOfFrames = 1
-        legacy_lazy_load = no
     }
 }
