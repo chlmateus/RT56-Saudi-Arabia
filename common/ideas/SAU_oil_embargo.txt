@@ -1,0 +1,12 @@
+ideas = {
+	country = {
+		SAU_oil_embargo_threat = {
+			name = SAU_oil_embargo_threat
+			picture = GFX_idea_generic_trade_advisor
+			modifier = {
+				trade_opinion_factor = 0.15
+				diplomatic_pressure = 0.10
+			}
+		}
+	}
+}

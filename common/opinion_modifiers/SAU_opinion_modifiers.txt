@@ -1,0 +1,6 @@
+opinion_modifiers = {
+	SAU_fear_of_oil_cutoff = {
+		value = -15
+		months = 60
+	}
+}

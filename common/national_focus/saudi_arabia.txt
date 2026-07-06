@@ -2823,7 +2823,7 @@ focus_tree = {
         id = SAU_revive_the_gold_dinar
         icon = GFX_focus_generic_industry_3
         cost = 7
-        x = 21
+        x = 22.5
         y = 13.75
         prerequisite = { focus = SAU_caliphate_oil_monopoly }
         completion_reward = {
@@ -2831,21 +2831,6 @@ focus_tree = {
             454 = { 
                 add_extra_state_shared_building_slots = 2
                 add_building_construction = { type = industrial_complex level = 2 } 
-            }
-        }
-    }
-    focus = {
-        id = SAU_weaponize_the_black_gold
-        icon = GFX_focus_generic_diplomatic_treaty
-        cost = 10
-        x = 23.7
-        y = 13.75
-        prerequisite = { focus = SAU_caliphate_oil_monopoly }
-        completion_reward = {
-            add_ideas = SAU_oil_embargo_threat
-            every_other_country = {
-                limit = { is_major = yes }
-                add_opinion_modifier = { target = ROOT modifier = SAU_fear_of_oil_cutoff }
             }
         }
     }
