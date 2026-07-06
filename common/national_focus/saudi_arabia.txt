@@ -2627,7 +2627,7 @@ focus_tree = {
     }
     focus = {
         id = SAU_abbasid_revolution
-        icon = GFX_abbasid_rev
+        icon = GFX_goal_generic_position_armies
         cost = 10
         x = 10.75
         y = 11
@@ -2637,10 +2637,14 @@ focus_tree = {
         completion_reward = {
             add_stability = 0.15
             add_war_support = 0.10
+            set_politics = {
+                ruling_party = neutrality
+                elections_allowed = no
+            }
             create_country_leader = {
                 name = SAU_Al_Mansur_Al_Abbasi_leader_name
                 expire = "1965.1.1"
-                ideology = despotism
+                ideology = neutrality
             }
             country_event = { id = SAU_abbasid.1 }
             every_other_country = {
@@ -2689,7 +2693,7 @@ focus_tree = {
     }
     focus = {
         id = SAU_demand_holy_submission
-        icon = GFX_Saudi_exp
+        icon = GFX_goal_generic_major_war
         cost = 10
         x = 10.75
         y = 14
@@ -2707,7 +2711,7 @@ focus_tree = {
     }
     focus = {
         id = SAU_sword_of_the_palestine
-        icon = GFX_sword_palestine
+        icon = GFX_goal_generic_major_war
         cost = 5
         x = 10.75
         y = 15
