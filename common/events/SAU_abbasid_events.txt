@@ -1,0 +1,31 @@
+namespace = SAU_abbasid
+
+# News event: Al-Mansur al-Abbasi takes power
+country_event = {
+	id = SAU_abbasid.1
+	title = SAU_abbasid.1.t
+	desc = SAU_abbasid.1.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	
+	option = {
+		name = SAU_abbasid.1.a
+		ai_chance = { base = 100 }
+	}
+}
+
+# News event: Abbasid Caliphate proclaimed (for other countries)
+news_event = {
+	id = SAU_abbasid.2
+	title = SAU_abbasid.2.t
+	desc = SAU_abbasid.2.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SAU_abbasid.2.a
+	}
+}
