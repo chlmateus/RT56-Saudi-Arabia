@@ -80,4 +80,13 @@ ideas = {
         picture = GFX_idea_generic_political_advisor_3
         modifier = { political_power_cost_factor = -0.1 }
     }
+    SAU_abbasid_caliph_idea = {
+        name = SAU_abbasid_caliph_idea
+        picture = GFX_idea_generic_political_advisor
+        modifier = {
+            political_power_gain = 0.20
+            stability_growth = 0.10
+            justify_war_goal_time = -0.15
+        }
+    }
 }

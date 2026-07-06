@@ -44,4 +44,13 @@ characters = {
             allowed = { always = yes }
         }
     }
+    SAU_abbasid_caliph_char = {
+        name = SAU_Al_Mansur_Al_Abbasi_name
+        portraits = { civilian = { large = "COS_ricardo_jiminez_oreamuno" } }
+        political_advisor = {
+            slot = political_advisor
+            idea_token = SAU_abbasid_caliph_idea
+            allowed = { always = yes }
+        }
+    }
 }
