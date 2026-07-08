@@ -11,8 +11,7 @@ focus_tree = {
     shared_focus = SYR_UNIFIED_arab_unification
     continuous_focus_position = { x = 1400 y = 900 }
     default = no
-    shared_focus = GEN_Aviation_Effort
-    shared_focus = GEN_Naval_Effort
+    
     
     focus = {
         id = SAU_the_unifier
@@ -1230,7 +1229,6 @@ focus_tree = {
     ###################################
     ### NEW ARMY TREE #################
     ###################################
-
     focus = {
         id = SAU_army_focus_1
         icon = GFX_goal_SAU_coa_army
@@ -1991,14 +1989,12 @@ focus_tree = {
                         owns_state = 455
                         owns_state = 1021
                         owns_state = 1022
-
                         #Mandate
                         owns_state = 454        #Coastal Plain
                         owns_state = 966        #West Bank
                         owns_state = 949        #Ghaza
                         owns_state = 1016       #Jerusalem
                         owns_state = 1017       #Beersheba
-
                         owns_state = 656        #Kuwait
                         owns_state = 658        #Abu Dhabi
                         owns_state = 765        #Qatar
@@ -2430,6 +2426,8 @@ focus_tree = {
         cost = 5
         x = 26.5
         y = 5
+        x = 22
+        y = 10.5
         completion_reward = {
             431 = { add_resource = { type = oil amount = 15 } }
             add_tech_bonus = {
@@ -2446,6 +2444,8 @@ focus_tree = {
         cost = 10
         x = 26.5
         y = 6
+        x = 22
+        y = 11.5
         prerequisite = { focus = SAU_oil_prospecting }
         completion_reward = {
             431 = { add_building_construction = { type = infrastructure level = 3 } }
@@ -2457,6 +2457,8 @@ focus_tree = {
         cost = 10
         x = 24.5
         y = 7
+        x = 20
+        y = 12.5
         prerequisite = { focus = SAU_aramco_pipeline }
         completion_reward = {
             431 = { 
@@ -2471,6 +2473,8 @@ focus_tree = {
         cost = 10
         x = 24.5
         y = 8
+        x = 20
+        y = 13.5
         prerequisite = { focus = SAU_state_mining_corp }
         completion_reward = {
             431 = { add_building_construction = { type = infrastructure level = 2 } }
@@ -2482,6 +2486,8 @@ focus_tree = {
         cost = 10
         x = 26.5
         y = 7
+        x = 22
+        y = 12.5
         prerequisite = { focus = SAU_aramco_pipeline }
         completion_reward = {
             431 = { 
@@ -2496,6 +2502,8 @@ focus_tree = {
         cost = 10
         x = 26.5
         y = 8
+        x = 22
+        y = 13.5
         prerequisite = { focus = SAU_refinery_boom_path }
         completion_reward = {
             add_ideas = SAU_mechanized_tools_spirit
@@ -2507,6 +2515,8 @@ focus_tree = {
         cost = 5
         x = 28
         y = 7
+        x = 23.5
+        y = 12.5
         prerequisite = { focus = SAU_aramco_pipeline }
         completion_reward = {
             431 = { add_resource = { type = oil amount = -10 } }
@@ -2519,6 +2529,8 @@ focus_tree = {
         cost = 10
         x = 28
         y = 8
+        x = 23.5
+        y = 13.5
         prerequisite = { focus = SAU_foreign_concessions }
         completion_reward = {
             431 = { add_resource = { type = oil amount = 30 } }
@@ -2530,6 +2542,8 @@ focus_tree = {
         cost = 10
         x = 25.5
         y = 9.5
+        x = 21
+        y = 15
         prerequisite = { focus = SAU_hejaz_railway_revival focus = SAU_petrochemicals }
         mutually_exclusive = { focus = SAU_western_giants }
         completion_reward = {
@@ -2544,6 +2558,8 @@ focus_tree = {
         cost = 10
         x = 25.5
         y = 10.5
+        x = 21
+        y = 16
         prerequisite = { focus = SAU_nationalize_oil }
         completion_reward = {
             431 = { 
@@ -2558,6 +2574,8 @@ focus_tree = {
         cost = 10
         x = 28
         y = 9.5
+        x = 23.5
+        y = 15
         prerequisite = { focus = SAU_offshore_drilling }
         mutually_exclusive = { focus = SAU_nationalize_oil }
         completion_reward = {
@@ -2571,6 +2589,8 @@ focus_tree = {
         cost = 5
         x = 28
         y = 10.5
+        x = 23.5
+        y = 16
         prerequisite = { focus = SAU_western_giants }
         completion_reward = {
             431 = { 
@@ -2585,6 +2605,8 @@ focus_tree = {
         cost = 10
         x = 26.9
         y = 11.5
+        x = 22.4
+        y = 17
         prerequisite = { focus = SAU_heavy_foundries focus = SAU_imported_mech }
         completion_reward = {
             431 = { 
@@ -2600,6 +2622,8 @@ focus_tree = {
         cost = 10
         x = 25.5
         y = 12.75
+        x = 21
+        y = 18.25
         prerequisite = { focus = SAU_desert_power_grid }
         completion_reward = {
             431 = { 
@@ -2614,6 +2638,8 @@ focus_tree = {
         cost = 10
         x = 28
         y = 12.75
+        x = 23.5
+        y = 18.25
         prerequisite = { focus = SAU_desert_power_grid }
         completion_reward = {
             440 = { 
@@ -2816,8 +2842,8 @@ focus_tree = {
         id = SAU_caliphate_oil_monopoly
         icon = GFX_goal_generic_construction
         cost = 7
-        x = 22.5
-        y = 12.75
+        x = 16
+        y = 18.25
         prerequisite = { focus = SAU_desert_power_grid }
         completion_reward = {
             451 = { add_resource = { type = oil amount = 50 } }
@@ -2828,8 +2854,8 @@ focus_tree = {
         id = SAU_unlock_oil_decisions
         icon = GFX_goal_generic_construction
         cost = 5
-        x = 24.125
-        y = 13.75
+        x = 17.625
+        y = 19.25
         prerequisite = { focus = SAU_caliphate_oil_monopoly }
         completion_reward = {
             set_country_flag = SAU_unlock_oil_decisions_done
@@ -2839,8 +2865,8 @@ focus_tree = {
         id = SAU_revive_the_gold_dinar
         icon = GFX_focus_generic_industry_3
         cost = 7
-        x = 22.5
-        y = 13.75
+        x = 16
+        y = 19.25
         prerequisite = { focus = SAU_caliphate_oil_monopoly }
         completion_reward = {
             add_stability = 0.15
@@ -2850,20 +2876,211 @@ focus_tree = {
             }
         }
     }
-
     # -------------------------------------------------------------------------
     # CENTER ANCHOR & RESOURCE SPINE
     # -------------------------------------------------------------------------
     focus = {
-        id = SAU_industrial_foundation
-        icon = GFX_focus_generic_industry_1
-        cost = 7
-        x = 55
-        y = 0
-        completion_reward = { add_stability = 0.05 }
-        search_filters = { FOCUS_FILTER_INDUSTRY }
+        id = SAU_oil_prospecting
+        icon = GFX_SOV_oil_production_ccp_2d_sov_compatibility
+        cost = 5
+        x = 20
+        y = 10.5
+        completion_reward = {
+            431 = { add_resource = { type = oil amount = 15 } }
+            add_tech_bonus = {
+                name = sau_industrial_bonus
+                bonus = 0.10
+                uses = 1
+                category = industry
+            }
+        }
     }
-
+    focus = {
+        id = SAU_aramco_pipeline
+        icon = GFX_goal_generic_construction
+        cost = 10
+        x = 20
+        y = 11.5
+        prerequisite = { focus = SAU_oil_prospecting }
+        completion_reward = {
+            431 = { add_building_construction = { type = infrastructure level = 3 } }
+        }
+    }
+    focus = {
+        id = SAU_state_mining_corp
+        icon = GFX_goal_generic_production
+        cost = 10
+        x = 18
+        y = 12.5
+        prerequisite = { focus = SAU_aramco_pipeline }
+        completion_reward = {
+            431 = { 
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = { type = industrial_complex level = 1 } 
+            }
+        }
+    }
+    focus = {
+        id = SAU_hejaz_railway_revival
+        icon = GFX_goal_generic_construction
+        cost = 10
+        x = 18
+        y = 13.5
+        prerequisite = { focus = SAU_state_mining_corp }
+        completion_reward = {
+            431 = { add_building_construction = { type = infrastructure level = 2 } }
+        }
+    }
+    focus = {
+        id = SAU_refinery_boom_path
+        icon = GFX_SOV_oil_production_ccp_2d_sov_compatibility
+        cost = 10
+        x = 20
+        y = 12.5
+        prerequisite = { focus = SAU_aramco_pipeline }
+        completion_reward = {
+            431 = { 
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = { type = synthetic_refinery level = 2 } 
+            }
+        }
+    }
+    focus = {
+        id = SAU_petrochemicals
+        icon = GFX_goal_generic_production
+        cost = 10
+        x = 20
+        y = 13.5
+        prerequisite = { focus = SAU_refinery_boom_path }
+        completion_reward = {
+            add_ideas = SAU_mechanized_tools_spirit
+        }
+    }
+    focus = {
+        id = SAU_foreign_concessions
+        icon = GFX_goal_generic_trade
+        cost = 5
+        x = 21.5
+        y = 12.5
+        prerequisite = { focus = SAU_aramco_pipeline }
+        completion_reward = {
+            431 = { add_resource = { type = oil amount = -10 } }
+            add_offmarket_factories = 3
+        }
+    }
+    focus = {
+        id = SAU_offshore_drilling
+        icon = GFX_SOV_oil_production_ccp_2d_sov_compatibility
+        cost = 10
+        x = 21.5
+        y = 13.5
+        prerequisite = { focus = SAU_foreign_concessions }
+        completion_reward = {
+            431 = { add_resource = { type = oil amount = 30 } }
+        }
+    }
+    focus = {
+        id = SAU_nationalize_oil
+        icon = GFX_SOV_oil_production_ccp_2d_sov_compatibility
+        cost = 10
+        x = 19
+        y = 15
+        prerequisite = { focus = SAU_hejaz_railway_revival focus = SAU_petrochemicals }
+        mutually_exclusive = { focus = SAU_western_giants }
+        completion_reward = {
+            431 = { add_resource = { type = oil amount = 10 } }
+            add_stability = -0.05
+            add_ideas = sau_nationalization_output
+        }
+    }
+    focus = {
+        id = SAU_heavy_foundries
+        icon = GFX_goal_generic_small_arms
+        cost = 10
+        x = 19
+        y = 16
+        prerequisite = { focus = SAU_nationalize_oil }
+        completion_reward = {
+            431 = { 
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = { type = arms_factory level = 2 } 
+            }
+        }
+    }
+    focus = {
+        id = SAU_western_giants
+        icon = GFX_focus_usa_union_representation_act
+        cost = 10
+        x = 21.5
+        y = 15
+        prerequisite = { focus = SAU_offshore_drilling }
+        mutually_exclusive = { focus = SAU_nationalize_oil }
+        completion_reward = {
+            add_offmarket_factories = 5
+            add_ideas = sau_corporate_partnership
+        }
+    }
+    focus = {
+        id = SAU_imported_mech
+        icon = GFX_goal_generic_trade
+        cost = 5
+        x = 21.5
+        y = 16
+        prerequisite = { focus = SAU_western_giants }
+        completion_reward = {
+            431 = { 
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = { type = industrial_complex level = 2 } 
+            }
+        }
+    }
+    focus = {
+        id = SAU_desert_power_grid
+        icon = GFX_goal_generic_construction
+        cost = 10
+        x = 20.4
+        y = 17
+        prerequisite = { focus = SAU_heavy_foundries focus = SAU_imported_mech }
+        completion_reward = {
+            431 = { 
+                add_extra_state_shared_building_slots = 3
+                add_building_construction = { type = industrial_complex level = 2 }
+                add_building_construction = { type = arms_factory level = 1 }
+            }
+        }
+    }
+    focus = {
+        id = SAU_automotive_hub
+        icon = GFX_goal_generic_construction
+        cost = 10
+        x = 19
+        y = 18.25
+        prerequisite = { focus = SAU_desert_power_grid }
+        completion_reward = {
+            431 = { 
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = { type = arms_factory level = 2 } 
+            }
+        }
+    }
+    focus = {
+        id = SAU_red_sea_arsenal
+        icon = GFX_goal_generic_construction
+        cost = 10
+        x = 21.5
+        y = 18.25
+        prerequisite = { focus = SAU_desert_power_grid }
+        completion_reward = {
+            440 = { 
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = { type = dockyard level = 2 } 
+            }
+            431 = { 
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = { type = arms_factory level = 1 } 
+            }
+        }
+    }
     # -------------------------------------------------------------------------
     # LEFT WING: CIVILIAN DEVELOPMENT (Max Left: x=51)
     # -------------------------------------------------------------------------
@@ -2940,7 +3157,6 @@ focus_tree = {
         completion_reward = { 451 = { add_building_construction = { type = infrastructure level = 1 } } }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
-
     # -------------------------------------------------------------------------
     # RIGHT WING: MILITARY DEVELOPMENTS (Max Right: x=58)
     # -------------------------------------------------------------------------
@@ -3019,7 +3235,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
-
     # -------------------------------------------------------------------------
     # MISCELLANEOUS FOCUSES
     # -----------------------------------------
@@ -3137,11 +3352,9 @@ focus_tree = {
             add_stability = 0.10
         }
     }
-
     # =========================================================================
     # BRANCH 1: RELIGIOUS AUTHORITY & CULTURAL IDENTITY
     # =========================================================================
-
     focus = {
         id = SAU_guardians_of_the_holy_sites
         icon = GFX_goal_PAL_jizya
@@ -3162,7 +3375,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
     }
-
     focus = {
         id = SAU_expand_hajj_infrastructure
         icon = GFX_focus_generic_industry_2
@@ -3192,7 +3404,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
-
     focus = {
         id = SAU_international_islamic_council
         icon = GFX_goal_generic_intelligence_exchange
@@ -3212,7 +3423,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
-
     focus = {
         id = SAU_wahhabi_doctrine_export
         icon = GFX_goal_PAL_declare_jihad
@@ -3254,7 +3464,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
-
     focus = {
         id = SAU_moderate_islam_approach
         icon = GFX_focus_generic_diplomatic_treaty
@@ -3295,7 +3504,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
     }
-
     focus = {
         id = SAU_hajj_pilgrimage_economy
         icon = GFX_focus_generic_industry_3
@@ -3311,7 +3519,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
-
     focus = {
         id = SAU_religious_education_network
         icon = GFX_focus_generic_university_2
@@ -3338,7 +3545,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_RESEARCH }
     }
-
     focus = {
         id = SAU_islamic_finance_system
         icon = GFX_goal_generic_financial_markets
@@ -3370,7 +3576,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
-
     focus = {
         id = SAU_ulema_council_influence
         icon = GFX_goal_generic_political_pressure
@@ -3387,11 +3592,9 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
     }
-
     # =========================================================================
     # BRANCH 2: PAN-ARABISM & REGIONAL DIPLOMACY
     # =========================================================================
-
     focus = {
         id = SAU_arab_unity_vision
         icon = GFX_focus_IRQ_unite_mashriq
@@ -3415,7 +3618,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
-
     focus = {
         id = SAU_cairo_damascus_axis
         icon = GFX_goal_generic_intelligence_exchange
@@ -3444,7 +3646,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
-
     focus = {
         id = SAU_league_of_arab_states
         icon = GFX_focus_generic_diplomatic_treaty
@@ -3468,7 +3669,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
-
     focus = {
         id = SAU_arabic_language_promotion
         icon = GFX_focus_generic_diplomatic_treaty
@@ -3498,7 +3698,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
-
     focus = {
         id = SAU_anti_colonial_front
         icon = GFX_goal_generic_attack_allies
@@ -3520,7 +3719,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
-
     focus = {
         id = SAU_economic_cooperation_council
         icon = GFX_goal_generic_positive_trade_relations
@@ -3537,7 +3735,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
-
     focus = {
         id = SAU_joint_arab_military_command
         icon = GFX_goal_generic_allies_build_infantry
@@ -3558,7 +3755,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_MANPOWER }
     }
-
     focus = {
         id = SAU_arab_cultural_renaissance
         icon = GFX_focus_research
@@ -3580,7 +3776,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY }
     }
-
     focus = {
         id = SAU_regional_infrastructure_fund
         icon = GFX_goal_generic_construction
@@ -3622,7 +3817,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
-
     focus = {
         id = SAU_pan_arab_broadcasting
         icon = GFX_goal_generic_propaganda
@@ -3652,11 +3846,9 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
-
     # =========================================================================
     # BRANCH 3: INTERNAL SECURITY & INTELLIGENCE
     # =========================================================================
-
     focus = {
         id = SAU_establish_security_apparatus
         icon = GFX_focus_generic_military_mission
@@ -3679,7 +3871,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
-
     focus = {
         id = SAU_religious_police_force
         icon = GFX_goal_generic_censorship
@@ -3711,7 +3902,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
     }
-
     focus = {
         id = SAU_foreign_intelligence_network
         icon = GFX_goal_generic_intelligence_exchange
@@ -3737,7 +3927,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
-
     focus = {
         id = SAU_counter_espionage_doctrine
         icon = GFX_goal_generic_secret_weapon
@@ -3760,7 +3949,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
-
     focus = {
         id = SAU_internal_passports
         icon = GFX_focus_generic_diplomatic_treaty
@@ -3777,7 +3965,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_STABILITY }
     }
-
     focus = {
         id = SAU_surveillance_state
         icon = GFX_goal_generic_censorship
@@ -3794,11 +3981,9 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
-
     # =========================================================================
     # BRANCH 4: TRIBAL INTEGRATION & SOCIAL REFORM
     # =========================================================================
-
     focus = {
         id = SAU_tribal_confederation_reforms
         icon = GFX_focus_ETH_sway_the_warlords
@@ -3815,7 +4000,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_MANPOWER }
     }
-
     focus = {
         id = SAU_sedentarization_incentives
         icon = GFX_focus_generic_population_growth
@@ -3846,7 +4030,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
-
     focus = {
         id = SAU_preserve_nomadic_culture
         icon = GFX_focus_ETH_keep_the_chitet
@@ -3879,7 +4062,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_MANPOWER }
     }
-
     focus = {
         id = SAU_universal_education_program
         icon = GFX_focus_generic_university_2
@@ -3908,7 +4090,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_RESEARCH }
     }
-
     focus = {
         id = SAU_womens_education_debate
         icon = GFX_goal_generic_political_pressure
@@ -3940,7 +4121,6 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
-
     focus = {
         id = SAU_technical_colleges
         icon = GFX_focus_generic_industry_3
@@ -3962,19 +4142,17 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
     }
-
     # =========================================================================
     # BRANCH 5: POST-EXPANSION CONSOLIDATION
     # =========================================================================
     # Note: Positioned at x=20-26 (shifted right from original x=15-20 plan)
     # to avoid visual clutter with existing Abbasid Support branch at x=7.75-14.25
-
     focus = {
         id = SAU_administrative_integration
         icon = GFX_focus_generic_industry_1
         cost = 8
-        x = 23
-        y = 17
+        x = 4.5
+        y = 15
         prerequisite = { focus = SAU_integrate_the_levant focus = SAU_our_rightful_domain }
         available = {
             num_of_controlled_states > 14
@@ -3994,13 +4172,12 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_ANNEXATION }
     }
-
     focus = {
         id = SAU_cultural_arabization
         icon = GFX_goal_generic_propaganda
         cost = 10
-        x = 21
-        y = 18
+        x = 3.5
+        y = 16
         prerequisite = { focus = SAU_administrative_integration }
         mutually_exclusive = { focus = SAU_regional_autonomy_system }
         ai_will_do = {
@@ -4025,13 +4202,12 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_ANNEXATION }
     }
-
     focus = {
         id = SAU_regional_autonomy_system
         icon = GFX_goal_MPL_arabs_ministers
         cost = 10
-        x = 25
-        y = 18
+        x = 5.5
+        y = 16
         prerequisite = { focus = SAU_administrative_integration }
         mutually_exclusive = { focus = SAU_cultural_arabization }
         ai_will_do = {
@@ -4057,13 +4233,12 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_STABILITY }
     }
-
     focus = {
         id = SAU_empire_administration
         icon = GFX_goal_generic_major_alliance
         cost = 10
-        x = 23
-        y = 19
+        x = 4.5
+        y = 17
         prerequisite = { focus = SAU_cultural_arabization focus = SAU_regional_autonomy_system }
         ai_will_do = {
             factor = 50
