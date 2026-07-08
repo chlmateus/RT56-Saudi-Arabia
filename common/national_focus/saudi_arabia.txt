@@ -1240,7 +1240,7 @@ focus_tree = {
             factor = 5
         }
         relative_position_id = SAU_the_unifier
-        x = 11
+        x = 40
         y = 0
         search_filters = { FOCUS_FILTER_RESEARCH }
         completion_reward = {
@@ -1262,7 +1262,7 @@ focus_tree = {
             factor = 2
         }
         relative_position_id = SAU_army_focus_1
-        x = -3
+        x = -4
         y = 1
         search_filters = { FOCUS_FILTER_RESEARCH }
         completion_reward = {
@@ -1405,7 +1405,7 @@ focus_tree = {
             factor = 5
         }
         relative_position_id = SAU_army_focus_1
-        x = -1
+        x = -2
         y = 1
         search_filters = { FOCUS_FILTER_RESEARCH }
         completion_reward = {
@@ -1496,7 +1496,7 @@ focus_tree = {
             factor = 5
         }
         relative_position_id = SAU_army_focus_1
-        x = 1
+        x = 2
         y = 1
         completion_reward = {
             add_ideas = { SAU_incorporate_nomad_tactics1 }
@@ -1631,7 +1631,7 @@ focus_tree = {
             factor = 1
         }
         relative_position_id = SAU_army_focus_1
-        x = 3
+        x = 4
         y = 1
         search_filters = { FOCUS_FILTER_RESEARCH }
         completion_reward = {
@@ -1745,7 +1745,7 @@ focus_tree = {
             factor = 10
         }
         relative_position_id = SAU_romanticize_army
-        x = 1
+        x = -1
         y = 1
         search_filters = { FOCUS_FILTER_RESEARCH }
         completion_reward = {
@@ -3814,7 +3814,7 @@ focus_tree = {
         id = SAU_arab_federation_council
         icon = GFX_focus_generic_diplomatic_treaty
         cost = 8
-        x = 33.5
+        x = 33
         y = 12
         prerequisite = { focus = SAU_arab_diplomatic_offensive }
         mutually_exclusive = { focus = SAU_arab_unification_campaign }
@@ -3845,7 +3845,7 @@ focus_tree = {
         id = SAU_arab_unification_campaign
         icon = GFX_goal_generic_seize_arabia
         cost = 8
-        x = 36.5
+        x = 37
         y = 12
         prerequisite = { focus = SAU_arab_diplomatic_offensive }
         mutually_exclusive = { focus = SAU_arab_federation_council }
@@ -3874,7 +3874,7 @@ focus_tree = {
         id = SAU_common_arab_market
         icon = GFX_goal_generic_positive_trade_relations
         cost = 8
-        x = 33.5
+        x = 33
         y = 13
         prerequisite = { focus = SAU_arab_federation_council }
         ai_will_do = {
@@ -3904,7 +3904,7 @@ focus_tree = {
         id = SAU_liberation_of_brothers
         icon = GFX_goal_generic_army
         cost = 10
-        x = 36.5
+        x = 37
         y = 13
         prerequisite = { focus = SAU_arab_unification_campaign }
         ai_will_do = {
@@ -3927,7 +3927,7 @@ focus_tree = {
         id = SAU_unified_arab_market
         icon = GFX_goal_generic_financial_markets
         cost = 10
-        x = 33.5
+        x = 33
         y = 14
         prerequisite = { focus = SAU_common_arab_market }
         ai_will_do = {
@@ -3944,7 +3944,7 @@ focus_tree = {
         id = SAU_arab_hegemony
         icon = GFX_goal_generic_major_war
         cost = 10
-        x = 36.5
+        x = 37
         y = 14
         prerequisite = { focus = SAU_liberation_of_brothers }
         ai_will_do = {
@@ -3963,7 +3963,7 @@ focus_tree = {
         icon = GFX_focus_IRQ_unite_mashriq
         cost = 10
         x = 35
-        y = 14
+        y = 15
         prerequisite = { focus = SAU_unified_arab_market focus = SAU_arab_hegemony }
         ai_will_do = {
             factor = 50
@@ -3982,8 +3982,8 @@ focus_tree = {
         id = SAU_establish_security_apparatus
         icon = GFX_focus_generic_military_mission
         cost = 7
-        x = 35
-        y = 12
+        x = 12
+        y = 6
         prerequisite = { focus = SAU_seek_german_arms focus = SAU_introduce_the_constitution focus = SAU_continue_hakimovs_legacy }
         ai_will_do = {
             factor = 60
@@ -4004,9 +4004,9 @@ focus_tree = {
         id = SAU_religious_police_force
         icon = GFX_goal_generic_censorship
         cost = 5
-        x = 32
+        x = 31
         y = 14
-        prerequisite = { focus = SAU_establish_security_apparatus }
+        prerequisite = { focus = SAU_arab_diplomatic_offensive }
         ai_will_do = {
             factor = 50
             modifier = {
@@ -4035,9 +4035,9 @@ focus_tree = {
         id = SAU_foreign_intelligence_network
         icon = GFX_goal_generic_intelligence_exchange
         cost = 5
-        x = 38
+        x = 39
         y = 14
-        prerequisite = { focus = SAU_establish_security_apparatus }
+        prerequisite = { focus = SAU_arab_diplomatic_offensive }
         ai_will_do = {
             factor = 45
         }
@@ -4061,7 +4061,7 @@ focus_tree = {
         icon = GFX_goal_generic_secret_weapon
         cost = 8
         x = 35
-        y = 15
+        y = 16
         prerequisite = { focus = SAU_religious_police_force }
         prerequisite = { focus = SAU_foreign_intelligence_network }
         ai_will_do = {
@@ -4083,7 +4083,7 @@ focus_tree = {
         icon = GFX_focus_generic_diplomatic_treaty
         cost = 7
         x = 33
-        y = 16
+        y = 17
         prerequisite = { focus = SAU_counter_espionage_doctrine }
         ai_will_do = {
             factor = 40
@@ -4099,7 +4099,7 @@ focus_tree = {
         icon = GFX_goal_generic_censorship
         cost = 7
         x = 37
-        y = 16
+        y = 17
         prerequisite = { focus = SAU_counter_espionage_doctrine }
         ai_will_do = {
             factor = 35
@@ -4227,7 +4227,6 @@ focus_tree = {
         cost = 5
         x = 55.5
         y = 0
-        prerequisite = { focus = SAU_the_unifier }
         ai_will_do = {
             factor = 60
         }
@@ -4268,7 +4267,7 @@ focus_tree = {
     focus = {
         id = SAU_economic_doctrine_choice
         icon = GFX_goal_generic_economy
-        cost = 5
+        cost = 2.5
         x = 55.5
         y = 1.5
         prerequisite = { focus = SAU_industrial_foundation }
@@ -4463,7 +4462,7 @@ focus_tree = {
         id = SAU_military_doctrine_choice
         icon = GFX_goal_plan
         cost = 5
-        x = 17
+        x = 46
         y = 1
         prerequisite = { focus = SAU_army_focus_1 }
         ai_will_do = {
@@ -4478,7 +4477,7 @@ focus_tree = {
         id = SAU_desert_fortress_doctrine
         icon = GFX_goal_defensive_position2
         cost = 10
-        x = 15
+        x = 46
         y = 2
         prerequisite = { focus = SAU_military_doctrine_choice }
         mutually_exclusive = { focus = SAU_desert_storm_doctrine }
@@ -4507,7 +4506,7 @@ focus_tree = {
         id = SAU_desert_storm_doctrine
         icon = GFX_goal_generic_army_tanks
         cost = 10
-        x = 19
+        x = 48
         y = 2
         prerequisite = { focus = SAU_military_doctrine_choice }
         mutually_exclusive = { focus = SAU_desert_fortress_doctrine }
@@ -4536,7 +4535,7 @@ focus_tree = {
         id = SAU_fortify_the_borders
         icon = GFX_goal_generic_fortify_city
         cost = 10
-        x = 14
+        x = 46
         y = 4
         prerequisite = { focus = SAU_desert_fortress_doctrine }
         ai_will_do = {
@@ -4568,7 +4567,7 @@ focus_tree = {
         id = SAU_conscription_drive
         icon = GFX_goal_generic_army
         cost = 10
-        x = 15
+        x = 46
         y = 5
         prerequisite = { focus = SAU_fortify_the_borders }
         ai_will_do = {
@@ -4604,7 +4603,7 @@ focus_tree = {
         id = SAU_mechanized_assault
         icon = GFX_goal_generic_army_tanks
         cost = 10
-        x = 20
+        x = 48
         y = 4
         prerequisite = { focus = SAU_desert_storm_doctrine }
         ai_will_do = {
@@ -4636,7 +4635,7 @@ focus_tree = {
         id = SAU_blitz_krieg_in_the_sand
         icon = GFX_goal_generic_allies_build_infantry
         cost = 10
-        x = 19
+        x = 48
         y = 5
         prerequisite = { focus = SAU_mechanized_assault }
         ai_will_do = {
