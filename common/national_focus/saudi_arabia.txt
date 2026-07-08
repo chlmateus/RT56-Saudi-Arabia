@@ -2610,7 +2610,7 @@ focus_tree = {
         id = SAU_caliphate_oil_monopoly
         icon = GFX_goal_generic_construction
         cost = 7
-        x = 16
+        x = 17
         y = 18.25
         prerequisite = { focus = SAU_desert_power_grid }
         completion_reward = {
@@ -2619,21 +2619,10 @@ focus_tree = {
         }
     }
     focus = {
-        id = SAU_unlock_oil_decisions
-        icon = GFX_goal_generic_construction
-        cost = 5
-        x = 17.625
-        y = 19.25
-        prerequisite = { focus = SAU_caliphate_oil_monopoly }
-        completion_reward = {
-            set_country_flag = SAU_unlock_oil_decisions_done
-        }
-    }
-    focus = {
         id = SAU_revive_the_gold_dinar
         icon = GFX_focus_generic_industry_3
         cost = 7
-        x = 16
+        x = 17
         y = 19.25
         prerequisite = { focus = SAU_caliphate_oil_monopoly }
         completion_reward = {
@@ -2728,7 +2717,7 @@ focus_tree = {
         id = SAU_foreign_concessions
         icon = GFX_goal_generic_trade
         cost = 5
-        x = 21.5
+        x = 22.5
         y = 12.5
         prerequisite = { focus = SAU_aramco_pipeline }
         completion_reward = {
@@ -2740,7 +2729,7 @@ focus_tree = {
         id = SAU_offshore_drilling
         icon = GFX_SOV_oil_production_ccp_2d_sov_compatibility
         cost = 10
-        x = 21.5
+        x = 22.5
         y = 13.5
         prerequisite = { focus = SAU_foreign_concessions }
         completion_reward = {
@@ -2779,7 +2768,7 @@ focus_tree = {
         id = SAU_western_giants
         icon = GFX_focus_usa_union_representation_act
         cost = 10
-        x = 21.5
+        x = 22.5
         y = 15
         prerequisite = { focus = SAU_offshore_drilling }
         mutually_exclusive = { focus = SAU_nationalize_oil }
@@ -2792,7 +2781,7 @@ focus_tree = {
         id = SAU_imported_mech
         icon = GFX_goal_generic_trade
         cost = 5
-        x = 21.5
+        x = 22.5
         y = 16
         prerequisite = { focus = SAU_western_giants }
         completion_reward = {
@@ -2806,7 +2795,7 @@ focus_tree = {
         id = SAU_desert_power_grid
         icon = GFX_goal_generic_construction
         cost = 10
-        x = 20.4
+        x = 20.7
         y = 17
         prerequisite = { focus = SAU_heavy_foundries focus = SAU_imported_mech }
         completion_reward = {
@@ -2821,7 +2810,7 @@ focus_tree = {
         id = SAU_automotive_hub
         icon = GFX_goal_generic_construction
         cost = 10
-        x = 19
+        x = 19.5
         y = 18.25
         prerequisite = { focus = SAU_desert_power_grid }
         completion_reward = {
@@ -2835,7 +2824,7 @@ focus_tree = {
         id = SAU_red_sea_arsenal
         icon = GFX_goal_generic_construction
         cost = 10
-        x = 21.5
+        x = 22.5
         y = 18.25
         prerequisite = { focus = SAU_desert_power_grid }
         completion_reward = {
