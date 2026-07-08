@@ -16,7 +16,7 @@ focus_tree = {
     focus = {
         id = SAU_the_unifier
         icon = GFX_goal_SAU_the_unifier
-        cost = 8
+        cost = 4
         x = 6
         y = 0
         ai_will_do = {
@@ -41,7 +41,7 @@ focus_tree = {
     focus = {
         id = SAU_solve_the_jafurah_dispute
         icon = GFX_focus_chi_british_cooperation
-        cost = 5
+        cost = 3
         x = -2
         y = 1
         prerequisite = { focus = SAU_the_unifier }
@@ -83,7 +83,7 @@ focus_tree = {
     focus = {
         id = SAU_reject_the_riyadh_line
         icon = GFX_focus_generic_provoke_border_clashes
-        cost = 5
+        cost = 3
         x = 2
         y = 1
         prerequisite = { focus = SAU_the_unifier }
@@ -121,7 +121,7 @@ focus_tree = {
     focus = {
         id = SAU_deal_with_bp
         icon = GFX_focus_IRQ_anglo_iraqi_oil_expansion
-        cost = 8
+        cost = 4
         prerequisite = {
             focus = SAU_solve_the_jafurah_dispute
         }
@@ -181,7 +181,7 @@ focus_tree = {
     focus = {
         id = SAU_invite_brabag
         icon = GFX_focus_chi_mission_to_germany
-        cost = 8
+        cost = 4
         prerequisite = {
             focus = SAU_reject_the_riyadh_line
         }
@@ -242,7 +242,7 @@ focus_tree = {
                 has_war_with = SOV
             }
         }
-        cost = 8
+        cost = 4
         available_if_capitulated = yes
         ai_will_do = {
             factor = 10
@@ -290,7 +290,7 @@ focus_tree = {
     focus = {
         id = SAU_concessions_to_standard_oil
         icon = GFX_goal_generic_befriend_united_states
-        cost = 8
+        cost = 4
         prerequisite = {
             focus = SAU_solve_the_jafurah_dispute focus = SAU_reject_the_riyadh_line
         }
@@ -335,7 +335,7 @@ focus_tree = {
     focus = {
         id = SAU_liberalize_the_market
         icon = GFX_goal_generic_financial_markets
-        cost = 8
+        cost = 4
         prerequisite = {
             focus = SAU_deal_with_bp focus = SAU_concessions_to_standard_oil
         }
@@ -362,7 +362,7 @@ focus_tree = {
     focus = {
         id = SAU_placate_the_tribes
         icon = GFX_focus_ETH_sway_the_warlords
-        cost = 8
+        cost = 4
         prerequisite = {
             focus = SAU_2_Invite_the_Soviet_oil_barons focus = SAU_invite_brabag
         }
@@ -381,7 +381,7 @@ focus_tree = {
     focus = {
         id = SAU_improve_our_infrastructure
         icon = GFX_focus_generic_road_investment
-        cost = 10
+        cost = 5
         prerequisite = {
             focus = SAU_deal_with_bp
         }
@@ -464,7 +464,7 @@ focus_tree = {
     focus = {
         id = SAU_invite_foreign_investors
         icon = GFX_focus_generic_industrialists
-        cost = 10
+        cost = 5
         prerequisite = {
             focus = SAU_invite_brabag
         }
@@ -518,7 +518,7 @@ focus_tree = {
     focus = {
         id = SAU_diplomacy_in_the_sand
         icon = GFX_goal_SAU_desert_diplomacy
-        cost = 8
+        cost = 4
         prerequisite = {
             focus = SAU_liberalize_the_market focus = SAU_placate_the_tribes
         }
@@ -4461,7 +4461,7 @@ focus_tree = {
     focus = {
         id = SAU_military_doctrine_choice
         icon = GFX_goal_plan
-        cost = 5
+        cost = 3
         x = 46
         y = 1
         prerequisite = { focus = SAU_army_focus_1 }
@@ -4476,7 +4476,7 @@ focus_tree = {
     focus = {
         id = SAU_desert_fortress_doctrine
         icon = GFX_goal_defensive_position2
-        cost = 10
+        cost = 5
         x = 46
         y = 2
         prerequisite = { focus = SAU_military_doctrine_choice }
@@ -4505,7 +4505,7 @@ focus_tree = {
     focus = {
         id = SAU_desert_storm_doctrine
         icon = GFX_goal_generic_army_tanks
-        cost = 10
+        cost = 5
         x = 48
         y = 2
         prerequisite = { focus = SAU_military_doctrine_choice }
@@ -4534,7 +4534,7 @@ focus_tree = {
     focus = {
         id = SAU_fortify_the_borders
         icon = GFX_goal_generic_fortify_city
-        cost = 10
+        cost = 5
         x = 46
         y = 4
         prerequisite = { focus = SAU_desert_fortress_doctrine }
@@ -4566,7 +4566,7 @@ focus_tree = {
     focus = {
         id = SAU_conscription_drive
         icon = GFX_goal_generic_army
-        cost = 10
+        cost = 5
         x = 46
         y = 5
         prerequisite = { focus = SAU_fortify_the_borders }
@@ -4602,7 +4602,7 @@ focus_tree = {
     focus = {
         id = SAU_mechanized_assault
         icon = GFX_goal_generic_army_tanks
-        cost = 10
+        cost = 5
         x = 48
         y = 4
         prerequisite = { focus = SAU_desert_storm_doctrine }
@@ -4634,7 +4634,7 @@ focus_tree = {
     focus = {
         id = SAU_blitz_krieg_in_the_sand
         icon = GFX_goal_generic_allies_build_infantry
-        cost = 10
+        cost = 5
         x = 48
         y = 5
         prerequisite = { focus = SAU_mechanized_assault }
