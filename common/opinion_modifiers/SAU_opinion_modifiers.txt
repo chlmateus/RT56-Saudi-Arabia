@@ -25,4 +25,14 @@ opinion_modifiers = {
 		value = 15
 		trade = yes
 	}
+
+	sau_interfaith_cooperation = {
+		value = 20
+		trade = yes
+	}
+
+	sau_trade_partner = {
+		value = 15
+		trade = yes
+	}
 }
