@@ -423,5 +423,229 @@ ideas = {
                 political_power_gain = -0.05 # Bureaucratic overhead penalty
             }
         }
+
+        # =================================================================
+        # NEW IDEAS - RELIGIOUS AUTHORITY & CULTURAL IDENTITY
+        # =================================================================
+
+        SAU_pilgrim_economy_idea = {
+            allowed = { always = yes }
+            picture = generic_goods_red_bonus
+            modifier = {
+                consumer_goods_factor = -0.03
+                political_power_gain = 0.15
+            }
+        }
+
+        SAU_ulema_council_idea = {
+            allowed = { always = yes }
+            picture = generic_religious_focus
+            modifier = {
+                stability_factor = 0.05
+                drift_defense_daily = 0.01
+                political_power_gain = 0.10
+            }
+        }
+
+        SAU_islamic_banking_idea = {
+            allowed = { always = yes }
+            picture = generic_financial_institutions
+            modifier = {
+                consumer_goods_factor = -0.02
+                production_speed_buildings_factor = 0.05
+                industrial_capacity_factory = 0.05
+            }
+        }
+
+        # =================================================================
+        # NEW IDEAS - PAN-ARABISM & REGIONAL DIPLOMACY
+        # =================================================================
+
+        SAU_arabic_cultural_influence = {
+            allowed = { always = yes }
+            picture = generic_diplomacy
+            modifier = {
+                opinion_gain_monthly_factor = 0.15
+                justify_war_goal_time = -0.10
+            }
+        }
+
+        SAU_arab_economic_cooperation = {
+            allowed = { always = yes }
+            picture = generic_trade
+            modifier = {
+                trade_opinion_factor = 0.25
+                min_export = -0.05
+                local_resources_factor = 0.10
+            }
+        }
+
+        SAU_arab_military_coordination = {
+            allowed = { always = yes }
+            picture = generic_volunteer_expedition_bonus
+            modifier = {
+                send_volunteer_divisions_required = -0.25
+                send_volunteers_tension = -0.10
+                army_experience_factor = 0.05
+            }
+        }
+
+        SAU_pan_arab_media = {
+            allowed = { always = yes }
+            picture = generic_propaganda
+            modifier = {
+                drift_defence_daily = 0.01
+                subversive_activites_upkeep = -0.15
+                foreign_subversive_activites = -0.20
+            }
+        }
+
+        SAU_arab_propaganda_influence = {
+            allowed = { always = yes }
+            picture = generic_morale_bonus
+            removal_cost = -1
+            modifier = {
+                drift_defence_daily = -0.02
+                stability_factor = -0.03
+            }
+        }
+
+        # =================================================================
+        # NEW IDEAS - INTERNAL SECURITY & INTELLIGENCE
+        # =================================================================
+
+        SAU_mutawwa_force = {
+            allowed = { always = yes }
+            picture = generic_secret_police
+            modifier = {
+                stability_factor = 0.05
+                drift_defence_daily = 0.02
+                democratic_drift = -0.01
+                political_power_gain = -0.05
+            }
+        }
+
+        SAU_counter_intelligence_focus = {
+            allowed = { always = yes }
+            picture = generic_intel_bonus
+            modifier = {
+                foreign_subversive_activites = -0.30
+                encryption_factor = 0.10
+                decryption_factor = 0.05
+            }
+        }
+
+        SAU_internal_passport_system = {
+            allowed = { always = yes }
+            picture = generic_manpower_bonus
+            modifier = {
+                stability_factor = 0.03
+                resistance_growth = -0.10
+                compliance_growth = 0.05
+            }
+        }
+
+        SAU_surveillance_apparatus = {
+            allowed = { always = yes }
+            picture = generic_intel_bonus
+            modifier = {
+                resistance_damage_to_garrison = -0.15
+                foreign_subversive_activites = -0.20
+                drift_defence_daily = 0.01
+                political_power_gain = 0.10
+            }
+        }
+
+        # =================================================================
+        # NEW IDEAS - TRIBAL INTEGRATION & SOCIAL REFORM
+        # =================================================================
+
+        SAU_tribal_integration_1 = {
+            allowed = { always = yes }
+            picture = generic_manpower_bonus
+            modifier = {
+                conscription_factor = 0.05
+                weekly_manpower = 100
+                stability_factor = 0.03
+            }
+        }
+
+        SAU_sedentarization_program = {
+            allowed = { always = yes }
+            picture = generic_production_bonus
+            modifier = {
+                production_speed_buildings_factor = 0.05
+                local_resources_factor = 0.05
+                weekly_manpower = -50
+            }
+        }
+
+        SAU_nomadic_tradition_preserved = {
+            allowed = { always = yes }
+            picture = generic_cavalry_bonus
+            modifier = {
+                cavalry_attack_factor = 0.10
+                cavalry_defence_factor = 0.10
+                army_morale_factor = 0.05
+                weekly_manpower = 75
+            }
+        }
+
+        SAU_social_reform_tension = {
+            allowed = { always = yes }
+            picture = generic_morale_bonus
+            removal_cost = -1
+            modifier = {
+                stability_factor = -0.03
+                political_power_gain = -0.10
+                war_support_factor = -0.02
+            }
+        }
+
+        SAU_technical_training = {
+            allowed = { always = yes }
+            picture = generic_research_bonus
+            modifier = {
+                production_factory_efficiency_gain_factor = 0.05
+                production_speed_buildings_factor = 0.05
+                industrial_capacity_factory = 0.05
+            }
+        }
+
+        # =================================================================
+        # NEW IDEAS - POST-EXPANSION CONSOLIDATION
+        # =================================================================
+
+        SAU_arabization_policy = {
+            allowed = { always = yes }
+            picture = generic_pp_unity_bonus
+            modifier = {
+                compliance_growth = 0.15
+                resistance_decay = 0.10
+                stability_factor = -0.03
+            }
+        }
+
+        SAU_regional_autonomy = {
+            allowed = { always = yes }
+            picture = generic_democratic_drift_bonus
+            modifier = {
+                resistance_growth = -0.20
+                compliance_growth = -0.05
+                stability_factor = 0.05
+                non_core_manpower = -0.10
+            }
+        }
+
+        SAU_imperial_administration = {
+            allowed = { always = yes }
+            picture = generic_pp_unity_bonus
+            modifier = {
+                stability_factor = 0.10
+                political_power_gain = 0.25
+                production_speed_buildings_factor = 0.05
+                state_resources_factor = 0.10
+            }
+        }
 	}
 }

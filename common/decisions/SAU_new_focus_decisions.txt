@@ -1,0 +1,211 @@
+### Decision categories for new focus branches ###
+
+# Religious Authority & Cultural Identity
+SAU_religious_diplomacy = {
+	icon = generic_religious_focus
+
+	allowed = {
+		tag = SAU
+	}
+
+	visible = {
+		has_country_flag = SAU_religious_diplomacy_unlocked
+	}
+
+	priority = 50
+}
+
+# Pan-Arabism & Regional Diplomacy
+SAU_arab_unity = {
+	icon = generic_diplomacy
+
+	allowed = {
+		tag = SAU
+	}
+
+	visible = {
+		has_country_flag = SAU_arab_unity_unlocked
+	}
+
+	priority = 50
+}
+
+# Enhanced Hajj Management
+SAU_hajj_management = {
+	icon = generic_goods_red_bonus
+
+	allowed = {
+		tag = SAU
+	}
+
+	visible = {
+		has_country_flag = SAU_enhanced_hajj_unlocked
+	}
+
+	priority = 40
+}
+
+# Islamic Council Invitations
+SAU_islamic_council_invites = {
+	icon = generic_intelligence_exchange
+
+	allowed = {
+		tag = SAU
+	}
+
+	visible = {
+		has_country_flag = SAU_islamic_council_unlocked
+	}
+
+	priority = 45
+}
+
+# Religious Subversion
+SAU_religious_subversion = {
+	icon = generic_propaganda
+
+	allowed = {
+		tag = SAU
+	}
+
+	visible = {
+		has_country_flag = SAU_wahhabi_export_path
+	}
+
+	priority = 40
+}
+
+# Arab Diplomatic Missions
+SAU_arab_diplomatic_missions = {
+	icon = generic_diplomacy
+
+	allowed = {
+		tag = SAU
+	}
+
+	visible = {
+		has_completed_focus = SAU_cairo_damascus_axis
+	}
+
+	priority = 45
+}
+
+# Independence Movement Support
+SAU_independence_support = {
+	icon = generic_volunteer_expedition_bonus
+
+	allowed = {
+		tag = SAU
+	}
+
+	visible = {
+		has_country_flag = SAU_anti_colonial_active
+	}
+
+	priority = 40
+}
+
+# Arab League Formation
+SAU_arab_league_formation = {
+	icon = generic_major_alliance
+
+	allowed = {
+		tag = SAU
+	}
+
+	visible = {
+		has_country_flag = SAU_can_form_arab_league
+	}
+
+	priority = 60
+}
+
+# Arab Resource Access
+SAU_arab_resource_access = {
+	icon = generic_trade
+
+	allowed = {
+		tag = SAU
+	}
+
+	visible = {
+		has_completed_focus = SAU_economic_cooperation_council
+	}
+
+	priority = 35
+}
+
+# Arab Volunteers
+SAU_arab_volunteers = {
+	icon = generic_volunteer_expedition_bonus
+
+	allowed = {
+		tag = SAU
+	}
+
+	visible = {
+		has_completed_focus = SAU_joint_arab_military_command
+	}
+
+	priority = 45
+}
+
+# Intelligence Operations
+SAU_intelligence_operations = {
+	icon = generic_intel_bonus
+
+	allowed = {
+		tag = SAU
+	}
+
+	visible = {
+		has_completed_focus = SAU_establish_security_apparatus
+	}
+
+	priority = 40
+}
+
+# Madrasah Expansion
+SAU_madrasah_expansion = {
+	icon = generic_research_bonus
+
+	allowed = {
+		tag = SAU
+	}
+
+	visible = {
+		has_country_flag = SAU_madrasah_unlocked
+	}
+
+	priority = 35
+}
+
+# Women's Rights Reform
+SAU_womens_rights_reform = {
+	icon = generic_political_reform
+
+	allowed = {
+		tag = SAU
+	}
+
+	visible = {
+		has_country_flag = SAU_womens_education_debate_active
+	}
+
+	priority = 40
+}
+
+# Territory Integration
+SAU_territory_integration = {
+	icon = generic_construction
+
+	allowed = {
+		tag = SAU
+	}
+
+	visible = {
+		has_completed_focus = SAU_administrative_integration
+	}
+
+	priority = 50
+}

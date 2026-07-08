@@ -1,0 +1,309 @@
+SAU_regional_initiatives = {
+	# General regional power decisions available after SAU_regional_ambitions
+}
+
+SAU_gulf_economic_integration = {
+	# Available to: Gulf Hegemon path via SAU_establish_gulf_council
+	
+	SAU_gulf_trade_bloc = {
+		icon = generic_trade
+		available = { has_completed_focus = SAU_establish_gulf_council }
+		cost = 100
+		fire_only_once = no
+		days_remove = 120
+		complete_effect = {
+			add_political_power = 75
+		}
+		remove_effect = {
+			every_country = {
+				limit = { is_in_faction_with = ROOT }
+				add_opinion_modifier = { target = ROOT modifier = gulf_trade_partner }
+			}
+			add_political_power = 150
+		}
+	}
+
+	SAU_gulf_technology_sharing = {
+		icon = generic_research
+		available = { has_completed_focus = SAU_establish_gulf_council }
+		cost = 120
+		fire_only_once = no
+		days_remove = 100
+		complete_effect = {
+			add_research_speed = 0.05
+		}
+		remove_effect = {
+			modify_tech_sharing_bonus = { id = SAU_gulf_tech_share share_modifier = 0.20 }
+		}
+	}
+
+	SAU_gulf_military_exercises = {
+		icon = generic_military
+		available = { has_completed_focus = SAU_gulf_military_superiority }
+		cost = 100
+		fire_only_once = no
+		days_remove = 90
+		complete_effect = {
+			add_war_support = 0.05
+		}
+		remove_effect = {
+			army_experience = 30
+			every_country = {
+				limit = { is_in_faction_with = ROOT }
+				add_war_support = 0.05
+			}
+		}
+	}
+
+	SAU_gulf_oil_coordination = {
+		icon = generic_oil
+		available = { has_completed_focus = SAU_gulf_oil_cartel }
+		cost = 100
+		fire_only_once = no
+		days_remove = 150
+		complete_effect = {
+			add_political_power = 100
+		}
+		remove_effect = {
+			add_political_power = 200
+			every_country = {
+				limit = { is_in_faction_with = ROOT }
+				add_opinion_modifier = { target = ROOT modifier = oil_cartel_member }
+			}
+		}
+	}
+
+	SAU_gulf_economic_aid = {
+		icon = generic_political_actions
+		available = { has_completed_focus = SAU_establish_gulf_council }
+		cost = 80
+		fire_only_once = no
+		days_remove = 90
+		complete_effect = {
+			add_political_power = 50
+		}
+		remove_effect = {
+			every_country = {
+				limit = { is_in_faction_with = ROOT is_puppet = no }
+				add_opinion_modifier = { target = ROOT modifier = gulf_economic_assistance }
+			}
+		}
+	}
+}
+
+SAU_islamic_solidarity_initiatives = {
+	# Available to: Pan-Islamic path via SAU_establish_islamic_bloc
+	
+	SAU_islamic_aid_fund = {
+		icon = generic_political_actions
+		available = { has_completed_focus = SAU_establish_islamic_bloc }
+		cost = 100
+		fire_only_once = no
+		days_remove = 100
+		complete_effect = {
+			add_war_support = 0.05
+		}
+		remove_effect = {
+			every_country = {
+				limit = { is_in_faction_with = ROOT }
+				add_opinion_modifier = { target = ROOT modifier = islamic_aid_recipient }
+			}
+			add_war_support = 0.10
+		}
+	}
+
+	SAU_islamic_volunteer_recruitment = {
+		icon = generic_army
+		available = { has_completed_focus = SAU_jihadist_support_network }
+		cost = 120
+		fire_only_once = no
+		days_remove = 120
+		complete_effect = {
+			add_manpower = 100000
+		}
+		remove_effect = {
+			add_manpower = 150000
+			add_war_support = 0.15
+		}
+	}
+
+	SAU_islamic_media_campaign = {
+		icon = generic_political_actions
+		available = { has_completed_focus = SAU_establish_islamic_bloc }
+		cost = 100
+		fire_only_once = no
+		days_remove = 90
+		complete_effect = {
+			add_political_power = 75
+		}
+		remove_effect = {
+			add_popularity = { ideology = neutrality popularity = 0.10 }
+			add_political_power = 150
+		}
+	}
+
+	SAU_hajj_cultural_exchange = {
+		icon = generic_political_actions
+		available = { has_completed_focus = SAU_hajj_as_soft_power }
+		cost = 100
+		fire_only_once = no
+		days_remove = 180
+		complete_effect = {
+			add_political_power = 100
+		}
+		remove_effect = {
+			every_country = {
+				limit = { has_government = neutrality NOT = { is_major = yes } }
+				add_opinion_modifier = { target = ROOT modifier = hajj_exchange_participant }
+			}
+		}
+	}
+
+	SAU_islamic_university_scholarships = {
+		icon = generic_research
+		available = { has_completed_focus = SAU_islamic_education_hub }
+		cost = 120
+		fire_only_once = no
+		days_remove = 120
+		complete_effect = {
+			add_research_speed = 0.05
+		}
+		remove_effect = {
+			add_research_speed = 0.10
+			add_popularity = { ideology = neutrality popularity = 0.05 }
+		}
+	}
+}
+
+SAU_arab_nationalist_initiatives = {
+	# Available to: Pan-Arab path via SAU_establish_arab_bloc
+	
+	SAU_arab_military_coordination = {
+		icon = generic_military
+		available = { has_completed_focus = SAU_arab_military_cooperation }
+		cost = 100
+		fire_only_once = no
+		days_remove = 100
+		complete_effect = {
+			add_war_support = 0.05
+		}
+		remove_effect = {
+			every_country = {
+				limit = { is_in_faction_with = ROOT }
+				add_opinion_modifier = { target = ROOT modifier = arab_military_coordination }
+			}
+			add_war_support = 0.15
+		}
+	}
+
+	SAU_arab_economic_aid = {
+		icon = generic_political_actions
+		available = { has_completed_focus = SAU_establish_arab_bloc }
+		cost = 100
+		fire_only_once = no
+		days_remove = 90
+		complete_effect = {
+			add_political_power = 75
+		}
+		remove_effect = {
+			every_country = {
+				limit = { is_in_faction_with = ROOT is_puppet = no }
+				add_opinion_modifier = { target = ROOT modifier = arab_economic_assistance }
+			}
+		}
+	}
+
+	SAU_arab_anti_western_campaign = {
+		icon = generic_political_actions
+		available = { has_completed_focus = SAU_anti_western_arab_front }
+		cost = 120
+		fire_only_once = no
+		days_remove = 120
+		complete_effect = {
+			add_war_support = 0.08
+		}
+		remove_effect = {
+			every_country = {
+				limit = { is_in_faction_with = ROOT }
+				add_war_support = 0.10
+			}
+			USA = { add_opinion_modifier = { target = ROOT modifier = arab_anti_western_coalition } }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = arab_anti_western_coalition } }
+		}
+	}
+
+	SAU_arab_cultural_promotion = {
+		icon = generic_political_actions
+		available = { has_completed_focus = SAU_establish_arab_bloc }
+		cost = 100
+		fire_only_once = no
+		days_remove = 100
+		complete_effect = {
+			add_political_power = 100
+		}
+		remove_effect = {
+			add_popularity = { ideology = fascism popularity = 0.08 }
+			add_political_power = 150
+		}
+	}
+
+	SAU_arab_liberation_support = {
+		icon = generic_army
+		available = { has_completed_focus = SAU_anti_western_arab_front }
+		cost = 120
+		fire_only_once = no
+		days_remove = 100
+		complete_effect = {
+			add_war_support = 0.05
+		}
+		remove_effect = {
+			add_war_support = 0.15
+			add_manpower = 75000
+		}
+	}
+}
+
+SAU_gulf_membership_invitations = {
+	# Gulf states: UAE, Qatar, Bahrain, Oman, Kuwait
+	# Available after Gulf Council established
+}
+
+SAU_islamic_recruitment = {
+	# Islamic nations recruitment
+	# Available after Islamic Bloc established
+}
+
+SAU_arab_recruitment = {
+	# Arab nations recruitment
+	# Available after Arab Front established
+}
+
+SAU_iran_containment = {
+	# Iran containment decisions
+	# Available after SAU_block_iran_expansion
+}
+
+SAU_turkey_containment = {
+	# Turkey containment decisions
+	# Available after SAU_block_turkey_expansion
+}
+
+SAU_oil_cartel_operations = {
+	# Oil cartel operational decisions
+	# Available after Gulf Oil Cartel established
+}
+
+SAU_hajj_diplomacy = {
+	# Hajj-related diplomatic decisions
+	# Available after Hajj as Soft Power
+}
+
+SAU_jihadist_support_decisions = {
+	# Jihadist support operations
+	# Available after Jihadist Support Network
+}
+
+SAU_anti_western_operations = {
+	# Anti-Western operational decisions
+	# Available after Anti-Western Arab Front
+}

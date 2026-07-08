@@ -1,0 +1,585 @@
+SAU_oil_wealth_allocation = {
+	# Available to: All economic paths after terminal focus
+	# Allocates oil wealth to military factories, civilian factories, research, or stability
+	
+	SAU_oil_for_military_buildup = {
+		icon = generic_production
+		available = { 
+			OR = {
+				has_completed_focus = SAU_socialist_economy_complete
+				has_completed_focus = SAU_mixed_economy_balanced
+				has_completed_focus = SAU_capitalist_economy_complete
+			}
+		}
+		cost = 0
+		days_remove = 100
+		fire_only_once = no
+		complete_effect = {
+			add_resource = { type = oil amount = -20 }
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = { free_building_slots = { building = arms_factory size > 1 include_locked = yes } }
+				add_building_construction = { type = arms_factory level = 8 instant_build = yes }
+			}
+		}
+	}
+
+	SAU_oil_for_civilian_modernization = {
+		icon = generic_industry
+		available = { 
+			OR = {
+				has_completed_focus = SAU_socialist_economy_complete
+				has_completed_focus = SAU_mixed_economy_balanced
+				has_completed_focus = SAU_capitalist_economy_complete
+			}
+		}
+		cost = 0
+		days_remove = 100
+		fire_only_once = no
+		complete_effect = {
+			add_resource = { type = oil amount = -15 }
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = { free_building_slots = { building = industrial_complex size > 1 include_locked = yes } }
+				add_building_construction = { type = industrial_complex level = 5 instant_build = yes }
+			}
+		}
+	}
+
+	SAU_oil_for_research_advancement = {
+		icon = generic_research
+		available = { 
+			OR = {
+				has_completed_focus = SAU_socialist_economy_complete
+				has_completed_focus = SAU_mixed_economy_balanced
+				has_completed_focus = SAU_capitalist_economy_complete
+			}
+		}
+		cost = 0
+		days_remove = 100
+		fire_only_once = no
+		complete_effect = {
+			add_resource = { type = oil amount = -10 }
+		}
+		remove_effect = {
+			add_research_slot = 1
+		}
+	}
+
+	SAU_oil_for_stability = {
+		icon = generic_stability
+		available = { 
+			OR = {
+				has_completed_focus = SAU_socialist_economy_complete
+				has_completed_focus = SAU_mixed_economy_balanced
+				has_completed_focus = SAU_capitalist_economy_complete
+			}
+			has_stability < 0.8
+		}
+		cost = 0
+		days_remove = 100
+		fire_only_once = no
+		complete_effect = {
+			add_resource = { type = oil amount = -5 }
+		}
+		remove_effect = {
+			add_stability = 0.15
+		}
+	}
+
+	SAU_oil_embargo_weapon = {
+		icon = generic_political_actions
+		available = { 
+			has_completed_focus = SAU_socialist_economy_complete
+			is_at_war = yes
+		}
+		cost = 0
+		days_remove = 90
+		fire_only_once = no
+		complete_effect = {
+			add_resource = { type = oil amount = -30 }
+		}
+		remove_effect = {
+			every_enemy_country = {
+				add_opinion_modifier = { target = ROOT modifier = oil_embargo_threat }
+			}
+		}
+	}
+}
+
+SAU_nationalization_decisions = {
+	# Available to: State-Controlled economy path
+	
+	SAU_seize_foreign_assets = {
+		icon = generic_political_actions
+		available = { 
+			has_completed_focus = SAU_nationalize_all_industry
+		}
+		cost = 150
+		fire_only_once = yes
+		complete_effect = {
+			add_political_power = 300
+			add_stability = -0.10
+			every_major = {
+				add_opinion_modifier = { target = ROOT modifier = seized_foreign_assets }
+			}
+		}
+	}
+
+	SAU_eliminate_capitalist_class = {
+		icon = generic_political_actions
+		available = { 
+			has_completed_focus = SAU_central_planning_board
+		}
+		cost = 100
+		fire_only_once = yes
+		complete_effect = {
+			add_political_power = 200
+			add_stability = -0.05
+			add_popularity = { ideology = communism popularity = 0.10 }
+		}
+	}
+
+	SAU_collectivize_all_land = {
+		icon = generic_political_actions
+		available = { 
+			has_completed_focus = SAU_collectivized_agriculture
+		}
+		cost = 120
+		fire_only_once = yes
+		complete_effect = {
+			add_political_power = 150
+			every_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	SAU_central_planning_congress = {
+		icon = generic_political_actions
+		available = { 
+			has_completed_focus = SAU_central_planning_board
+		}
+		cost = 80
+		fire_only_once = no
+		days_remove = 180
+		complete_effect = {
+			production_speed_buildings_factor = 0.05
+		}
+		remove_effect = {
+			add_stability = 0.05
+			production_speed_buildings_factor = 0.10
+		}
+	}
+
+	SAU_workers_control_economy = {
+		icon = generic_political_actions
+		available = { 
+			has_completed_focus = SAU_workers_councils
+		}
+		cost = 100
+		fire_only_once = no
+		days_remove = 120
+		complete_effect = {
+			add_war_support = 0.05
+		}
+		remove_effect = {
+			add_war_support = 0.10
+			add_manpower = 100000
+		}
+	}
+}
+
+SAU_public_private_partnerships = {
+	# Available to: Mixed economy path
+	
+	SAU_encourage_private_enterprise = {
+		icon = generic_production
+		available = { 
+			has_completed_focus = SAU_mixed_economy_path
+		}
+		cost = 100
+		fire_only_once = no
+		days_remove = 90
+		complete_effect = {
+			add_political_power = 50
+		}
+		remove_effect = {
+			add_offmarket_factories = 3
+			add_political_power = 100
+		}
+	}
+
+	SAU_state_investment_program = {
+		icon = generic_industry
+		available = { 
+			has_completed_focus = SAU_strategic_state_ownership
+		}
+		cost = 120
+		fire_only_once = no
+		days_remove = 120
+		complete_effect = {
+			production_speed_buildings_factor = 0.05
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = { free_building_slots = { building = industrial_complex size > 1 include_locked = yes } }
+				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+			}
+		}
+	}
+
+	SAU_regional_development_fund = {
+		icon = generic_political_actions
+		available = { 
+			has_completed_focus = SAU_regional_investment_banks
+		}
+		cost = 100
+		fire_only_once = no
+		days_remove = 150
+		complete_effect = {
+			add_research_speed = 0.03
+		}
+		remove_effect = {
+			add_political_power = 200
+			every_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	SAU_mixed_economy_balance = {
+		icon = generic_political_actions
+		available = { 
+			has_completed_focus = SAU_infrastructure_development_program
+		}
+		cost = 80
+		fire_only_once = no
+		days_remove = 100
+		complete_effect = {
+			add_stability = 0.02
+		}
+		remove_effect = {
+			add_stability = 0.05
+			production_speed_buildings_factor = 0.05
+		}
+	}
+
+	SAU_protect_state_interests = {
+		icon = generic_political_actions
+		available = { 
+			has_completed_focus = SAU_strategic_state_ownership
+		}
+		cost = 100
+		fire_only_once = no
+		days_remove = 90
+		complete_effect = {
+			add_political_power = 75
+		}
+		remove_effect = {
+			add_political_power = 150
+			add_stability = 0.03
+		}
+	}
+}
+
+SAU_foreign_investment_deals = {
+	# Available to: Free-market capitalism path
+	
+	SAU_corporate_tax_incentives = {
+		icon = generic_political_actions
+		available = { 
+			has_completed_focus = SAU_free_market_capitalism
+		}
+		cost = 80
+		fire_only_once = no
+		days_remove = 90
+		complete_effect = {
+			add_offmarket_factories = 2
+		}
+		remove_effect = {
+			add_offmarket_factories = 3
+			add_political_power = 100
+		}
+	}
+
+	SAU_attract_silicon_valley = {
+		icon = generic_research
+		available = { 
+			has_completed_focus = SAU_corporate_dominance
+		}
+		cost = 150
+		fire_only_once = no
+		days_remove = 180
+		complete_effect = {
+			add_research_speed = 0.05
+		}
+		remove_effect = {
+			add_research_speed = 0.10
+			add_tech_bonus = {
+				name = foreign_tech
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	SAU_open_special_economic_zones = {
+		icon = generic_production
+		available = { 
+			has_completed_focus = SAU_foreign_direct_investment
+		}
+		cost = 100
+		fire_only_once = no
+		days_remove = 120
+		complete_effect = {
+			add_offmarket_factories = 3
+		}
+		remove_effect = {
+			add_offmarket_factories = 5
+			random_owned_controlled_state = {
+				limit = { free_building_slots = { building = industrial_complex size > 1 include_locked = yes } }
+				add_building_construction = { type = industrial_complex level = 3 instant_build = yes }
+			}
+		}
+	}
+
+	SAU_foreign_investor_summit = {
+		icon = generic_political_actions
+		available = { 
+			has_completed_focus = SAU_corporate_dominance
+		}
+		cost = 120
+		fire_only_once = no
+		days_remove = 100
+		complete_effect = {
+			add_political_power = 100
+		}
+		remove_effect = {
+			add_offmarket_factories = 4
+			add_political_power = 200
+		}
+	}
+
+	SAU_maximize_profit_extraction = {
+		icon = generic_political_actions
+		available = { 
+			has_completed_focus = SAU_export_driven_growth
+		}
+		cost = 100
+		fire_only_once = no
+		days_remove = 90
+		complete_effect = {
+			add_political_power = 75
+		}
+		remove_effect = {
+			add_political_power = 200
+			add_stability = -0.05
+		}
+	}
+}
+
+SAU_investment_initiatives = {
+	# Available to: Mixed economy path
+	
+	SAU_infrastructure_bond_program = {
+		icon = generic_industry
+		available = { 
+			has_completed_focus = SAU_regional_investment_banks
+		}
+		cost = 100
+		fire_only_once = no
+		days_remove = 120
+		complete_effect = {
+			production_speed_buildings_factor = 0.05
+		}
+		remove_effect = {
+			every_owned_controlled_state = {
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+			}
+		}
+	}
+
+	SAU_development_bank_expansion = {
+		icon = generic_banking
+		available = { 
+			has_completed_focus = SAU_regional_investment_banks
+		}
+		cost = 120
+		fire_only_once = no
+		days_remove = 100
+		complete_effect = {
+			add_political_power = 100
+		}
+		remove_effect = {
+			add_political_power = 200
+			add_research_speed = 0.05
+		}
+	}
+
+	SAU_strategic_industry_fund = {
+		icon = generic_production
+		available = { 
+			has_completed_focus = SAU_strategic_state_ownership
+		}
+		cost = 100
+		fire_only_once = no
+		days_remove = 120
+		complete_effect = {
+			add_offmarket_factories = 2
+		}
+		remove_effect = {
+			add_offmarket_factories = 3
+			random_owned_controlled_state = {
+				limit = { free_building_slots = { building = arms_factory size > 1 include_locked = yes } }
+				add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+			}
+		}
+	}
+
+	SAU_regional_cooperation_pact = {
+		icon = generic_political_actions
+		available = { 
+			has_completed_focus = SAU_regional_investment_banks
+		}
+		cost = 80
+		fire_only_once = no
+		days_remove = 90
+		complete_effect = {
+			add_political_power = 50
+		}
+		remove_effect = {
+			add_research_speed = 0.03
+			add_political_power = 100
+		}
+	}
+}
+
+SAU_export_markets = {
+	# Available to: Free-market capitalism path
+	
+	SAU_european_trade_route = {
+		icon = generic_trade
+		available = { 
+			has_completed_focus = SAU_export_driven_growth
+		}
+		cost = 100
+		fire_only_once = no
+		days_remove = 100
+		complete_effect = {
+			add_political_power = 75
+		}
+		remove_effect = {
+			add_political_power = 150
+			add_offmarket_factories = 2
+		}
+	}
+
+	SAU_asian_market_penetration = {
+		icon = generic_trade
+		available = { 
+			has_completed_focus = SAU_export_driven_growth
+		}
+		cost = 100
+		fire_only_once = no
+		days_remove = 100
+		complete_effect = {
+			add_political_power = 75
+		}
+		remove_effect = {
+			add_political_power = 150
+			add_offmarket_factories = 2
+		}
+	}
+
+	SAU_american_market_access = {
+		icon = generic_trade
+		available = { 
+			has_completed_focus = SAU_export_driven_growth
+		}
+		cost = 120
+		fire_only_once = no
+		days_remove = 120
+		complete_effect = {
+			add_political_power = 100
+		}
+		remove_effect = {
+			add_political_power = 200
+			USA = { add_opinion_modifier = { target = ROOT modifier = trade_partner } }
+		}
+	}
+
+	SAU_commodities_cartel = {
+		icon = generic_trade
+		available = { 
+			has_completed_focus = SAU_export_driven_growth
+		}
+		cost = 100
+		fire_only_once = no
+		days_remove = 90
+		complete_effect = {
+			add_political_power = 50
+		}
+		remove_effect = {
+			add_political_power = 200
+			add_stability = 0.05
+		}
+	}
+}
+
+SAU_agricultural_collectivization = {
+	# Available to: State-controlled economy path
+	
+	SAU_collective_farm_network = {
+		icon = generic_political_actions
+		available = { 
+			has_completed_focus = SAU_collectivized_agriculture
+		}
+		cost = 100
+		fire_only_once = no
+		days_remove = 120
+		complete_effect = {
+			add_stability = 0.02
+		}
+		remove_effect = {
+			add_stability = 0.08
+			add_manpower = 50000
+		}
+	}
+
+	SAU_agricultural_mechanization = {
+		icon = generic_production
+		available = { 
+			has_completed_focus = SAU_collectivized_agriculture
+		}
+		cost = 120
+		fire_only_once = no
+		days_remove = 150
+		complete_effect = {
+			production_speed_buildings_factor = 0.05
+		}
+		remove_effect = {
+			production_speed_buildings_factor = 0.10
+			add_stability = 0.05
+		}
+	}
+
+	SAU_grain_reserve_stockpiling = {
+		icon = generic_political_actions
+		available = { 
+			has_completed_focus = SAU_collectivized_agriculture
+		}
+		cost = 100
+		fire_only_once = no
+		days_remove = 100
+		complete_effect = {
+			add_stability = 0.03
+		}
+		remove_effect = {
+			add_stability = 0.10
+		}
+	}
+}

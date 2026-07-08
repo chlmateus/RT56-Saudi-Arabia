@@ -1,0 +1,83 @@
+SAU_internal_power_struggle = {
+	allowed = {
+		tag = SAU
+	}
+	visible = {
+		has_completed_focus = SAU_internal_political_crisis
+	}
+	
+	SAU_execute_dissidents = {
+		icon = GFX_decision_generic_political_purge
+		available = {
+			has_idea = SAU_purged_opposition
+			political_power > 50
+		}
+		cost = 50
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 2
+				has_government = fascism
+			}
+			modifier = {
+				factor = 0
+				has_government = democratic
+			}
+		}
+		complete_effect = {
+			add_political_power = -50
+			add_stability = 0.05
+			add_war_support = 0.03
+		}
+	}
+
+	SAU_hold_democratic_elections = {
+		icon = GFX_decision_generic_democratic_election
+		available = {
+			has_idea = SAU_parliamentary_expansion
+			political_power > 75
+		}
+		cost = 75
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 2
+				has_government = democratic
+			}
+			modifier = {
+				factor = 0
+				has_government = fascism
+			}
+		}
+		complete_effect = {
+			add_political_power = -75
+			add_popularity = { ideology = democratic popularity = 0.10 }
+			add_stability = 0.08
+		}
+	}
+
+	SAU_issue_revolutionary_decree = {
+		icon = GFX_decision_generic_revolutionary_decree
+		available = {
+			has_idea = SAU_revolutionary_authority
+			political_power > 60
+		}
+		cost = 60
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 2
+				has_government = communism
+			}
+			modifier = {
+				factor = 0
+				has_government = democratic
+			}
+		}
+		complete_effect = {
+			add_political_power = -60
+			add_war_support = 0.10
+			add_stability = -0.05
+		}
+	}
+}

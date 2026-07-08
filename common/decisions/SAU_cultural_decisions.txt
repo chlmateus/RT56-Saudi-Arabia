@@ -1,0 +1,100 @@
+SAU_cultural_initiatives = {
+	allowed = {
+		tag = SAU
+	}
+	visible = {
+		has_completed_focus = SAU_cultural_development_initiative
+	}
+	
+	SAU_expand_islamic_education = {
+		icon = GFX_decision_generic_islamic_education
+		available = {
+			has_completed_focus = SAU_islamic_university_system
+			political_power > 40
+		}
+		cost = 40
+		ai_will_do = {
+			factor = 60
+		}
+		complete_effect = {
+			add_political_power = -40
+			tech_research_speed_factor = 0.03
+			add_stability = 0.02
+		}
+	}
+
+	SAU_promote_entertainment_abroad = {
+		icon = GFX_decision_generic_media_promotion
+		available = {
+			has_completed_focus = SAU_media_entertainment_industry
+			political_power > 35
+		}
+		cost = 35
+		ai_will_do = {
+			factor = 55
+		}
+		complete_effect = {
+			add_political_power = -35
+			every_other_country = {
+				limit = { NOT = { is_major = yes } }
+				add_opinion_modifier = { target = ROOT modifier = saudi_cultural_appeal value = 5 }
+			}
+		}
+	}
+
+	SAU_host_sporting_tournament = {
+		icon = GFX_decision_generic_sports_event
+		available = {
+			has_completed_focus = SAU_sporting_events_investment
+			political_power > 30
+		}
+		cost = 30
+		ai_will_do = {
+			factor = 50
+		}
+		complete_effect = {
+			add_political_power = -30
+			every_other_country = {
+				limit = { NOT = { is_major = yes } }
+				add_opinion_modifier = { target = ROOT modifier = saudi_sporting_soft_power value = 3 }
+			}
+			add_stability = 0.03
+		}
+	}
+
+	SAU_fund_research_initiative = {
+		icon = GFX_decision_generic_research_initiative
+		available = {
+			has_completed_focus = SAU_tech_innovation_centers
+			political_power > 50
+		}
+		cost = 50
+		ai_will_do = {
+			factor = 65
+		}
+		complete_effect = {
+			add_political_power = -50
+			tech_research_speed_factor = 0.05
+		}
+	}
+
+	SAU_heritage_preservation_campaign = {
+		icon = GFX_decision_generic_heritage_preservation
+		available = {
+			has_completed_focus = SAU_heritage_tourism_program
+			political_power > 35
+		}
+		cost = 35
+		ai_will_do = {
+			factor = 55
+		}
+		complete_effect = {
+			add_political_power = -35
+			every_other_country = {
+				limit = { NOT = { is_major = yes } }
+				add_opinion_modifier = { target = ROOT modifier = saudi_heritage_appeal value = 5 }
+			}
+			add_stability = 0.02
+		}
+	}
+}

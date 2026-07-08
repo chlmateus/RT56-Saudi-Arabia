@@ -1,0 +1,83 @@
+l_english:
+ ### DECISION CATEGORY NAMES ###
+ SAU_religious_diplomacy: "Religious Diplomacy"
+ SAU_arab_unity: "Arab Unity Initiatives"
+ SAU_hajj_management: "Hajj Management"
+ SAU_islamic_council_invites: "Islamic Council"
+ SAU_religious_subversion: "Religious Subversion"
+ SAU_arab_diplomatic_missions: "Arab Diplomatic Missions"
+ SAU_independence_support: "Support Independence Movements"
+ SAU_arab_league_formation: "Arab League Formation"
+ SAU_arab_resource_access: "Arab Resource Cooperation"
+ SAU_arab_volunteers: "Arab Volunteer Corps"
+ SAU_intelligence_operations: "Intelligence Operations"
+ SAU_madrasah_expansion: "Madrasah Network"
+ SAU_womens_rights_reform: "Women's Rights Reform"
+ SAU_territory_integration: "Territory Integration"
+
+ ### NATIONAL SPIRITS/IDEAS ###
+ SAU_pilgrim_economy_idea: "Hajj Pilgrimage Economy"
+ SAU_pilgrim_economy_idea_desc: "The annual pilgrimage to Mecca brings millions of faithful to our holy cities, generating substantial revenue and demonstrating our central role in the Islamic world."
+ 
+ SAU_ulema_council_idea: "Ulema Council Authority"
+ SAU_ulema_council_idea_desc: "Religious scholars exercise formal influence over state policy, ensuring Islamic principles guide our governance while providing legitimacy and stability."
+ 
+ SAU_islamic_banking_idea: "Islamic Finance System"
+ SAU_islamic_banking_idea_desc: "Our Sharia-compliant banking system avoids interest-based transactions while still facilitating the capital flows necessary for modern economic development."
+ 
+ SAU_arabic_cultural_influence: "Arabic Cultural Influence"
+ SAU_arabic_cultural_influence_desc: "Through language, literature, and cultural programs, we are strengthening bonds with Arabic-speaking peoples throughout the region."
+ 
+ SAU_arab_economic_cooperation: "Arab Economic Cooperation"
+ SAU_arab_economic_cooperation_desc: "Economic coordination among Arab states provides mutual benefits, shared resources, and strengthens political unity."
+ 
+ SAU_arab_military_coordination: "Arab Military Coordination"
+ SAU_arab_military_coordination_desc: "Joint command structures and coordinated military operations demonstrate Arab unity and enhance our collective defense capabilities."
+ 
+ SAU_pan_arab_media: "Pan-Arab Broadcasting Network"
+ SAU_pan_arab_media_desc: "Our radio broadcasts reach into every Arab home, spreading our vision of unity and countering foreign propaganda."
+ 
+ SAU_arab_propaganda_influence: "Arab Unity Propaganda"
+ SAU_arab_propaganda_influence_desc: "Foreign broadcasts promoting Arab unity are influencing public opinion and weakening resistance to change."
+ 
+ SAU_mutawwa_force: "Religious Police"
+ SAU_mutawwa_force_desc: "The mutawwa enforce Islamic law and public morality, maintaining social order but limiting personal freedoms."
+ 
+ SAU_counter_intelligence_focus: "Counter-Intelligence Doctrine"
+ SAU_counter_intelligence_focus_desc: "Specialized training in detecting and neutralizing foreign espionage operations protects our state secrets and prevents foreign manipulation."
+ 
+ SAU_internal_passport_system: "Internal Passport System"
+ SAU_internal_passport_system_desc: "Comprehensive controls over internal movement allow us to track population flows and maintain security in sensitive areas."
+ 
+ SAU_surveillance_apparatus: "Surveillance State"
+ SAU_surveillance_apparatus_desc: "Extensive monitoring of communications and activities throughout the kingdom provides early warning of potential threats."
+ 
+ SAU_tribal_integration_1: "Tribal Confederation"
+ SAU_tribal_integration_1_desc: "Formal structures for tribal participation in governance secure the loyalty of nomadic peoples while providing access to their manpower."
+ 
+ SAU_sedentarization_program: "Sedentarization Program"
+ SAU_sedentarization_program_desc: "Incentives for nomads to adopt settled agricultural life create stable populations that support industrial development."
+ 
+ SAU_nomadic_tradition_preserved: "Preserved Nomadic Traditions"
+ SAU_nomadic_tradition_preserved_desc: "Honoring traditional Bedouin culture maintains martial traditions and cultural authenticity valued by our people."
+ 
+ SAU_social_reform_tension: "Social Reform Tensions"
+ SAU_social_reform_tension_desc: "Controversial social reforms have generated tension between progressive and conservative elements of society."
+ 
+ SAU_technical_training: "Technical Education"
+ SAU_technical_training_desc: "Vocational colleges are training the engineers, mechanics, and technicians necessary to operate modern industrial equipment."
+ 
+ SAU_arabization_policy: "Cultural Arabization"
+ SAU_arabization_policy_desc: "Promoting Saudi Arabian identity and Arabic language in conquered territories creates cultural unity but generates resistance from local populations."
+ 
+ SAU_regional_autonomy: "Regional Autonomy System"
+ SAU_regional_autonomy_desc: "Granting self-governance to conquered regions reduces resistance by respecting local traditions, though it limits our control and manpower access."
+ 
+ SAU_imperial_administration: "Imperial Administration"
+ SAU_imperial_administration_desc: "Sophisticated bureaucratic structures efficiently manage our vast multi-regional empire, coordinating resources and projecting power across great distances."
+
+ ### OPINION MODIFIERS ###
+ SAU_wahhabi_influence: "Wahhabi Religious Ties"
+ moderate_islam_relations: "Moderate Islamic Partnership"
+ sau_arab_cooperation: "Arab Cooperation Agreement"
+ sau_cultural_ties: "Arabic Cultural Ties"

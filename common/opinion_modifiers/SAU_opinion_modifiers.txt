@@ -3,4 +3,26 @@ opinion_modifiers = {
 		value = -15
 		months = 60
 	}
+
+	# NEW OPINION MODIFIERS - Religious Branch
+	SAU_wahhabi_influence = {
+		value = 15
+		trade = yes
+	}
+
+	moderate_islam_relations = {
+		value = 25
+		trade = yes
+	}
+
+	# NEW OPINION MODIFIERS - Diplomacy Branch
+	sau_arab_cooperation = {
+		value = 30
+		trade = yes
+	}
+
+	sau_cultural_ties = {
+		value = 15
+		trade = yes
+	}
 }
