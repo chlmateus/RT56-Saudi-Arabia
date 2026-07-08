@@ -1973,6 +1973,7 @@ focus_tree = {
         relative_position_id = SAU_spread_islam_force
         mutually_exclusive = {
             focus = SAU_destabilize_the_east
+            focus = SAU_abbasid_revolution
         }
         x = -8.5
         y = 1
@@ -2633,7 +2634,7 @@ focus_tree = {
         y = 11
         ai_will_do = { factor = 45 }
         prerequisite = { focus = SAU_spread_islam_force focus = SAU_political_correctness }
-        mutually_exclusive = { focus = SAU_destabilize_the_east }
+        mutually_exclusive = { focus = SAU_destabilize_the_east focus = SAU_ask_british_colonies }
         completion_reward = {
             add_stability = 0.15
             add_war_support = 0.10
@@ -3135,5 +3136,943 @@ focus_tree = {
             production_factory_max_efficiency_factor = 0.10
             add_stability = 0.10
         }
+    }
+
+    # =========================================================================
+    # BRANCH 1: RELIGIOUS AUTHORITY & CULTURAL IDENTITY
+    # =========================================================================
+
+    focus = {
+        id = SAU_guardians_of_the_holy_sites
+        icon = GFX_goal_PAL_jizya
+        cost = 5
+        x = 35
+        y = 2
+        prerequisite = { focus = SAU_the_unifier }
+        ai_will_do = {
+            factor = 45
+        }
+        completion_reward = {
+            add_stability = 0.05
+            add_political_power = 50
+            custom_effect_tooltip = SAU_unlock_religious_diplomacy_tt
+            hidden_effect = {
+                set_country_flag = SAU_religious_diplomacy_unlocked
+            }
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_expand_hajj_infrastructure
+        icon = GFX_focus_generic_industry_2
+        cost = 8
+        x = 33
+        y = 4
+        prerequisite = { focus = SAU_guardians_of_the_holy_sites }
+        ai_will_do = {
+            factor = 40
+        }
+        available = {
+            controls_state = 856
+        }
+        completion_reward = {
+            856 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes
+                }
+            }
+            add_political_power = 100
+            custom_effect_tooltip = SAU_enhanced_hajj_decisions_tt
+            hidden_effect = {
+                set_country_flag = SAU_enhanced_hajj_unlocked
+            }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = SAU_international_islamic_council
+        icon = GFX_goal_generic_intelligence_exchange
+        cost = 8
+        x = 37
+        y = 4
+        prerequisite = { focus = SAU_guardians_of_the_holy_sites }
+        ai_will_do = {
+            factor = 35
+        }
+        completion_reward = {
+            add_political_power = 75
+            custom_effect_tooltip = SAU_islamic_council_invite_tt
+            hidden_effect = {
+                set_country_flag = SAU_islamic_council_unlocked
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_wahhabi_doctrine_export
+        icon = GFX_goal_PAL_declare_jihad
+        cost = 7
+        x = 33
+        y = 6
+        prerequisite = { focus = SAU_expand_hajj_infrastructure }
+        mutually_exclusive = { focus = SAU_moderate_islam_approach }
+        ai_will_do = {
+            factor = 40
+            modifier = {
+                factor = 2
+                has_government = fascism
+            }
+            modifier = {
+                factor = 0
+                has_government = democratic
+            }
+        }
+        completion_reward = {
+            add_popularity = {
+                ideology = fascism
+                popularity = 0.05
+            }
+            custom_effect_tooltip = SAU_wahhabi_export_tt
+            hidden_effect = {
+                set_country_flag = SAU_wahhabi_export_path
+                every_other_country = {
+                    limit = {
+                        has_government = neutrality
+                        religion = { has_religion_type = islam }
+                    }
+                    add_opinion_modifier = {
+                        target = ROOT
+                        modifier = SAU_wahhabi_influence
+                    }
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_moderate_islam_approach
+        icon = GFX_focus_generic_diplomatic_treaty
+        cost = 7
+        x = 37
+        y = 6
+        prerequisite = { focus = SAU_international_islamic_council }
+        mutually_exclusive = { focus = SAU_wahhabi_doctrine_export }
+        ai_will_do = {
+            factor = 30
+            modifier = {
+                factor = 2
+                has_government = democratic
+            }
+            modifier = {
+                factor = 0
+                has_government = fascism
+            }
+        }
+        completion_reward = {
+            add_stability = 0.05
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.03
+            }
+            ENG = {
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = moderate_islam_relations
+                }
+            }
+            USA = {
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = moderate_islam_relations
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_hajj_pilgrimage_economy
+        icon = GFX_focus_generic_industry_3
+        cost = 8
+        x = 35
+        y = 7
+        prerequisite = { focus = SAU_wahhabi_doctrine_export focus = SAU_moderate_islam_approach }
+        ai_will_do = {
+            factor = 50
+        }
+        completion_reward = {
+            add_ideas = SAU_pilgrim_economy_idea
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = SAU_religious_education_network
+        icon = GFX_focus_generic_university_2
+        cost = 10
+        x = 33
+        y = 9
+        prerequisite = { focus = SAU_hajj_pilgrimage_economy }
+        prerequisite = { focus = SAU_wahhabi_doctrine_export }
+        ai_will_do = {
+            factor = 35
+        }
+        completion_reward = {
+            add_research_slot_no_penalty = 1
+            add_tech_bonus = {
+                name = SAU_religious_education
+                bonus = 0.5
+                uses = 1
+                category = industry
+            }
+            custom_effect_tooltip = SAU_madrasah_decisions_tt
+            hidden_effect = {
+                set_country_flag = SAU_madrasah_unlocked
+            }
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH }
+    }
+
+    focus = {
+        id = SAU_islamic_finance_system
+        icon = GFX_goal_generic_financial_markets
+        cost = 10
+        x = 37
+        y = 9
+        prerequisite = { focus = SAU_hajj_pilgrimage_economy }
+        prerequisite = { focus = SAU_moderate_islam_approach }
+        ai_will_do = {
+            factor = 35
+        }
+        completion_reward = {
+            add_ideas = SAU_islamic_banking_idea
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 0
+                        include_locked = yes
+                    }
+                }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = SAU_ulema_council_influence
+        icon = GFX_goal_generic_political_pressure
+        cost = 8
+        x = 35
+        y = 10
+        prerequisite = { focus = SAU_religious_education_network focus = SAU_islamic_finance_system }
+        ai_will_do = {
+            factor = 40
+        }
+        completion_reward = {
+            add_ideas = SAU_ulema_council_idea
+            add_stability = 0.05
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    # =========================================================================
+    # BRANCH 2: PAN-ARABISM & REGIONAL DIPLOMACY
+    # =========================================================================
+
+    focus = {
+        id = SAU_arab_unity_vision
+        icon = GFX_focus_IRQ_unite_mashriq
+        cost = 5
+        x = 43
+        y = 2
+        prerequisite = { focus = SAU_the_unifier }
+        ai_will_do = {
+            factor = 35
+            modifier = {
+                factor = 0
+                has_completed_focus = SAU_abbasid_revolution
+            }
+        }
+        completion_reward = {
+            add_political_power = 75
+            custom_effect_tooltip = SAU_arab_unity_decisions_tt
+            hidden_effect = {
+                set_country_flag = SAU_arab_unity_unlocked
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_cairo_damascus_axis
+        icon = GFX_goal_generic_intelligence_exchange
+        cost = 8
+        x = 41
+        y = 4
+        prerequisite = { focus = SAU_arab_unity_vision }
+        ai_will_do = {
+            factor = 30
+        }
+        completion_reward = {
+            EGY = {
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = sau_arab_cooperation
+                }
+            }
+            SYR = {
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = sau_arab_cooperation
+                }
+            }
+            add_political_power = 50
+            custom_effect_tooltip = SAU_diplomatic_missions_tt
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_league_of_arab_states
+        icon = GFX_focus_generic_diplomatic_treaty
+        cost = 8
+        x = 45
+        y = 4
+        prerequisite = { focus = SAU_arab_unity_vision }
+        ai_will_do = {
+            factor = 40
+        }
+        available = {
+            is_subject = no
+            is_in_faction = no
+        }
+        completion_reward = {
+            custom_effect_tooltip = SAU_form_arab_league_tt
+            hidden_effect = {
+                set_country_flag = SAU_can_form_arab_league
+            }
+            add_political_power = 100
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_arabic_language_promotion
+        icon = GFX_focus_generic_diplomatic_treaty
+        cost = 7
+        x = 41
+        y = 6
+        prerequisite = { focus = SAU_cairo_damascus_axis }
+        ai_will_do = {
+            factor = 35
+        }
+        completion_reward = {
+            add_ideas = SAU_arabic_cultural_influence
+            every_other_country = {
+                limit = {
+                    capital_scope = {
+                        OR = {
+                            is_on_continent = middle_east
+                            is_on_continent = africa
+                        }
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = sau_cultural_ties
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_anti_colonial_front
+        icon = GFX_goal_generic_attack_allies
+        cost = 7
+        x = 43
+        y = 6
+        prerequisite = { focus = SAU_cairo_damascus_axis }
+        prerequisite = { focus = SAU_league_of_arab_states }
+        ai_will_do = {
+            factor = 30
+        }
+        completion_reward = {
+            add_named_threat = { threat = 1 name = SAU_anti_colonial }
+            custom_effect_tooltip = SAU_independence_support_tt
+            hidden_effect = {
+                set_country_flag = SAU_anti_colonial_active
+            }
+            add_war_support = 0.05
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_economic_cooperation_council
+        icon = GFX_goal_generic_positive_trade_relations
+        cost = 7
+        x = 45
+        y = 6
+        prerequisite = { focus = SAU_league_of_arab_states }
+        ai_will_do = {
+            factor = 40
+        }
+        completion_reward = {
+            add_ideas = SAU_arab_economic_cooperation
+            custom_effect_tooltip = SAU_resource_access_tt
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = SAU_joint_arab_military_command
+        icon = GFX_goal_generic_allies_build_infantry
+        cost = 10
+        x = 43
+        y = 8
+        prerequisite = { focus = SAU_anti_colonial_front }
+        ai_will_do = {
+            factor = 35
+        }
+        completion_reward = {
+            army_experience = 25
+            set_rule = {
+                can_send_volunteers = yes
+            }
+            add_ideas = SAU_arab_military_coordination
+            custom_effect_tooltip = SAU_volunteer_decisions_tt
+        }
+        search_filters = { FOCUS_FILTER_MANPOWER }
+    }
+
+    focus = {
+        id = SAU_arab_cultural_renaissance
+        icon = GFX_focus_research
+        cost = 8
+        x = 41
+        y = 8
+        prerequisite = { focus = SAU_arabic_language_promotion }
+        ai_will_do = {
+            factor = 30
+        }
+        completion_reward = {
+            add_stability = 0.05
+            add_tech_bonus = {
+                name = SAU_cultural_renaissance
+                bonus = 0.5
+                uses = 2
+                category = industry
+            }
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY }
+    }
+
+    focus = {
+        id = SAU_regional_infrastructure_fund
+        icon = GFX_goal_generic_construction
+        cost = 8
+        x = 45
+        y = 8
+        prerequisite = { focus = SAU_economic_cooperation_council }
+        ai_will_do = {
+            factor = 35
+        }
+        completion_reward = {
+            add_political_power = 100
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = infrastructure
+                        size > 1
+                    }
+                }
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = infrastructure
+                        size > 1
+                    }
+                }
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = SAU_pan_arab_broadcasting
+        icon = GFX_goal_generic_propaganda
+        cost = 8
+        x = 43
+        y = 10
+        prerequisite = { focus = SAU_joint_arab_military_command }
+        ai_will_do = {
+            factor = 30
+        }
+        completion_reward = {
+            add_ideas = SAU_pan_arab_media
+            every_other_country = {
+                limit = {
+                    capital_scope = {
+                        OR = {
+                            is_on_continent = middle_east
+                            is_on_continent = africa
+                        }
+                    }
+                }
+                add_timed_idea = {
+                    idea = SAU_arab_propaganda_influence
+                    days = 365
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    # =========================================================================
+    # BRANCH 3: INTERNAL SECURITY & INTELLIGENCE
+    # =========================================================================
+
+    focus = {
+        id = SAU_establish_security_apparatus
+        icon = GFX_focus_generic_military_mission
+        cost = 7
+        x = 35
+        y = 12
+        prerequisite = { focus = SAU_seek_german_arms focus = SAU_introduce_the_constitution focus = SAU_continue_hakimovs_legacy }
+        ai_will_do = {
+            factor = 60
+        }
+        completion_reward = {
+            add_political_power = 50
+            custom_effect_tooltip = SAU_intelligence_upgrades_tt
+            if = {
+                limit = {
+                    has_dlc = "La Resistance"
+                }
+                upgrade_intelligence_agency = upgrade_form_department
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_religious_police_force
+        icon = GFX_goal_generic_censorship
+        cost = 5
+        x = 33
+        y = 14
+        prerequisite = { focus = SAU_establish_security_apparatus }
+        ai_will_do = {
+            factor = 50
+            modifier = {
+                factor = 2
+                OR = {
+                    has_government = fascism
+                    has_government = neutrality
+                }
+            }
+            modifier = {
+                factor = 0.5
+                has_government = democratic
+            }
+        }
+        completion_reward = {
+            add_stability = 0.05
+            add_popularity = {
+                ideology = democratic
+                popularity = -0.03
+            }
+            add_ideas = SAU_mutawwa_force
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_foreign_intelligence_network
+        icon = GFX_goal_generic_intelligence_exchange
+        cost = 5
+        x = 37
+        y = 14
+        prerequisite = { focus = SAU_establish_security_apparatus }
+        ai_will_do = {
+            factor = 45
+        }
+        completion_reward = {
+            if = {
+                limit = {
+                    has_dlc = "La Resistance"
+                }
+                upgrade_intelligence_agency = upgrade_crypto_strength
+                add_intelligence_agency_upgrade_token = 1
+            }
+            else = {
+                army_experience = 10
+                add_political_power = 50
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_counter_espionage_doctrine
+        icon = GFX_goal_generic_secret_weapon
+        cost = 8
+        x = 35
+        y = 15
+        prerequisite = { focus = SAU_religious_police_force }
+        prerequisite = { focus = SAU_foreign_intelligence_network }
+        ai_will_do = {
+            factor = 50
+        }
+        completion_reward = {
+            add_ideas = SAU_counter_intelligence_focus
+            if = {
+                limit = {
+                    has_dlc = "La Resistance"
+                }
+                upgrade_intelligence_agency = upgrade_defense_department
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_internal_passports
+        icon = GFX_focus_generic_diplomatic_treaty
+        cost = 7
+        x = 33
+        y = 16
+        prerequisite = { focus = SAU_counter_espionage_doctrine }
+        ai_will_do = {
+            factor = 40
+        }
+        completion_reward = {
+            add_ideas = SAU_internal_passport_system
+            add_stability = 0.03
+        }
+        search_filters = { FOCUS_FILTER_STABILITY }
+    }
+
+    focus = {
+        id = SAU_surveillance_state
+        icon = GFX_goal_generic_censorship
+        cost = 7
+        x = 37
+        y = 16
+        prerequisite = { focus = SAU_counter_espionage_doctrine }
+        ai_will_do = {
+            factor = 35
+        }
+        completion_reward = {
+            add_ideas = SAU_surveillance_apparatus
+            add_political_power = 75
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    # =========================================================================
+    # BRANCH 4: TRIBAL INTEGRATION & SOCIAL REFORM
+    # =========================================================================
+
+    focus = {
+        id = SAU_tribal_confederation_reforms
+        icon = GFX_focus_ETH_sway_the_warlords
+        cost = 7
+        x = 43
+        y = 12
+        prerequisite = { focus = SAU_liberalize_the_market focus = SAU_placate_the_tribes }
+        ai_will_do = {
+            factor = 40
+        }
+        completion_reward = {
+            add_manpower = 5000
+            add_ideas = SAU_tribal_integration_1
+        }
+        search_filters = { FOCUS_FILTER_MANPOWER }
+    }
+
+    focus = {
+        id = SAU_sedentarization_incentives
+        icon = GFX_focus_generic_population_growth
+        cost = 8
+        x = 41
+        y = 14
+        prerequisite = { focus = SAU_tribal_confederation_reforms }
+        mutually_exclusive = { focus = SAU_preserve_nomadic_culture }
+        ai_will_do = {
+            factor = 45
+        }
+        completion_reward = {
+            random_owned_controlled_state = {
+                prioritize = { 292 856 857 }
+                limit = {
+                    is_core_of = ROOT
+                }
+                add_extra_state_shared_building_slots = 1
+            }
+            random_owned_controlled_state = {
+                prioritize = { 292 856 857 }
+                limit = {
+                    is_core_of = ROOT
+                }
+                add_extra_state_shared_building_slots = 1
+            }
+            add_ideas = SAU_sedentarization_program
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = SAU_preserve_nomadic_culture
+        icon = GFX_focus_ETH_keep_the_chitet
+        cost = 8
+        x = 45
+        y = 14
+        prerequisite = { focus = SAU_tribal_confederation_reforms }
+        mutually_exclusive = { focus = SAU_sedentarization_incentives }
+        ai_will_do = {
+            factor = 25
+            modifier = {
+                factor = 2
+                has_idea = SAU_incorporate_nomad_tactics1
+            }
+        }
+        completion_reward = {
+            add_ideas = SAU_nomadic_tradition_preserved
+            if = {
+                limit = {
+                    has_dlc = "Battle for the Bosporus"
+                    has_tech = camelry
+                }
+                add_tech_bonus = {
+                    name = SAU_nomadic_bonus
+                    bonus = 1
+                    uses = 1
+                    category = camelry_tech
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_MANPOWER }
+    }
+
+    focus = {
+        id = SAU_universal_education_program
+        icon = GFX_focus_generic_university_2
+        cost = 10
+        x = 43
+        y = 15
+        prerequisite = { focus = SAU_sedentarization_incentives focus = SAU_preserve_nomadic_culture }
+        ai_will_do = {
+            factor = 50
+        }
+        completion_reward = {
+            if = {
+                limit = {
+                    num_of_research_slots < 5
+                }
+                add_research_slot = 1
+            }
+            else = {
+                add_tech_bonus = {
+                    name = SAU_education_boost
+                    bonus = 0.75
+                    uses = 2
+                    category = industry
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH }
+    }
+
+    focus = {
+        id = SAU_womens_education_debate
+        icon = GFX_goal_generic_political_pressure
+        cost = 8
+        x = 41
+        y = 16
+        prerequisite = { focus = SAU_universal_education_program }
+        ai_will_do = {
+            factor = 30
+            modifier = {
+                factor = 2
+                has_government = democratic
+            }
+            modifier = {
+                factor = 0.5
+                has_government = fascism
+            }
+        }
+        completion_reward = {
+            add_stability = -0.03
+            custom_effect_tooltip = SAU_womens_reform_decisions_tt
+            hidden_effect = {
+                set_country_flag = SAU_womens_education_debate_active
+            }
+            add_timed_idea = {
+                idea = SAU_social_reform_tension
+                days = 365
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_technical_colleges
+        icon = GFX_focus_generic_industry_3
+        cost = 8
+        x = 45
+        y = 16
+        prerequisite = { focus = SAU_universal_education_program }
+        ai_will_do = {
+            factor = 45
+        }
+        completion_reward = {
+            add_ideas = SAU_technical_training
+            add_tech_bonus = {
+                name = SAU_technical_education
+                bonus = 0.5
+                uses = 2
+                category = industry
+            }
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+    }
+
+    # =========================================================================
+    # BRANCH 5: POST-EXPANSION CONSOLIDATION
+    # =========================================================================
+    # Note: Positioned at x=20-26 (shifted right from original x=15-20 plan)
+    # to avoid visual clutter with existing Abbasid Support branch at x=7.75-14.25
+
+    focus = {
+        id = SAU_administrative_integration
+        icon = GFX_focus_generic_industry_1
+        cost = 8
+        x = 23
+        y = 17
+        prerequisite = { focus = SAU_integrate_the_levant focus = SAU_our_rightful_domain }
+        available = {
+            num_of_controlled_states > 14
+        }
+        ai_will_do = {
+            factor = 50
+        }
+        completion_reward = {
+            every_owned_state = {
+                limit = {
+                    NOT = { is_core_of = ROOT }
+                }
+                add_compliance = 10
+                add_resistance = -5
+            }
+            add_political_power = 100
+        }
+        search_filters = { FOCUS_FILTER_ANNEXATION }
+    }
+
+    focus = {
+        id = SAU_cultural_arabization
+        icon = GFX_goal_generic_propaganda
+        cost = 10
+        x = 21
+        y = 18
+        prerequisite = { focus = SAU_administrative_integration }
+        mutually_exclusive = { focus = SAU_regional_autonomy_system }
+        ai_will_do = {
+            factor = 40
+            modifier = {
+                factor = 2
+                has_government = fascism
+            }
+            modifier = {
+                factor = 0.5
+                has_government = democratic
+            }
+        }
+        completion_reward = {
+            every_owned_state = {
+                limit = {
+                    NOT = { is_core_of = ROOT }
+                }
+                add_compliance = 15
+            }
+            add_ideas = SAU_arabization_policy
+        }
+        search_filters = { FOCUS_FILTER_ANNEXATION }
+    }
+
+    focus = {
+        id = SAU_regional_autonomy_system
+        icon = GFX_goal_MPL_arabs_ministers
+        cost = 10
+        x = 25
+        y = 18
+        prerequisite = { focus = SAU_administrative_integration }
+        mutually_exclusive = { focus = SAU_cultural_arabization }
+        ai_will_do = {
+            factor = 35
+            modifier = {
+                factor = 2
+                has_government = democratic
+            }
+            modifier = {
+                factor = 0.5
+                has_government = fascism
+            }
+        }
+        completion_reward = {
+            every_owned_state = {
+                limit = {
+                    NOT = { is_core_of = ROOT }
+                }
+                add_resistance = -10
+            }
+            add_stability = 0.05
+            add_ideas = SAU_regional_autonomy
+        }
+        search_filters = { FOCUS_FILTER_STABILITY }
+    }
+
+    focus = {
+        id = SAU_empire_administration
+        icon = GFX_goal_generic_major_alliance
+        cost = 10
+        x = 23
+        y = 19
+        prerequisite = { focus = SAU_cultural_arabization focus = SAU_regional_autonomy_system }
+        ai_will_do = {
+            factor = 50
+        }
+        completion_reward = {
+            add_ideas = SAU_imperial_administration
+            add_stability = 0.10
+            add_political_power = 150
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
     }
 }
