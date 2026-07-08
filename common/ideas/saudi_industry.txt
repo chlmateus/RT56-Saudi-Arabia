@@ -647,5 +647,245 @@ ideas = {
                 state_resources_factor = 0.10
             }
         }
+
+        # =================================================================
+        # MISSING RELIGIOUS LAW BRANCH IDEAS
+        # =================================================================
+
+        SAU_strict_sharia_law = {
+            allowed = { always = yes }
+            picture = generic_religious_focus
+            modifier = {
+                stability_factor = 0.05
+                war_support_factor = 0.05
+                drift_defense_daily = 0.02
+                research_speed_factor = -0.05
+            }
+        }
+
+        SAU_pragmatic_sharia = {
+            allowed = { always = yes }
+            picture = generic_constitutional_monarchy
+            modifier = {
+                stability_factor = 0.05
+                political_power_gain = 0.10
+                research_speed_factor = 0.05
+            }
+        }
+
+        SAU_moral_enforcement = {
+            allowed = { always = yes }
+            picture = generic_secret_police
+            modifier = {
+                stability_factor = 0.05
+                drift_defense_daily = 0.03
+                foreign_subversive_activites = -0.15
+            }
+        }
+
+        SAU_supreme_religious_authority = {
+            allowed = { always = yes }
+            picture = generic_religious_focus
+            modifier = {
+                stability_factor = 0.10
+                political_power_gain = 0.20
+                drift_defense_daily = 0.05
+                non_core_manpower = 0.05
+            }
+        }
+
+        # =================================================================
+        # MISSING ARAB UNITY BRANCH IDEAS
+        # =================================================================
+
+        SAU_common_market = {
+            allowed = { always = yes }
+            picture = generic_trade
+            modifier = {
+                trade_opinion_factor = 0.30
+                min_export = -0.10
+                industrial_capacity_factory = 0.05
+            }
+        }
+
+        SAU_unified_market_policy = {
+            allowed = { always = yes }
+            picture = generic_financial_institutions
+            modifier = {
+                trade_opinion_factor = 0.40
+                local_resources_factor = 0.10
+                industrial_capacity_factory = 0.10
+                consumer_goods_expected_value = -0.02
+            }
+        }
+
+        SAU_arab_hegemonic_ambition = {
+            allowed = { always = yes }
+            picture = generic_war_support_bonus
+            modifier = {
+                war_support_factor = 0.10
+                army_attack_factor = 0.05
+                justify_war_goal_time = -0.15
+            }
+        }
+
+        SAU_arab_unity_triumphant = {
+            allowed = { always = yes }
+            picture = generic_pp_unity_bonus
+            modifier = {
+                stability_factor = 0.10
+                political_power_gain = 0.20
+                non_core_manpower = 0.10
+                army_org_factor = 0.05
+            }
+        }
+
+        # =================================================================
+        # STEEL MILL IDEA (Abbasid alternative)
+        # =================================================================
+
+        SAU_heavy_steel_idea = {
+            allowed = { always = yes }
+            picture = generic_production_bonus
+            modifier = {
+                production_speed_arms_factory_factor = 0.15
+                industrial_capacity_factory = 0.05
+            }
+        }
+
+        # =================================================================
+        # ECONOMIC DOCTRINE SPLIT IDEAS
+        # =================================================================
+
+        SAU_state_industrialization_idea = {
+            allowed = { always = yes }
+            picture = generic_production_bonus
+            modifier = {
+                industrial_capacity_factory = 0.15
+                production_speed_industrial_complex_factor = 0.15
+                production_speed_arms_factory_factor = 0.10
+                consumer_goods_expected_value = 0.03
+                stability_factor = -0.05
+            }
+        }
+
+        SAU_privatization_idea = {
+            allowed = { always = yes }
+            picture = generic_trade
+            modifier = {
+                research_speed_factor = 0.10
+                construction_speed = 0.10
+                production_efficiency_cap = 0.05
+                industrial_capacity_factory = -0.05
+            }
+        }
+
+        SAU_crash_industrialization_idea = {
+            allowed = { always = yes }
+            picture = generic_production_bonus
+            removal_cost = -1
+            modifier = {
+                production_speed_industrial_complex_factor = 0.25
+                production_speed_arms_factory_factor = 0.20
+                consumer_goods_expected_value = 0.05
+                stability_factor = 0.02
+            }
+        }
+
+        SAU_resource_authority_idea = {
+            allowed = { always = yes }
+            picture = generic_oil_bonus
+            modifier = {
+                local_resources_factor = 0.20
+                resource_extraction_efficiency = 0.10
+            }
+        }
+
+        SAU_free_market_infra_idea = {
+            allowed = { always = yes }
+            picture = generic_infrastructure_bonus
+            modifier = {
+                production_speed_infrastructure_factor = 0.25
+                infrastructure_construction_cost_factor = -0.15
+                army_speed_factor = 0.05
+            }
+        }
+
+        SAU_foreign_investment_idea = {
+            allowed = { always = yes }
+            picture = idea_generic_foreign_investment
+            modifier = {
+                production_speed_industrial_complex_factor = 0.10
+                consumer_goods_expected_value = -0.03
+                stability_factor = -0.03
+            }
+        }
+
+        SAU_economic_dominance_idea = {
+            allowed = { always = yes }
+            picture = generic_financial_institutions
+            modifier = {
+                political_power_gain = 0.15
+                research_speed_factor = 0.05
+                trade_opinion_factor = 0.20
+                production_factory_max_efficiency_factor = 0.10
+            }
+        }
+
+        # =================================================================
+        # MILITARY DOCTRINE SPLIT IDEAS
+        # =================================================================
+
+        SAU_desert_fortress_idea = {
+            allowed = { always = yes }
+            picture = generic_infantry_bonus
+            modifier = {
+                army_core_defence_factor = 0.15
+                army_infantry_defence_factor = 0.10
+                land_combat_defense_factor = 0.10
+                conscription = 0.02
+            }
+        }
+
+        SAU_desert_storm_idea = {
+            allowed = { always = yes }
+            picture = generic_armor_bonus
+            modifier = {
+                army_attack_factor = 0.10
+                armor_attack_factor = 0.15
+                motorized_attack_factor = 0.10
+                army_speed_factor = 0.10
+            }
+        }
+
+        SAU_fortification_effort_idea = {
+            allowed = { always = yes }
+            picture = generic_fort_bonus
+            modifier = {
+                fort_construction_cost_factor = -0.15
+                army_core_defence_factor = 0.05
+            }
+        }
+
+        SAU_conscription_drive_idea = {
+            allowed = { always = yes }
+            picture = generic_manpower_bonus
+            modifier = {
+                conscription = 0.03
+                training_time_factor = -0.10
+                weekly_manpower = 200
+            }
+        }
+
+        SAU_blitz_sand_idea = {
+            allowed = { always = yes }
+            picture = generic_armor_bonus
+            modifier = {
+                armor_attack_factor = 0.10
+                army_speed_factor = 0.15
+                army_breakthrough_factor = 0.10
+                war_support_factor = 0.05
+            }
+        }
 	}
 }

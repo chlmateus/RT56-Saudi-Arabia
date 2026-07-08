@@ -77,6 +77,9 @@ focus_tree = {
         search_filters = { FOCUS_FILTER_POLITICAL }
         relative_position_id = SAU_the_unifier
     }
+    
+    
+
     focus = {
         id = SAU_reject_the_riyadh_line
         icon = GFX_focus_generic_provoke_border_clashes
@@ -4001,7 +4004,7 @@ focus_tree = {
         id = SAU_religious_police_force
         icon = GFX_goal_generic_censorship
         cost = 5
-        x = 33
+        x = 32
         y = 14
         prerequisite = { focus = SAU_establish_security_apparatus }
         ai_will_do = {
@@ -4032,7 +4035,7 @@ focus_tree = {
         id = SAU_foreign_intelligence_network
         icon = GFX_goal_generic_intelligence_exchange
         cost = 5
-        x = 37
+        x = 38
         y = 14
         prerequisite = { focus = SAU_establish_security_apparatus }
         ai_will_do = {
@@ -4214,5 +4217,455 @@ focus_tree = {
             add_political_power = 150
         }
         search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
+    }
+    # =========================================================================
+    # INDUSTRIAL FOUNDATION (anchor for civilian/military industry wings)
+    # =========================================================================
+    focus = {
+        id = SAU_industrial_foundation
+        icon = GFX_focus_generic_industry_1
+        cost = 5
+        x = 55.5
+        y = 0
+        prerequisite = { focus = SAU_the_unifier }
+        ai_will_do = {
+            factor = 60
+        }
+        completion_reward = {
+            431 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = { type = industrial_complex level = 1 }
+            }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+    # -------------------------------------------------------------------------
+    # STEEL MILL (mutually exclusive alternative to monetize in Abbasid branch)
+    # -------------------------------------------------------------------------
+    focus = {
+        id = SAU_steel_mill
+        icon = GFX_focus_generic_industry_3
+        cost = 7
+        x = 7.75
+        y = 16
+        prerequisite = { focus = SAU_battle_of_talas }
+        mutually_exclusive = { focus = SAU_monetize }
+        ai_will_do = {
+            factor = 35
+        }
+        completion_reward = {
+            291 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = { type = arms_factory level = 1 }
+            }
+            add_ideas = SAU_heavy_steel_idea
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+    # =========================================================================
+    # ECONOMIC DOCTRINE SPLIT: State Industrialization vs Privatization
+    # =========================================================================
+    focus = {
+        id = SAU_economic_doctrine_choice
+        icon = GFX_goal_generic_economy
+        cost = 5
+        x = 55.5
+        y = 1.5
+        prerequisite = { focus = SAU_industrial_foundation }
+        ai_will_do = {
+            factor = 50
+        }
+        completion_reward = {
+            add_political_power = 50
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+    focus = {
+        id = SAU_state_led_industrialization
+        icon = GFX_goal_generic_production
+        cost = 10
+        x = 53
+        y = 3
+        prerequisite = { focus = SAU_economic_doctrine_choice }
+        mutually_exclusive = { focus = SAU_privatization_focus }
+        ai_will_do = {
+            factor = 40
+            modifier = {
+                factor = 2
+                OR = {
+                    has_government = communism
+                    has_government = neutrality
+                }
+            }
+            modifier = {
+                factor = 0.5
+                has_government = democratic
+            }
+        }
+        completion_reward = {
+            add_stability = -0.05
+            add_ideas = SAU_state_industrialization_idea
+            431 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = { type = industrial_complex level = 2 }
+            }
+            292 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = { type = industrial_complex level = 1 }
+            }
+            custom_effect_tooltip = SAU_consumer_goods_penalty_tt
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+    focus = {
+        id = SAU_privatization_focus
+        icon = GFX_goal_generic_trade
+        cost = 10
+        x = 58
+        y = 3
+        prerequisite = { focus = SAU_economic_doctrine_choice }
+        mutually_exclusive = { focus = SAU_state_led_industrialization }
+        ai_will_do = {
+            factor = 40
+            modifier = {
+                factor = 2
+                has_government = democratic
+            }
+            modifier = {
+                factor = 0.5
+                has_government = communism
+            }
+        }
+        completion_reward = {
+            add_stability = 0.05
+            add_ideas = SAU_privatization_idea
+            add_tech_bonus = {
+                name = SAU_privatization_bonus
+                bonus = 0.5
+                uses = 2
+                category = industry
+            }
+            431 = {
+                add_building_construction = { type = infrastructure level = 2 }
+            }
+            454 = {
+                add_building_construction = { type = infrastructure level = 1 }
+            }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+    }
+    focus = {
+        id = SAU_five_year_industrial_push
+        icon = GFX_goal_generic_soviet_construction
+        cost = 10
+        x = 53
+        y = 5
+        prerequisite = { focus = SAU_state_led_industrialization }
+        ai_will_do = {
+            factor = 45
+        }
+        completion_reward = {
+            add_timed_idea = { idea = SAU_crash_industrialization_idea days = 1095 }
+            431 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = { type = arms_factory level = 1 }
+            }
+            292 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = { type = arms_factory level = 1 }
+            }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+    focus = {
+        id = SAU_resource_extraction_authority
+        icon = GFX_SOV_oil_production_ccp_2d_sov_compatibility
+        cost = 10
+        x = 53
+        y = 7
+        prerequisite = { focus = SAU_five_year_industrial_push }
+        ai_will_do = {
+            factor = 45
+        }
+        completion_reward = {
+            431 = { add_resource = { type = oil amount = 25 } }
+            292 = { add_resource = { type = steel amount = 15 } }
+            add_ideas = SAU_resource_authority_idea
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_OIL }
+    }
+    focus = {
+        id = SAU_free_market_infrastructure
+        icon = GFX_focus_generic_road_investment
+        cost = 10
+        x = 58
+        y = 5
+        prerequisite = { focus = SAU_privatization_focus }
+        ai_will_do = {
+            factor = 45
+        }
+        completion_reward = {
+            add_ideas = SAU_free_market_infra_idea
+            every_owned_state = {
+                limit = {
+                    free_building_slots = {
+                        building = infrastructure
+                        size > 0
+                    }
+                    is_in_home_area = yes
+                }
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+    focus = {
+        id = SAU_foreign_investment_incentives
+        icon = GFX_focus_generic_industrialists
+        cost = 10
+        x = 58
+        y = 7
+        prerequisite = { focus = SAU_free_market_infrastructure }
+        ai_will_do = {
+            factor = 45
+        }
+        completion_reward = {
+            add_offmarket_factories = 3
+            add_ideas = SAU_foreign_investment_idea
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+    focus = {
+        id = SAU_economic_dominance_capstone
+        icon = GFX_goal_generic_financial_markets
+        cost = 10
+        x = 55.5
+        y = 9
+        prerequisite = { focus = SAU_resource_extraction_authority focus = SAU_foreign_investment_incentives }
+        ai_will_do = {
+            factor = 55
+        }
+        completion_reward = {
+            add_research_slot_no_penalty = 1
+            add_stability = 0.05
+            add_ideas = SAU_economic_dominance_idea
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+    }
+    # =========================================================================
+    # MILITARY DOCTRINE SPLIT: Desert Fortress vs Desert Storm
+    # =========================================================================
+    focus = {
+        id = SAU_military_doctrine_choice
+        icon = GFX_goal_plan
+        cost = 5
+        x = 17
+        y = 1
+        prerequisite = { focus = SAU_army_focus_1 }
+        ai_will_do = {
+            factor = 50
+        }
+        completion_reward = {
+            army_experience = 10
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH }
+    }
+    focus = {
+        id = SAU_desert_fortress_doctrine
+        icon = GFX_goal_defensive_position2
+        cost = 10
+        x = 15
+        y = 2
+        prerequisite = { focus = SAU_military_doctrine_choice }
+        mutually_exclusive = { focus = SAU_desert_storm_doctrine }
+        ai_will_do = {
+            factor = 40
+            modifier = {
+                factor = 2
+                OR = {
+                    has_government = neutrality
+                    has_government = democratic
+                }
+            }
+        }
+        completion_reward = {
+            add_ideas = SAU_desert_fortress_idea
+            add_doctrine_cost_reduction = {
+                name = SAU_desert_fortress_doctrine
+                cost_reduction = 0.75
+                uses = 2
+                category = land_doctrine
+            }
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH }
+    }
+    focus = {
+        id = SAU_desert_storm_doctrine
+        icon = GFX_goal_generic_army_tanks
+        cost = 10
+        x = 19
+        y = 2
+        prerequisite = { focus = SAU_military_doctrine_choice }
+        mutually_exclusive = { focus = SAU_desert_fortress_doctrine }
+        ai_will_do = {
+            factor = 40
+            modifier = {
+                factor = 2
+                OR = {
+                    has_government = fascism
+                    has_government = communism
+                }
+            }
+        }
+        completion_reward = {
+            add_ideas = SAU_desert_storm_idea
+            add_doctrine_cost_reduction = {
+                name = SAU_desert_storm_doctrine
+                cost_reduction = 0.75
+                uses = 2
+                category = land_doctrine
+            }
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH }
+    }
+    focus = {
+        id = SAU_fortify_the_borders
+        icon = GFX_goal_generic_fortify_city
+        cost = 10
+        x = 14
+        y = 4
+        prerequisite = { focus = SAU_desert_fortress_doctrine }
+        ai_will_do = {
+            factor = 45
+        }
+        available = {
+            controls_state = 292
+        }
+        completion_reward = {
+            292 = {
+                add_building_construction = {
+                    type = bunker
+                    level = 3
+                    instant_build = yes
+                }
+            }
+            856 = {
+                add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                }
+            }
+            add_ideas = SAU_fortification_effort_idea
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH }
+    }
+    focus = {
+        id = SAU_conscription_drive
+        icon = GFX_goal_generic_army
+        cost = 10
+        x = 15
+        y = 5
+        prerequisite = { focus = SAU_fortify_the_borders }
+        ai_will_do = {
+            factor = 45
+        }
+        completion_reward = {
+            add_stability = 0.05
+            add_war_support = 0.05
+            add_ideas = SAU_conscription_drive_idea
+            custom_effect_tooltip = SAU_gain_2_generals_tt
+            hidden_effect = {
+                create_corps_commander = {
+                    traits = { infantry_officer }
+                    skill = 3
+                    attack_skill = 1
+                    defense_skill = 4
+                    planning_skill = 2
+                    logistics_skill = 2
+                }
+                create_field_marshal = {
+                    traits = { JAP_defensive_doctrine }
+                    skill = 3
+                    attack_skill = 1
+                    defense_skill = 5
+                    planning_skill = 3
+                    logistics_skill = 2
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_MANPOWER }
+    }
+    focus = {
+        id = SAU_mechanized_assault
+        icon = GFX_goal_generic_army_tanks
+        cost = 10
+        x = 20
+        y = 4
+        prerequisite = { focus = SAU_desert_storm_doctrine }
+        ai_will_do = {
+            factor = 45
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                name = SAU_mechanized_assault
+                bonus = 0.75
+                uses = 2
+                ahead_reduction = 0.5
+                category = armor
+            }
+            add_tech_bonus = {
+                name = SAU_mechanized_assault
+                bonus = 0.5
+                uses = 1
+                category = motorized_equipment
+            }
+            add_equipment_to_stockpile = {
+                type = motorized_equipment
+                amount = 500
+                producer = SAU
+            }
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH }
+    }
+    focus = {
+        id = SAU_blitz_krieg_in_the_sand
+        icon = GFX_goal_generic_allies_build_infantry
+        cost = 10
+        x = 19
+        y = 5
+        prerequisite = { focus = SAU_mechanized_assault }
+        ai_will_do = {
+            factor = 45
+        }
+        completion_reward = {
+            add_ideas = SAU_blitz_sand_idea
+            army_experience = 20
+            add_war_support = 0.10
+            custom_effect_tooltip = SAU_gain_2_generals_tt
+            hidden_effect = {
+                create_corps_commander = {
+                    traits = { trait_reckless armor_officer }
+                    skill = 3
+                    attack_skill = 4
+                    defense_skill = 2
+                    planning_skill = 3
+                    logistics_skill = 1
+                }
+                create_field_marshal = {
+                    traits = { JAP_offensive_doctrine }
+                    skill = 3
+                    attack_skill = 5
+                    defense_skill = 1
+                    planning_skill = 3
+                    logistics_skill = 1
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH }
     }
 }

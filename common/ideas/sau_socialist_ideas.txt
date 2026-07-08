@@ -1,0 +1,53 @@
+sau_workers_rule_idea = {
+    allowed = { }
+    picture = GFX_idea_generic_industry
+    removal_cost = 0
+}
+
+sau_nationalize_industry_idea = {
+    allowed = { }
+    picture = GFX_idea_generic_national_industry
+    removal_cost = 0
+}
+
+sau_land_reform_idea = {
+    allowed = { }
+    picture = GFX_idea_generic_land_reform
+    removal_cost = 0
+}
+
+sau_proletariat_mobilization_idea = {
+    allowed = { }
+    picture = GFX_idea_generic_mobilization
+    removal_cost = 0
+}
+
+sau_hardline_purge_idea = {
+    allowed = { }
+    picture = GFX_idea_generic_political_authority
+    removal_cost = 0
+}
+
+sau_popular_front_idea = {
+    allowed = { }
+    picture = GFX_idea_generic_allies
+    removal_cost = 0
+}
+
+sau_workers_militia_idea = {
+    allowed = { }
+    picture = GFX_idea_generic_mobilization
+    removal_cost = 0
+}
+
+sau_state_planning_idea = {
+    allowed = { }
+    picture = GFX_idea_generic_economy
+    removal_cost = 0
+}
+
+sau_socialist_capstone_idea = {
+    allowed = { }
+    picture = GFX_idea_generic_national_industry
+    removal_cost = 0
+}
