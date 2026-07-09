@@ -1,1 +1,0 @@
-Used Agentic HOI4 Modding for help in modding the Saudi Arabia mod for RT56 
