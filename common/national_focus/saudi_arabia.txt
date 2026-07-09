@@ -4678,7 +4678,7 @@ focus_tree = {
 	focus = {
 		id = SAU_Naval_Effort
 		icon = GFX_focus_generic_shipbuilding
-		x = 97   # Base 27 + 70 SAU offset
+		x = 90   # Base 27 + 70 SAU offset
 		y = 0
 		cost = 10
 
@@ -6557,5 +6557,4 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
-	
 }
