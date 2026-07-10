@@ -888,4 +888,50 @@ ideas = {
             }
         }
 	}
+    SAU_wahhabi_revival = {
+		picture = generic_national_pride
+		allowed = { tag = SAU }
+		modifier = {
+			stability_factor = 0.10
+			political_power_factor = 0.10
+		}
+	}
+ 
+	SAU_second_ikhwan_legion = {
+		picture = generic_manpower
+		allowed = { tag = SAU }
+		modifier = {
+			army_org_factor = 0.05
+			war_support_factor = 0.05
+		}
+	}
+ 
+	SAU_mutaween_secret_police = {
+		picture = generic_secret_police
+		allowed = { tag = SAU }
+		modifier = {
+			stability_factor = 0.05
+			political_power_factor = 0.05
+		}
+		removal_cost = -1
+	}
+ 
+	SAU_export_of_the_awakening = {
+		picture = generic_propaganda
+		allowed = { tag = SAU }
+		modifier = {
+			generate_wargoal_tension_factor = -0.1
+			join_faction_tension_factor = -0.1
+		}
+	}
+ 
+	SAU_caliphate_ambitions = {
+		picture = generic_great_power
+		allowed = { tag = SAU }
+		modifier = {
+			stability_factor = 0.15
+			war_support_factor = 0.15
+			political_power_factor = 0.15
+		}
+	}
 }
