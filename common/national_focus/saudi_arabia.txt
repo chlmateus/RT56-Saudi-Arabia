@@ -2127,7 +2127,7 @@ focus_tree = {
             focus = SAU_claim_the_sinai
         }
         relative_position_id = SAU_claim_the_sinai
-        x = -1
+        x = 0
         y = 1
         ai_will_do = {
             base = 0
@@ -3882,7 +3882,7 @@ focus_tree = {
         id = SAU_administrative_integration
         icon = GFX_focus_generic_industry_1
         cost = 8
-        x = 4.5
+        x = 5.5
         y = 15
         prerequisite = { focus = SAU_integrate_the_levant focus = SAU_our_rightful_domain }
         available = {
@@ -6321,308 +6321,531 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
     focus = {
-		id = SAU_wahhabi_awakening
-		icon = GFX_goal_generic_position_of_power
-		x = -0.5
-		y = 11
-		relative_position_id = SAU_kingdom_at_the_crossroads
-		cost = 10
-		prerequisite = { 
-            focus = SAU_increase_oil_exportations_to_the_allies
-            focus = SAU_deterrence
-            focus = SAU_political_correctness
-        }
-		mutually_exclusive = {
-            focus = SAU_destabilize_the_east
-            focus = SAU_abbasid_revolution
-        }
-		available = {
-			has_civil_war = no
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 100
-			add_popularity = { ideology = fascism popularity = 0.1 }
-			add_ideas = SAU_wahhabi_revival
+	id = SAU_wahhabi_awakening
+	icon = GFX_goal_generic_position_of_power
+	x = -1
+	y = 11
+	relative_position_id = SAU_kingdom_at_the_crossroads
+	cost = 10
+	prerequisite = { 
+		focus = SAU_increase_oil_exportations_to_the_allies
+		focus = SAU_deterrence
+		focus = SAU_political_correctness
+	}
+	mutually_exclusive = {
+		focus = SAU_destabilize_the_east
+		focus = SAU_abbasid_revolution
+	}
+	available = {
+		has_civil_war = no
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = {
+		add_political_power = 100
+		add_popularity = { ideology = fascism popularity = 0.1 }
+		add_ideas = SAU_wahhabi_revival
+	}
+}
+
+focus = {
+	id = SAU_grand_mufti_endorsement
+	icon = GFX_goal_generic_national_unity
+	x = 0
+	y = 1
+	relative_position_id = SAU_wahhabi_awakening
+	cost = 10
+	prerequisite = { focus = SAU_wahhabi_awakening }
+	available = { }
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = {
+		add_political_power = 75
+		add_stability = 0.05
+		add_popularity = { ideology = fascism popularity = 0.05 }
+	}
+}
+
+focus = {
+	id = SAU_mutaween_ascendant
+	icon = GFX_goal_generic_political_pressure
+	x = 0
+	y = 1
+	relative_position_id = SAU_grand_mufti_endorsement
+	cost = 10
+	prerequisite = { focus = SAU_grand_mufti_endorsement }
+	available = { }
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = {
+		add_ideas = SAU_mutaween_secret_police
+		add_stability = 0.05
+	}
+}
+
+focus = {
+	id = SAU_purify_the_court
+	icon = GFX_goal_generic_more_territorial_claims
+	x = 0
+	y = 1
+	relative_position_id = SAU_mutaween_ascendant
+	cost = 10
+	prerequisite = { focus = SAU_mutaween_ascendant }
+	available = { }
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = {
+		add_political_power = 100
+		add_popularity = { ideology = fascism popularity = 0.1 }
+		swap_ideas = {
+			remove_idea = SAU_mutaween_secret_police
+			add_idea = SAU_mutaween_purified  # upgraded version
 		}
 	}
- 
-	focus = {
-		id = SAU_grand_mufti_endorsement
-		icon = GFX_goal_generic_national_unity
-		x = 0
-		y = 1
-		relative_position_id = SAU_wahhabi_awakening
-		cost = 10
-		prerequisite = { focus = SAU_wahhabi_awakening }
-		available = { }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 75
-			add_stability = 0.05
-			add_popularity = { ideology = fascism popularity = 0.05 }
+}
+
+# ========== THREE BRANCHES FROM PURIFY ==========
+
+# ---- Branch A: Military (Left) ----
+focus = {
+	id = SAU_reform_ikhwan_legion
+	icon = GFX_goal_generic_army_effort
+	x = -3
+	y = 1
+	relative_position_id = SAU_purify_the_court
+	cost = 10
+	prerequisite = { focus = SAU_purify_the_court }
+	available = { }
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = {
+		add_ideas = SAU_second_ikhwan_legion
+		army_experience = 20
+	}
+}
+
+focus = {
+	id = SAU_desert_hawks_doctrine
+	icon = GFX_goal_generic_military_sphere
+	x = 0
+	y = 1
+	relative_position_id = SAU_reform_ikhwan_legion
+	cost = 10
+	prerequisite = { focus = SAU_reform_ikhwan_legion }
+	available = { }
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = {
+		army_experience = 30
+		add_tech_bonus = {
+			name = SAU_desert_hawks_bonus
+			bonus = 0.5
+			uses = 1
+			category = infantry_weapons
 		}
 	}
- 
-	focus = {
-		id = SAU_mutaween_ascendant
-		icon = GFX_goal_generic_political_pressure
-		x = 0
-		y = 1
-		relative_position_id = SAU_grand_mufti_endorsement
-		cost = 10
-		prerequisite = { focus = SAU_grand_mufti_endorsement }
-		available = { }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_ideas = SAU_mutaween_secret_police
-			add_stability = 0.05
+}
+
+# New: Elite Legion focus
+focus = {
+	id = SAU_bolom_akwan_legion
+	icon = GFX_goal_generic_army_effort
+	x = 0
+	y = 1
+	relative_position_id = SAU_desert_hawks_doctrine
+	cost = 10
+	prerequisite = { focus = SAU_desert_hawks_doctrine }
+	available = { }
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = {
+		add_ideas = SAU_bolom_akwan_elite
+		army_experience = 30
+		add_tech_bonus = {
+			name = SAU_elite_infantry_bonus
+			bonus = 0.4
+			uses = 2
+			category = infantry_weapons
 		}
 	}
- 
-	focus = {
-		id = SAU_purify_the_court
-		icon = GFX_goal_generic_more_territorial_claims
-		x = 0
-		y = 1
-		relative_position_id = SAU_mutaween_ascendant
-		cost = 10
-		prerequisite = { focus = SAU_mutaween_ascendant }
-		available = { }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 100
-			add_popularity = { ideology = fascism popularity = 0.1 }
-			swap_ideas = {
-				remove_idea = SAU_mutaween_secret_police
-				add_idea = SAU_mutaween_secret_police
-			}
-		}
+}
+
+# New: Optional counter‑doctrine (mutually exclusive with something, but here we just add it as a choice)
+focus = {
+	id = SAU_desert_hawks_decline
+	icon = GFX_goal_generic_military_sphere
+	x = 1.5
+	y = 2
+	relative_position_id = SAU_bolom_akwan_legion  # side branch
+	cost = 10
+	prerequisite = { focus = SAU_bolom_akwan_legion }
+	available = { }
+	ai_will_do = {
+		factor = 0.8
 	}
- 
-	# --- FORK: two internal sub-branches, both completable, later reconverge ---
- 
-	# Branch A — Sword of the Faith (military)
-	focus = {
-		id = SAU_reform_ikhwan_legion
-		icon = GFX_goal_generic_army_effort
-		x = -2
-		y = 1
-		relative_position_id = SAU_purify_the_court
-		cost = 10
-		prerequisite = { focus = SAU_purify_the_court }
-		available = { }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_ideas = SAU_second_ikhwan_legion
-			army_experience = 20
-		}
+	completion_reward = {
+		add_political_power = 50
+		add_ideas = SAU_hawk_decline_doctrine  # gives defensive bonuses instead of offensive
 	}
- 
-	focus = {
-		id = SAU_desert_hawks_doctrine
-		icon = GFX_goal_generic_military_sphere
-		x = 0
-		y = 1
-		relative_position_id = SAU_reform_ikhwan_legion
-		cost = 10
-		prerequisite = { focus = SAU_reform_ikhwan_legion }
-		available = { }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			army_experience = 30
-			add_tech_bonus = {
-				name = SAU_desert_hawks_bonus
-				bonus = 0.5
-				uses = 1
-				category = infantry_weapons
-			}
-		}
+}
+
+focus = {
+	id = SAU_gulf_liberation_plans
+	icon = GFX_goal_generic_demand_territory
+	x = 0
+	y = 1
+	relative_position_id = SAU_bolom_akwan_legion
+	cost = 15
+	prerequisite = { focus = SAU_bolom_akwan_legion }
+	available = { }
+	ai_will_do = {
+		factor = 1
 	}
- 
-	focus = {
-		id = SAU_gulf_liberation_plans
-		icon = GFX_goal_generic_demand_territory
-		x = 0
-		y = 1
-		relative_position_id = SAU_desert_hawks_doctrine
-		cost = 15
-		prerequisite = { focus = SAU_desert_hawks_doctrine }
-		available = { }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 100
-			add_named_threat = { threat = 2 name = SAU_gulf_ambitions_threat }
-			set_country_flag = SAU_gulf_liberation_flag
-			# ADD WARGOAL/CLAIM EFFECTS HERE (e.g. add_state_claim on target Gulf states)
-		}
+	completion_reward = {
+		add_political_power = 100
+		add_named_threat = { threat = 2 name = SAU_gulf_ambitions_threat }
+		set_country_flag = SAU_gulf_liberation_flag
+		# Add claims/wargoals here
 	}
- 
-	# Branch B — Voice of the Ummah (political/ideological)
-	focus = {
-		id = SAU_state_religious_broadcasting
-		icon = GFX_goal_generic_propaganda
-		x = 2
-		y = 1
-		relative_position_id = SAU_purify_the_court
-		cost = 10
-		prerequisite = { focus = SAU_purify_the_court }
-		available = { }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 75
-			add_popularity = { ideology = fascism popularity = 0.05 }
-		}
+}
+
+# ---- Branch B: Political (Right) ----
+focus = {
+	id = SAU_state_religious_broadcasting
+	icon = GFX_goal_generic_propaganda
+	x = 3
+	y = 1
+	relative_position_id = SAU_purify_the_court
+	cost = 10
+	prerequisite = { focus = SAU_purify_the_court }
+	available = { }
+	ai_will_do = {
+		factor = 1
 	}
- 
-	focus = {
-		id = SAU_ummah_solidarity_congress
-		icon = GFX_goal_generic_national_unity
-		x = 0
-		y = 1
-		relative_position_id = SAU_state_religious_broadcasting
-		cost = 10
-		prerequisite = { focus = SAU_state_religious_broadcasting }
-		available = { }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 75
-			add_ideas = SAU_export_of_the_awakening
-		}
+	completion_reward = {
+		add_political_power = 75
+		add_popularity = { ideology = fascism popularity = 0.05 }
 	}
- 
-	focus = {
-		id = SAU_export_the_awakening
-		icon = GFX_goal_generic_political_pressure
-		x = 0
-		y = 1
-		relative_position_id = SAU_ummah_solidarity_congress
-		cost = 10
-		prerequisite = { focus = SAU_ummah_solidarity_congress }
-		available = { }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 100
-			set_country_flag = SAU_exported_awakening_flag
-		}
+}
+
+focus = {
+	id = SAU_ummah_solidarity_congress
+	icon = GFX_goal_generic_national_unity
+	x = 0
+	y = 1
+	relative_position_id = SAU_state_religious_broadcasting
+	cost = 10
+	prerequisite = { focus = SAU_state_religious_broadcasting }
+	available = { }
+	ai_will_do = {
+		factor = 1
 	}
- 
-	# --- RECONVERGENCE: requires both branches complete ---
-	focus = {
-		id = SAU_sword_and_scripture
-		icon = GFX_goal_generic_position_of_power
-		x = 2
-		y = 1
-		relative_position_id = SAU_gulf_liberation_plans
-		cost = 15
-		prerequisite = { focus = SAU_gulf_liberation_plans }
-		prerequisite = { focus = SAU_export_the_awakening }
-		available = { }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 100
-			add_stability = 0.1
-			add_war_support = 0.1
-		}
+	completion_reward = {
+		add_political_power = 75
+		add_ideas = SAU_ummah_solidarity
 	}
- 
-	focus = {
-		id = SAU_second_saudi_conquest
-		icon = GFX_goal_generic_demand_territory
-		x = 0
-		y = 1
-		relative_position_id = SAU_sword_and_scripture
-		cost = 15
-		prerequisite = { focus = SAU_sword_and_scripture }
-		available = { }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 100
-			army_experience = 30
-			# ADD WARGOAL/CLAIM EFFECTS HERE (e.g. add_state_claim / create_wargoal
-			# against a chosen neighbor, using your RT56 claim system)
-		}
+}
+
+focus = {
+	id = SAU_export_the_awakening
+	icon = GFX_goal_generic_political_pressure
+	x = 0
+	y = 1
+	relative_position_id = SAU_ummah_solidarity_congress
+	cost = 10
+	prerequisite = { focus = SAU_ummah_solidarity_congress }
+	available = { }
+	ai_will_do = {
+		factor = 1
 	}
- 
-	focus = {
-		id = SAU_kingdom_unbound
-		icon = GFX_goal_generic_national_unity
-		x = 0
-		y = 1
-		relative_position_id = SAU_second_saudi_conquest
-		cost = 15
-		prerequisite = { focus = SAU_second_saudi_conquest }
-		available = { }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 150
-			add_popularity = { ideology = fascism popularity = 0.15 }
-			add_stability = 0.1
-		}
+	completion_reward = {
+		add_political_power = 100
+		set_country_flag = SAU_exported_awakening_flag
+		add_ideas = SAU_awakening_export
 	}
- 
-	focus = {
-		id = SAU_defender_of_the_two_holy_cities
-		icon = GFX_goal_generic_more_territorial_claims
-		x = 0
-		y = 1
-		relative_position_id = SAU_kingdom_unbound
-		cost = 10
-		prerequisite = { focus = SAU_kingdom_unbound }
-		available = { }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 100
-			add_ideas = SAU_export_of_the_awakening
-			add_war_support = 0.1
-		}
+}
+
+# New: Support the Awakening (global influence)
+focus = {
+	id = SAU_support_the_awakening
+	icon = GFX_goal_generic_political_pressure
+	x = 0
+	y = 1
+	relative_position_id = SAU_export_the_awakening
+	cost = 15
+	prerequisite = { focus = SAU_export_the_awakening }
+	available = { }
+	ai_will_do = {
+		factor = 1
 	}
- 
-	focus = {
-		id = SAU_new_caliphate_declared
-		icon = GFX_goal_generic_position_of_power
-		x = 0
-		y = 1
-		relative_position_id = SAU_defender_of_the_two_holy_cities
-		cost = 20
-		prerequisite = { focus = SAU_defender_of_the_two_holy_cities }
-		available = { }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 200
-			add_ideas = SAU_caliphate_ambitions
-			add_war_support = 0.2
-			add_stability = 0.15
-		}
+	completion_reward = {
+		add_political_power = 100
+		add_popularity = { ideology = fascism popularity = 0.1 }
+		add_ideas = SAU_global_awakening
+		add_named_threat = { threat = 1 name = SAU_awakening_threat }
 	}
+}
+
+# New: Further diplomatic integration
+focus = {
+	id = SAU_ummah_integration
+	icon = GFX_goal_generic_demand_territory
+	x = 0.75
+	y = 1
+	relative_position_id = SAU_support_the_awakening  # side branch
+	cost = 10
+	prerequisite = { focus = SAU_support_the_awakening }
+	available = { }
+	ai_will_do = {
+		factor = 0.7
+	}
+	completion_reward = {
+		add_political_power = 75
+		add_stability = 0.05
+		add_ideas = SAU_pan_arab_union
+	}
+}
+
+# ---- Branch C: Economic (Center) ----
+# New: Wealthful Awakening – focus on oil wealth
+focus = {
+	id = SAU_wealthful_awakening
+	icon = GFX_goal_generic_construct
+	x = 0
+	y = 1
+	relative_position_id = SAU_purify_the_court
+	cost = 10
+	prerequisite = { focus = SAU_purify_the_court }
+	available = { }
+	ai_will_do = {
+		factor = 0.8
+	}
+	completion_reward = {
+		add_political_power = 50
+		add_ideas = SAU_oil_boom
+		add_stability = 0.05
+	}
+}
+
+# New: Oil Industrialisation
+focus = {
+	id = SAU_oil_industrialisation
+	icon = GFX_goal_generic_construct
+	x = 0
+	y = 1
+	relative_position_id = SAU_wealthful_awakening
+	cost = 10
+	prerequisite = { focus = SAU_wealthful_awakening }
+	available = { }
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = {
+		add_ideas = SAU_oil_industrial_complex
+		add_extra_state_shared_building_slots = 2
+	}
+}
+
+# New: Infrastructure Megaprojects
+focus = {
+	id = SAU_infrastructure_megaprojects
+	icon = GFX_goal_generic_construct
+	x = 0
+	y = 1
+	relative_position_id = SAU_oil_industrialisation
+	cost = 15
+	prerequisite = { focus = SAU_oil_industrialisation }
+	available = { }
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = {
+		add_ideas = SAU_modern_infrastructure
+		add_factory = { type = civilian_factory amount = 3 }
+		add_factory = { type = military_factory amount = 1 }
+	}
+}
+
+# ========== RECONVERGENCE ==========
+# Now requires both military (gulf_liberation) and political (support_the_awakening) branches complete.
+# The economic branch is optional but can be taken too.
+focus = {
+	id = SAU_sword_and_scripture
+	icon = GFX_goal_generic_position_of_power
+	x = 0
+	y = 1
+	relative_position_id = SAU_gulf_liberation_plans  # placed below the military branch; we'll adjust visually later
+	cost = 15
+	prerequisite = {
+		focus = SAU_gulf_liberation_plans
+		focus = SAU_support_the_awakening
+	}
+	available = { }
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = {
+		add_political_power = 100
+		add_stability = 0.1
+		add_war_support = 0.1
+		add_ideas = SAU_sword_and_scripture_spirit
+	}
+}
+
+# Alternative name from image: second_and_sacrifice – can be an optional side focus
+focus = {
+	id = SAU_second_and_sacrifice
+	icon = GFX_goal_generic_national_unity
+	x = 1.5
+	y = 2
+	relative_position_id = SAU_sword_and_scripture
+	cost = 10
+	prerequisite = { focus = SAU_sword_and_scripture }
+	available = { }
+	ai_will_do = {
+		factor = 0.6
+	}
+	completion_reward = {
+		add_political_power = 75
+		add_stability = 0.05
+		add_war_support = 0.05
+	}
+}
+
+# ========== FINAL CONQUEST PATH ==========
+focus = {
+	id = SAU_second_saudi_conquest
+	icon = GFX_goal_generic_demand_territory
+	x = 0
+	y = 1
+	relative_position_id = SAU_sword_and_scripture
+	cost = 15
+	prerequisite = { focus = SAU_sword_and_scripture }
+	available = { }
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = {
+		add_political_power = 100
+		army_experience = 30
+		# Add claims/wargoals
+	}
+}
+
+focus = {
+	id = SAU_kingdom_unbound
+	icon = GFX_goal_generic_national_unity
+	x = 0
+	y = 1
+	relative_position_id = SAU_second_saudi_conquest
+	cost = 15
+	prerequisite = { focus = SAU_second_saudi_conquest }
+	available = { }
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = {
+		add_political_power = 150
+		add_popularity = { ideology = fascism popularity = 0.15 }
+		add_stability = 0.1
+		add_ideas = SAU_kingdom_unbound_spirit
+	}
+}
+
+focus = {
+	id = SAU_defender_of_the_two_holy_cities
+	icon = GFX_goal_generic_more_territorial_claims
+	x = 0
+	y = 1
+	relative_position_id = SAU_kingdom_unbound
+	cost = 10
+	prerequisite = { focus = SAU_kingdom_unbound }
+	available = { }
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = {
+		add_political_power = 100
+		add_ideas = SAU_defender_of_holy_sites
+		add_war_support = 0.1
+	}
+}
+
+# New: Alternative defender with "new" holy cities (maybe expansionist)
+focus = {
+	id = SAU_defender_of_the_new_holy_cities
+	icon = GFX_goal_generic_more_territorial_claims
+	x = 1
+	y = 1
+	relative_position_id = SAU_defender_of_the_two_holy_cities
+	cost = 10
+	prerequisite = { focus = SAU_defender_of_the_two_holy_cities }
+	available = { }
+	ai_will_do = {
+		factor = 0.7
+	}
+	completion_reward = {
+		add_political_power = 50
+		add_ideas = SAU_new_holy_guardian
+		add_war_support = 0.05
+	}
+}
+
+# ========== FINAL CHOICE: DECLARE OR DEBUNK THE CALIPHATE ==========
+# Declare – aggressive, war support
+focus = {
+	id = SAU_new_caliphate_declared
+	icon = GFX_goal_generic_position_of_power
+	x = -1
+	y = 1
+	relative_position_id = SAU_defender_of_the_two_holy_cities
+	cost = 20
+	prerequisite = { focus = SAU_defender_of_the_two_holy_cities }
+	mutually_exclusive = {
+		focus = SAU_new_caliphate_debunked
+	}
+	available = { }
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = {
+		add_political_power = 200
+		add_ideas = SAU_caliphate_ambitions
+		add_war_support = 0.2
+		add_stability = 0.05
+		add_popularity = { ideology = fascism popularity = 0.2 }
+	}
+}
+
+# Debunk – moderate, stability and legitimacy
+focus = {
+	id = SAU_new_caliphate_debunked
+	icon = GFX_goal_generic_national_unity
+	x = 1
+	y = 1
+	relative_position_id = SAU_defender_of_the_two_holy_cities
+	cost = 20
+	prerequisite = { focus = SAU_defender_of_the_two_holy_cities }
+	mutually_exclusive = {
+		focus = SAU_new_caliphate_declared
+	}
+	available = { }
+	ai_will_do = {
+		factor = 0.6
+	}
+	completion_reward = {
+		add_political_power = 150
+		add_ideas = SAU_caliphate_debunked
+		add_stability = 0.2
+		add_war_support = -0.05  # less aggressive
+		add_popularity = { ideology = fascism popularity = 0.05 }
+	}
+}
 }
