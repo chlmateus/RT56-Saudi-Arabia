@@ -934,4 +934,63 @@ ideas = {
 			political_power_factor = 0.15
 		}
 	}
+        SAU_civil_service_reform_idea = {
+        modifier = {
+            political_power_gain = 0.05
+        }
+    }
+    SAU_majlis_al_shura_idea = {
+        modifier = {
+            political_power_gain = 0.10
+            stability = 0.05
+        }
+    }
+    SAU_modern_civil_service_idea = {
+        modifier = {
+            factory_output = 0.05
+            construction_speed = 0.05
+        }
+    }
+    SAU_elite_compromise_idea = {
+        modifier = {
+            stability = 0.10
+            trade_volume = 0.10
+        }
+    }
+    SAU_tribal_pact_idea = {
+        modifier = {
+            stability = 0.05
+            war_support = 0.05
+        }
+    }
+    SAU_grassroots_reform_idea = {
+        modifier = {
+            daily_democratic_drift = 0.10
+            stability = -0.05
+        }
+    }
+    SAU_free_press_and_unions_idea = {
+        modifier = {
+            research_speed = 0.10
+            factory_output = 0.05
+            stability = -0.05
+        }
+    }
+    SAU_constitutional_convention_idea = {
+        modifier = {
+            political_power_gain = 0.15
+        }
+    }
+    SAU_constitutional_monarchy_idea = {
+        modifier = {
+            stability = 0.10
+            democratic = 0.10
+        }
+    }
+    SAU_parliamentary_democracy_idea = {
+        modifier = {
+            political_power_gain = 0.10
+            stability = 0.15
+        }
+    }
 }

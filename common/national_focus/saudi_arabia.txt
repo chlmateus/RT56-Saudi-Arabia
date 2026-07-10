@@ -6848,4 +6848,297 @@ focus = {
 		add_popularity = { ideology = fascism popularity = 0.05 }
 	}
 }
+    ###################################
+    ### CONSTITUTIONAL REFORM BRANCH ##
+    ###################################
+
+    focus = {
+        id = SAU_administrative_reform
+        icon = GFX_focus_generic_reform_government
+        cost = 5
+        x = -5
+        y = 1
+        relative_position_id = SAU_The_Crossroads
+        prerequisite = { focus = SAU_The_Crossroads }
+        ai_will_do = {
+            factor = 15
+        }
+        available = {
+            has_government = neutrality
+        }
+        completion_reward = {
+            add_political_power = 120
+            add_stability = 0.05
+            add_ideas = SAU_civil_service_reform_idea
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_establish_majlis_al_shura
+        icon = GFX_goal_generic_parliament
+        cost = 5
+        x = 0
+        y = 1
+        relative_position_id = SAU_administrative_reform
+        prerequisite = { focus = SAU_administrative_reform }
+        ai_will_do = {
+            factor = 15
+        }
+        completion_reward = {
+            add_political_power = 150
+            add_stability = 0.05
+            add_ideas = SAU_majlis_al_shura_idea
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_civil_service_modernization
+        icon = GFX_focus_generic_national_focus
+        cost = 5
+        x = 0
+        y = 1
+        relative_position_id = SAU_establish_majlis_al_shura
+        prerequisite = { focus = SAU_establish_majlis_al_shura }
+        ai_will_do = {
+            factor = 15
+        }
+        completion_reward = {
+            add_political_power = 100
+            add_stability = 0.05
+            add_ideas = SAU_modern_civil_service_idea
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_elite_compromise
+        icon = GFX_focus_generic_industrialists
+        cost = 5
+        x = -2
+        y = 1
+        relative_position_id = SAU_civil_service_modernization
+        prerequisite = { focus = SAU_civil_service_modernization }
+        mutually_exclusive = { focus = SAU_grassroots_reform }
+        ai_will_do = {
+            factor = 10
+        }
+        completion_reward = {
+            add_stability = 0.10
+            add_ideas = SAU_elite_compromise_idea
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_merchant_guild_alliance
+        icon = GFX_goal_generic_financial_markets
+        cost = 5
+        x = 1
+        y = 1
+        relative_position_id = SAU_elite_compromise
+        prerequisite = { focus = SAU_elite_compromise }
+        ai_will_do = {
+            factor = 10
+        }
+        completion_reward = {
+            if = {
+                limit = { has_idea = free_trade }
+                add_political_power = 100
+            }
+            else = {
+                add_ideas = free_trade
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 0
+                        include_locked = yes
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 0
+                        include_locked = yes
+                    }
+                }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = SAU_tribal_nobility_pact
+        icon = GFX_focus_ETH_sway_the_warlords
+        cost = 5
+        x = 1
+        y = 1
+        relative_position_id = SAU_merchant_guild_alliance
+        prerequisite = { focus = SAU_merchant_guild_alliance }
+        ai_will_do = {
+            factor = 10
+        }
+        completion_reward = {
+            add_stability = 0.05
+            add_war_support = 0.05
+            add_ideas = SAU_tribal_pact_idea
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_grassroots_reform
+        icon = GFX_goal_democracy_people
+        cost = 5
+        x = 2
+        y = 1
+        relative_position_id = SAU_civil_service_modernization
+        prerequisite = { focus = SAU_civil_service_modernization }
+        mutually_exclusive = { focus = SAU_elite_compromise }
+        ai_will_do = {
+            factor = 10
+        }
+        completion_reward = {
+            add_stability = -0.10
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.15
+            }
+            add_ideas = SAU_grassroots_reform_idea
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_national_education_initiative
+        icon = GFX_focus_generic_university_2
+        cost = 5
+        x = -1
+        y = 1
+        relative_position_id = SAU_grassroots_reform
+        prerequisite = { focus = SAU_grassroots_reform }
+        ai_will_do = {
+            factor = 10
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                name = SAU_education_bonus
+                bonus = 0.5
+                uses = 2
+                category = industry
+            }
+            add_tech_bonus = {
+                name = SAU_education_bonus_electronics
+                bonus = 0.5
+                uses = 1
+                category = electronics
+            }
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH }
+    }
+
+    focus = {
+        id = SAU_press_and_labor_unions
+        icon = GFX_goal_generic_censorship
+        cost = 5
+        x = -1
+        y = 1
+        relative_position_id = SAU_national_education_initiative
+        prerequisite = { focus = SAU_national_education_initiative }
+        ai_will_do = {
+            factor = 10
+        }
+        completion_reward = {
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.10
+            }
+            add_stability = -0.05
+            add_political_power = 50
+            add_ideas = SAU_free_press_and_unions_idea
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_constitutional_convention
+        icon = GFX_focus_hol_the_foundations_of_defense
+        cost = 8
+        x = 0
+        y = 4
+        relative_position_id = SAU_civil_service_modernization
+        prerequisite = { focus = SAU_tribal_nobility_pact focus = SAU_press_and_labor_unions }
+        ai_will_do = {
+            factor = 15
+        }
+        completion_reward = {
+            add_political_power = 200
+            add_stability = 0.10
+            add_ideas = SAU_constitutional_convention_idea
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_constitutional_monarchy_act
+        icon = GFX_focus_generic_reform_government
+        cost = 8
+        x = 0
+        y = 1
+        relative_position_id = SAU_constitutional_convention
+        prerequisite = { focus = SAU_constitutional_convention }
+        ai_will_do = {
+            factor = 15
+        }
+        completion_reward = {
+            add_stability = 0.10
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.20
+            }
+            add_ideas = SAU_constitutional_monarchy_idea
+            set_politics = {
+                ruling_party = democratic
+                elections_allowed = yes
+            }
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_first_parliamentary_elections
+        icon = GFX_goal_generic_election
+        cost = 10
+        x = 0
+        y = 1
+        relative_position_id = SAU_constitutional_monarchy_act
+        prerequisite = { focus = SAU_constitutional_monarchy_act }
+        ai_will_do = {
+            factor = 20
+        }
+        completion_reward = {
+            add_stability = 0.15
+            add_political_power = 150
+            add_ideas = SAU_parliamentary_democracy_idea
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
 }
