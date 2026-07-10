@@ -6856,15 +6856,17 @@ focus = {
         id = SAU_administrative_reform
         icon = GFX_focus_generic_reform_government
         cost = 5
-        x = -5
+        x = -9
         y = 1
-        relative_position_id = SAU_The_Crossroads
-        prerequisite = { focus = SAU_The_Crossroads }
+        relative_position_id = SAU_diplomacy_in_the_sand
+        prerequisite = { focus = SAU_diplomacy_in_the_sand }
+        mutually_exclusive = { 
+            focus = SAU_continue_hakimovs_legacy 
+            focus = SAU_seek_german_arms 
+            focus = SAU_introduce_the_constitution 
+        }
         ai_will_do = {
             factor = 15
-        }
-        available = {
-            has_government = neutrality
         }
         completion_reward = {
             add_political_power = 120
@@ -7085,7 +7087,9 @@ focus = {
         x = 0
         y = 4
         relative_position_id = SAU_civil_service_modernization
-        prerequisite = { focus = SAU_tribal_nobility_pact focus = SAU_press_and_labor_unions }
+        # Separate prerequisite blocks act as an OR condition. This prevents bugs where mutually exclusive focuses block progression.
+        prerequisite = { focus = SAU_tribal_nobility_pact }
+        prerequisite = { focus = SAU_press_and_labor_unions }
         ai_will_do = {
             factor = 15
         }

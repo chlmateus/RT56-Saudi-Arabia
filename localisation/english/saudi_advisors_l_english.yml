@@ -59,3 +59,52 @@
  SAU_constitutional_convention_idea: "Constitutional Convention"
  SAU_constitutional_monarchy_idea: "Constitutional Monarchy"
  SAU_parliamentary_democracy_idea: "Parliamentary Democracy"
+ l_english:
+ 
+ SAU_administrative_reform: "Administrative Reform"
+ SAU_administrative_reform_desc: "The foundation of a modern state rests upon the efficiency of its administration. By reforming our bureaucratic apparatus and adopting standardized procedures, we shall replace arbitrary governance with the rule of law."
+ 
+ SAU_establish_majlis_al_shura: "Establish the Majlis al-Shura"
+ SAU_establish_majlis_al_shura_desc: "To bridge the gap between the sovereign and the subjects, a formal Consultative Assembly must be established. The Majlis al-Shura will provide a platform for learned voices to guide the state's affairs, ensuring that the concerns of the people resonate within the halls of power."
+ 
+ SAU_civil_service_modernization: "Civil Service Modernization"
+ SAU_civil_service_modernization_desc: "A progressive state requires a competent and meritocratic civil service. We will invest in training our administrators, establishing institutions that foster professionalism and shield the bureaucracy from the whims of nepotism."
+ 
+ SAU_elite_compromise: "The Elite Compromise"
+ SAU_elite_compromise_desc: "Change must be gradual to be lasting. By engaging the merchant elites and tribal nobility, we can orchestrate a peaceful transition of power. Their cooperation will guarantee that our march toward constitutionalism does not fracture the realm."
+ 
+ SAU_merchant_guild_alliance: "Merchant Guild Alliance"
+ SAU_merchant_guild_alliance_desc: "The merchant houses are the engines of our prosperity. By granting them formal representation and easing trade restrictions, we secure their economic might in service of the state, fostering an era of industrial expansion and commercial vitality."
+ 
+ SAU_tribal_nobility_pact: "Tribal Nobility Pact"
+ SAU_tribal_nobility_pact_desc: "The tribes are the historical backbone of Arabia. By enshrining their traditional rights within the new legal framework, we transform potential adversaries into partners, ensuring the stability of the realm as we venture into uncharted political waters."
+ 
+ SAU_grassroots_reform: "Grassroots Reform"
+ SAU_grassroots_reform_desc: "True legitimacy springs from the will of the people. By embracing grassroots reform, we accept the initial turbulence of political awakening to forge a deeply rooted democracy. The masses must be empowered, for they are the true sovereigns of this land."
+ 
+ SAU_national_education_initiative: "National Education Initiative"
+ SAU_national_education_initiative_desc: "An enlightened populace is the ultimate safeguard of liberty. We will launch a comprehensive initiative to build schools and universities, eradicating ignorance and equipping our citizens with the knowledge required to participate in national governance."
+ 
+ SAU_press_and_labor_unions: "Free Press and Labor Unions"
+ SAU_press_and_labor_unions_desc: "The state must not fear the voice of its workers. By legalizing labor unions and dismantling censorship, we invite a period of vibrant civic discourse. Though it may challenge the old order, a free press is the lifeblood of a modern constitutional state."
+ 
+ SAU_constitutional_convention: "The Constitutional Convention"
+ SAU_constitutional_convention_desc: "The hour of codification has arrived. Delegates from across the Kingdom—scholars, merchants, and representatives of the people—shall convene in Riyadh to draft the supreme law of the land. This constitution will bind the monarch and the citizen alike under a shared legal compact."
+ 
+ SAU_constitutional_monarchy_act: "The Constitutional Monarchy Act"
+ SAU_constitutional_monarchy_act_desc: "The deliberations are complete. His Majesty signs the Basic Law of Governance, formally transforming the absolute monarchy into a constitutional one. The Crown shall remain the symbolic heart of the nation, while executive authority is entrusted to an accountable government."
+ 
+ SAU_first_parliamentary_elections: "First Parliamentary Elections"
+ SAU_first_parliamentary_elections_desc: "The culmination of our progressive endeavor is at hand. The Kingdom shall hold its first free and fair parliamentary elections. As the ballots are cast and counted, a new Arabia emerges—a state of laws, rights, and popular representation."
+
+ # Ideas
+ SAU_civil_service_reform_idea: "Administrative Reform"
+ SAU_majlis_al_shura_idea: "Majlis al-Shura"
+ SAU_modern_civil_service_idea: "Modern Civil Service"
+ SAU_elite_compromise_idea: "The Elite Compromise"
+ SAU_tribal_pact_idea: "Tribal Nobility Pact"
+ SAU_grassroots_reform_idea: "Grassroots Awakening"
+ SAU_free_press_and_unions_idea: "Free Press & Labor Unions"
+ SAU_constitutional_convention_idea: "Constitutional Convention"
+ SAU_constitutional_monarchy_idea: "Constitutional Monarchy"
+ SAU_parliamentary_democracy_idea: "Parliamentary Democracy"
