@@ -538,9 +538,9 @@ focus_tree = {
         id = SAU_continue_hakimovs_legacy
         icon = GFX_goal_spread_communism
         cost = 5
-        prerequisite = { focus = SAU_diplomacy_in_the_sand }
-        mutually_exclusive = { focus = SAU_introduce_the_constitution focus = SAU_seek_german_arms }
-        relative_position_id = SAU_diplomacy_in_the_sand
+        prerequisite = { focus = SAU_administrative_reform }
+        mutually_exclusive = { focus = SAU_seek_german_arms }
+        relative_position_id = SAU_administrative_reform
         x = 0
         y = 1
         ai_will_do = {
@@ -558,15 +558,14 @@ focus_tree = {
     focus = {
         id = SAU_seek_german_arms
         icon = GFX_focus_ger_oppose_hitler
-        prerequisite = { focus = SAU_diplomacy_in_the_sand }
+        prerequisite = { focus = SAU_administrative_reform }
         prerequisite = {
             focus = SAU_invite_foreign_investors focus = SAU_placate_the_tribes focus = SAU_liberalize_the_market
         }
         mutually_exclusive = {
-            focus = SAU_introduce_the_constitution
             focus = SAU_continue_hakimovs_legacy
         }
-        relative_position_id = SAU_diplomacy_in_the_sand
+        relative_position_id = SAU_administrative_reform
         ai_will_do = {
             factor = 10
         }
@@ -597,113 +596,7 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
-    focus = {
-        id = SAU_introduce_the_constitution
-        icon = GFX_focus_hol_the_foundations_of_defense
-        cost = 5
-        mutually_exclusive = {
-            focus = SAU_seek_german_arms
-            focus = SAU_continue_hakimovs_legacy
-        }
-        relative_position_id = SAU_diplomacy_in_the_sand
-        prerequisite = { focus = SAU_diplomacy_in_the_sand }
-        prerequisite = {
-            focus = SAU_liberalize_the_market focus = SAU_improve_our_infrastructure
-        }
-        x = -3
-        y = 1
-        ai_will_do = {
-            factor = 10
-        }
-        completion_reward = {
-            add_stability = 0.05
-            add_popularity = {
-                ideology = democratic
-                popularity = 0.1
-            }
-            custom_effect_tooltip = generic_skip_one_line_tt
-            add_ideas = PER_restore_constitutionalism
-        }
-        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
-    }
-    focus = {
-        id = SAU_democraticize_the_administration
-        icon = GFX_goal_democracy_people
-        cost = 8
-        prerequisite = {
-            focus = SAU_introduce_the_constitution
-        }
-        relative_position_id = SAU_introduce_the_constitution
-        ai_will_do = {
-            factor = 30
-        }
-        completion_reward = {
-            add_popularity = {
-                ideology = democratic
-                popularity = 0.1
-            }
-            custom_effect_tooltip = generic_skip_one_line_tt
-            set_politics = {
-                ruling_party = democratic
-                elections_allowed = yes
-                last_election = 1936.1.1
-                long_name = "National Assembly Party"
-                name = "National Assembly Party"
-            }
-            custom_effect_tooltip = generic_skip_one_line_tt
-            SAU_abdulaziz_ibn_saud = {
-                add_country_leader_role = {
-                    country_leader = {
-                        expire = "1965.1.1"
-                        ideology = oligarchic_democracy
-                        traits = {
-                            SAU_abdulaziz_al_saud_of_saudi_arabia SAU_the_great_unifier
-                        }
-                    }
-                    promote_leader = yes
-                }
-            }
-        }
-        search_filters = { FOCUS_FILTER_RESEARCH }
-        x = 0
-        y = 1
-    }
-    focus = {
-        id = SAU_invite_western_advisors
-        icon = GFX_focus_generic_befriend_saudi_arabia
-        cost = 8
-        prerequisite = {
-            focus = SAU_introduce_the_constitution
-        }
-        relative_position_id = SAU_introduce_the_constitution
-        ai_will_do = {
-            factor = 30
-        }
-        completion_reward = {
-            add_popularity = {
-                ideology = democratic
-                popularity = 0.05
-            }
-            custom_effect_tooltip = generic_skip_one_line_tt
-            add_tech_bonus = {
-                name = SAU_invite_western_advisors
-                bonus = 0.75
-                uses = 1
-                category = industry
-            }
-            custom_effect_tooltip = generic_skip_one_line_tt
-            add_tech_bonus = {
-                name = SAU_invite_western_advisors
-                bonus = 0.75
-                uses = 1
-                ahead_reduction = 0.5
-                category = electronics
-            }
-        }
-        search_filters = { FOCUS_FILTER_RESEARCH }
-        x = -1
-        y = 2
-    }
+
     focus = {
         id = SAU_enforce_the_zakat
         icon = GFX_focus_hol_abandon_the_gold_standard
@@ -733,7 +626,7 @@ focus_tree = {
         icon = GFX_focus_generic_population_growth
         cost = 8
         prerequisite = {
-            focus = SAU_introduce_the_constitution focus = SAU_seek_german_arms focus = SAU_continue_hakimovs_legacy
+            focus = SAU_administrative_reform focus = SAU_seek_german_arms
         }
         ai_will_do = {
             factor = 41
@@ -755,7 +648,7 @@ focus_tree = {
         icon = GFX_focus_DEN_no_regulations
         cost = 8
         prerequisite = {
-            focus = SAU_introduce_the_constitution focus = SAU_continue_hakimovs_legacy
+            focus = SAU_administrative_reform focus = SAU_continue_hakimovs_legacy
         }
         
         ai_will_do = {
@@ -786,7 +679,7 @@ focus_tree = {
         search_filters = { FOCUS_FILTER_POLITICAL }
         x = 2
         y = 1
-        relative_position_id = SAU_introduce_the_constitution
+        relative_position_id = SAU_administrative_reform
     }
     focus = {
         id = SAU_enocurage_the_hajj
@@ -835,7 +728,7 @@ focus_tree = {
         cost = 10
         prerequisite = {
             focus = SAU_seek_german_arms
-            focus = SAU_introduce_the_constitution
+            focus = SAU_administrative_reform
             focus = SAU_continue_hakimovs_legacy
         }
         available = {
@@ -850,7 +743,7 @@ focus_tree = {
         search_filters = { FOCUS_FILTER_RESEARCH }
         x = 1
         y = 2
-        relative_position_id = SAU_introduce_the_constitution
+        relative_position_id = SAU_administrative_reform
     }
     focus = {
         id = SAU_influence_the_king
@@ -926,7 +819,6 @@ focus_tree = {
             focus = SAU_provide_shelter_for_fritz_gobba
         }
         mutually_exclusive = {
-            focus = SAU_western_alignment
             focus = SAU_maintain_international_neutrality
             focus = SAU_join_the_comintern
         }
@@ -969,10 +861,9 @@ focus_tree = {
         icon = GFX_goal_generic_neutrality_focus
         cost = 5
         prerequisite = {
-            focus = SAU_invite_western_advisors focus = SAU_influence_the_king focus = SAU_provide_shelter_for_fritz_gobba
+            focus = SAU_administrative_reform focus = SAU_influence_the_king focus = SAU_provide_shelter_for_fritz_gobba
         }
         mutually_exclusive = {
-            focus = SAU_western_alignment
             focus = SAU_move_toward_german_alignment
             focus = SAU_join_the_comintern
         }
@@ -988,14 +879,13 @@ focus_tree = {
         search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
         x = 1
         y = 1
-        relative_position_id = SAU_invite_western_advisors
+        relative_position_id = SAU_administrative_reform
     }
-    focus = { 
+    focus = {
         id = SAU_join_the_comintern
         icon = GFX_focus_generic_join_comintern
         prerequisite = { focus = SAU_influence_the_king }
         mutually_exclusive = {
-            focus = SAU_western_alignment
             focus = SAU_move_toward_german_alignment
             focus = SAU_maintain_international_neutrality
         }
@@ -1056,42 +946,6 @@ focus_tree = {
         }
     }
     focus = {
-        id = SAU_western_alignment
-        icon = GFX_allies
-        cost = 5
-        prerequisite = {
-            focus = SAU_invite_western_advisors
-        }
-        mutually_exclusive = {
-            focus = SAU_move_toward_german_alignment
-            focus = SAU_maintain_international_neutrality
-            focus = SAU_join_the_comintern
-        }
-        available = {
-            is_in_faction = no
-            is_puppet = no
-            ENG = {
-                is_faction_leader = yes
-                exists = yes
-                NOT = {
-                    has_government = communism
-                    has_war_with = ROOT
-                }
-            }
-        }
-        ai_will_do = {
-            factor = 10
-        }
-        completion_reward = {
-            ENG = {
-                country_event = generic.2
-            }
-        }
-        x = -1
-        y = 1
-        relative_position_id = SAU_invite_western_advisors
-    }
-    focus = {
         id = SAU_request_german_guns
         icon = GFX_focus_ger_reichskommisariats
         cost = 5
@@ -1141,93 +995,7 @@ focus_tree = {
         y = 1
         relative_position_id = SAU_move_toward_german_alignment
     }
-    focus = {
-        id = SAU_increase_oil_exportations_to_the_allies
-        icon = GFX_goal_generic_positive_trade_relations
-        cost = 5
-        prerequisite = {
-            focus = SAU_western_alignment
-        }
-        available = {
-            NOT = {
-                has_war_with = ENG
-            }
-        }
-        ai_will_do = {
-            factor = 45
-        }
-        completion_reward = {
-            add_ideas = SAU_increase_oil_exports_to_the_allies
-        }
-        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_OIL }
-        x = 0
-        y = 2
-        relative_position_id = SAU_western_alignment
-    }
-    focus = { 
-        id = SAU_form_a_volunteer_force
-        icon = GFX_goal_generic_army
-        prerequisite = {
-            focus = SAU_western_alignment focus = SAU_maintain_international_neutrality
-        }
-        relative_position_id = SAU_western_alignment
-        x = 1
-        y = 1
-        cost = 5
-        ai_will_do = {
-            factor = 5            
-        }        
-        completion_reward = {
-            set_rule = {
-                can_send_volunteers = yes
-            }
-            add_ideas = SAU_volunteer_corps
-        }
-        search_filters = { FOCUS_FILTER_INDUSTRY }
-    }
-    focus = {
-        id = SAU_USS_quincy_meeting
-        icon = GFX_focus_ARG_study_the_battle_of_the_river_plate
-        cost = 5
-        prerequisite = {
-            focus = SAU_western_alignment
-        }
-        available = {
-            NOT = {
-                has_war_with = USA
-            }
-        }
-        ai_will_do = {
-            factor = 45
-        }
-        completion_reward = {
-            add_equipment_to_stockpile = {
-                type = infantry_equipment_1
-                amount = 2500
-                producer = USA
-            }
-            custom_effect_tooltip = generic_skip_one_line_tt
-            add_doctrine_cost_reduction = {
-                name = naval_doc_bonus
-                cost_reduction = 0.5
-                uses = 1
-                category = naval_doctrine
-            }
-            custom_effect_tooltip = NIC_dock_access
-            hidden_effect = {
-                USA = {
-                    diplomatic_relation = {
-                        country = NIC
-                        relation = docking_rights
-                        active = yes
-                    }
-                }
-            }
-        }
-        x = -1
-        y = 1
-        relative_position_id = SAU_western_alignment
-    }
+
     
     ###################################
     ### NEW ARMY TREE #################
@@ -3747,7 +3515,7 @@ focus_tree = {
         cost = 7
         x = 12
         y = 6
-        prerequisite = { focus = SAU_seek_german_arms focus = SAU_introduce_the_constitution focus = SAU_continue_hakimovs_legacy }
+        prerequisite = { focus = SAU_seek_german_arms focus = SAU_administrative_reform focus = SAU_continue_hakimovs_legacy }
         ai_will_do = {
             factor = 60
         }
@@ -6328,7 +6096,6 @@ focus_tree = {
 	relative_position_id = SAU_kingdom_at_the_crossroads
 	cost = 10
 	prerequisite = { 
-		focus = SAU_increase_oil_exportations_to_the_allies
 		focus = SAU_deterrence
 		focus = SAU_political_correctness
 	}
@@ -6856,22 +6623,54 @@ focus = {
         id = SAU_administrative_reform
         icon = GFX_focus_generic_reform_government
         cost = 5
-        x = -9
+        x = 0
         y = 1
         relative_position_id = SAU_diplomacy_in_the_sand
         prerequisite = { focus = SAU_diplomacy_in_the_sand }
-        mutually_exclusive = { 
-            focus = SAU_continue_hakimovs_legacy 
-            focus = SAU_seek_german_arms 
-            focus = SAU_introduce_the_constitution 
-        }
         ai_will_do = {
-            factor = 15
+            factor = 65
         }
         completion_reward = {
             add_political_power = 120
             add_stability = 0.05
             add_ideas = SAU_civil_service_reform_idea
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+
+    ###################################
+    ### DEMOCRATIC COLUMN #############
+    ###################################
+
+    # --- Core Ideological Chain ---
+
+    focus = {
+        id = SAU_constitutional_commission
+        icon = GFX_goal_generic_parliament
+        cost = 5
+
+    ###################################
+    ### DEMOCRATIC COLUMN #############
+    ###################################
+
+    # --- Core Ideological Chain ---
+
+    focus = {
+        id = SAU_constitutional_commission
+        icon = GFX_goal_generic_parliament
+        cost = 5
+        x = -2
+        y = 1
+        relative_position_id = SAU_administrative_reform
+        prerequisite = { focus = SAU_administrative_reform }
+        ai_will_do = {
+            factor = 15
+        }
+        completion_reward = {
+            add_political_power = 100
+            add_stability = 0.05
+            add_ideas = SAU_constitutional_commission_idea
         }
         search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
     }
@@ -6882,8 +6681,8 @@ focus = {
         cost = 5
         x = 0
         y = 1
-        relative_position_id = SAU_administrative_reform
-        prerequisite = { focus = SAU_administrative_reform }
+        relative_position_id = SAU_constitutional_commission
+        prerequisite = { focus = SAU_constitutional_commission }
         ai_will_do = {
             factor = 15
         }
@@ -6915,128 +6714,224 @@ focus = {
     }
 
     focus = {
-        id = SAU_elite_compromise
-        icon = GFX_focus_generic_industrialists
+        id = SAU_judicial_reform_act
+        icon = GFX_focus_generic_reform_government
+        cost = 5
+        x = 0
+        y = 1
+        relative_position_id = SAU_civil_service_modernization
+        prerequisite = { focus = SAU_civil_service_modernization }
+        ai_will_do = {
+            factor = 10
+        }
+        completion_reward = {
+            add_political_power = 75
+            add_stability = 0.05
+            add_ideas = SAU_judicial_reform_idea
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = SAU_democratic_transition
+        icon = GFX_goal_democracy_people
+        cost = 8
+        x = 0
+        y = 1
+        relative_position_id = SAU_judicial_reform_act
+        prerequisite = { focus = SAU_judicial_reform_act }
+        ai_will_do = {
+            factor = 15
+        }
+        completion_reward = {
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.15
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            set_politics = {
+                ruling_party = democratic
+                elections_allowed = yes
+                last_election = 1936.1.1
+                long_name = "National Assembly Party"
+                name = "National Assembly Party"
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            SAU_abdulaziz_ibn_saud = {
+                add_country_leader_role = {
+                    country_leader = {
+                        expire = "1965.1.1"
+                        ideology = oligarchic_democracy
+                        traits = {
+                            SAU_abdulaziz_al_saud_of_saudi_arabia SAU_the_great_unifier
+                        }
+                    }
+                    promote_leader = yes
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    # --- Military Reform Sub-Branch (left of core) ---
+
+    focus = {
+        id = SAU_civilian_military_commission
+        icon = GFX_focus_generic_military_mission
         cost = 5
         x = -2
         y = 1
         relative_position_id = SAU_civil_service_modernization
         prerequisite = { focus = SAU_civil_service_modernization }
-        mutually_exclusive = { focus = SAU_grassroots_reform }
         ai_will_do = {
             factor = 10
         }
         completion_reward = {
-            add_stability = 0.10
-            add_ideas = SAU_elite_compromise_idea
+            add_political_power = 50
+            add_ideas = SAU_civilian_military_commission_idea
         }
-        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+        search_filters = { FOCUS_FILTER_POLITICAL }
     }
 
     focus = {
-        id = SAU_merchant_guild_alliance
-        icon = GFX_goal_generic_financial_markets
+        id = SAU_professional_officer_training
+        icon = GFX_goal_generic_army
         cost = 5
-        x = 1
+        x = 0
         y = 1
-        relative_position_id = SAU_elite_compromise
-        prerequisite = { focus = SAU_elite_compromise }
+        relative_position_id = SAU_civilian_military_commission
+        prerequisite = { focus = SAU_civilian_military_commission }
         ai_will_do = {
             factor = 10
         }
         completion_reward = {
-            if = {
-                limit = { has_idea = free_trade }
-                add_political_power = 100
-            }
-            else = {
-                add_ideas = free_trade
-            }
-            custom_effect_tooltip = generic_skip_one_line_tt
-            random_owned_controlled_state = {
-                limit = {
-                    free_building_slots = {
-                        building = industrial_complex
-                        size > 0
-                        include_locked = yes
-                    }
-                }
-                add_extra_state_shared_building_slots = 2
-                add_building_construction = {
-                    type = industrial_complex
-                    level = 1
-                    instant_build = yes
-                }
-            }
-            random_owned_controlled_state = {
-                limit = {
-                    free_building_slots = {
-                        building = industrial_complex
-                        size > 0
-                        include_locked = yes
-                    }
-                }
-                add_extra_state_shared_building_slots = 1
-                add_building_construction = {
-                    type = industrial_complex
-                    level = 1
-                    instant_build = yes
-                }
-            }
+            army_experience = 15
+            add_ideas = SAU_professional_officer_corps_idea
         }
-        search_filters = { FOCUS_FILTER_INDUSTRY }
+        search_filters = { FOCUS_FILTER_RESEARCH }
     }
 
     focus = {
-        id = SAU_tribal_nobility_pact
-        icon = GFX_focus_ETH_sway_the_warlords
+        id = SAU_modern_defense_reform
+        icon = GFX_goal_generic_army_effort
+        cost = 8
+        x = 0
+        y = 1
+        relative_position_id = SAU_professional_officer_training
+        prerequisite = { focus = SAU_professional_officer_training }
+        ai_will_do = {
+            factor = 10
+        }
+        completion_reward = {
+            army_experience = 20
+            add_doctrine_cost_reduction = {
+                name = SAU_modern_defense_reform
+                cost_reduction = 0.5
+                uses = 1
+                category = land_doctrine
+            }
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH }
+    }
+
+    focus = {
+        id = SAU_national_guard_establishment
+        icon = GFX_goal_generic_army
+        cost = 8
+        x = 0
+        y = 1
+        relative_position_id = SAU_modern_defense_reform
+        prerequisite = { focus = SAU_modern_defense_reform }
+        ai_will_do = {
+            factor = 10
+        }
+        available = {
+            has_civil_war = no
+        }
+        completion_reward = {
+            add_ideas = SAU_national_guard_idea
+            add_equipment_to_stockpile = {
+                type = infantry_equipment_1
+                amount = 2000
+                producer = SAU
+            }
+        }
+        search_filters = { FOCUS_FILTER_ARMY }
+    }
+
+    focus = {
+        id = SAU_democratic_defense_pact
+        icon = GFX_allies
         cost = 5
-        x = 1
+        x = 0
         y = 1
-        relative_position_id = SAU_merchant_guild_alliance
-        prerequisite = { focus = SAU_merchant_guild_alliance }
+        relative_position_id = SAU_national_guard_establishment
+        prerequisite = { focus = SAU_national_guard_establishment }
+        available = {
+            is_in_faction = no
+            is_puppet = no
+            OR = {
+                ENG = {
+                    is_faction_leader = yes
+                    exists = yes
+                    NOT = { has_government = communism has_war_with = ROOT }
+                }
+                FRA = {
+                    is_faction_leader = yes
+                    exists = yes
+                    NOT = { has_government = communism has_war_with = ROOT }
+                }
+            }
+        }
         ai_will_do = {
             factor = 10
         }
         completion_reward = {
-            add_stability = 0.05
-            add_war_support = 0.05
-            add_ideas = SAU_tribal_pact_idea
+            random_country = {
+                limit = {
+                    is_faction_leader = yes
+                    exists = yes
+                    OR = {
+                        tag = ENG
+                        tag = FRA
+                    }
+                    NOT = { has_government = communism has_war_with = ROOT }
+                }
+                country_event = generic.2
+            }
         }
-        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+        search_filters = { FOCUS_FILTER_POLITICAL }
     }
 
+    # --- Economic & Social Reform Sub-Branch (right of core) ---
+
     focus = {
-        id = SAU_grassroots_reform
-        icon = GFX_goal_democracy_people
+        id = SAU_land_and_tax_reform
+        icon = GFX_focus_DEN_no_regulations
         cost = 5
         x = 2
         y = 1
         relative_position_id = SAU_civil_service_modernization
         prerequisite = { focus = SAU_civil_service_modernization }
-        mutually_exclusive = { focus = SAU_elite_compromise }
         ai_will_do = {
             factor = 10
         }
         completion_reward = {
-            add_stability = -0.10
-            add_popularity = {
-                ideology = democratic
-                popularity = 0.15
-            }
-            add_ideas = SAU_grassroots_reform_idea
+            add_stability = -0.05
+            add_political_power = 75
+            add_ideas = SAU_land_tax_reform_idea
         }
-        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_ECONOMY }
     }
 
     focus = {
         id = SAU_national_education_initiative
         icon = GFX_focus_generic_university_2
         cost = 5
-        x = -1
+        x = 0
         y = 1
-        relative_position_id = SAU_grassroots_reform
-        prerequisite = { focus = SAU_grassroots_reform }
+        relative_position_id = SAU_land_and_tax_reform
+        prerequisite = { focus = SAU_land_and_tax_reform }
         ai_will_do = {
             factor = 10
         }
@@ -7061,7 +6956,7 @@ focus = {
         id = SAU_press_and_labor_unions
         icon = GFX_goal_generic_censorship
         cost = 5
-        x = -1
+        x = 0
         y = 1
         relative_position_id = SAU_national_education_initiative
         prerequisite = { focus = SAU_national_education_initiative }
@@ -7081,15 +6976,56 @@ focus = {
     }
 
     focus = {
+        id = SAU_public_healthcare_act
+        icon = GFX_focus_generic_national_focus
+        cost = 8
+        x = 0
+        y = 1
+        relative_position_id = SAU_press_and_labor_unions
+        prerequisite = { focus = SAU_press_and_labor_unions }
+        ai_will_do = {
+            factor = 10
+        }
+        completion_reward = {
+            add_stability = 0.05
+            add_ideas = SAU_public_healthcare_idea
+        }
+        search_filters = { FOCUS_FILTER_STABILITY }
+    }
+
+    focus = {
+        id = SAU_social_welfare_system
+        icon = GFX_goal_generic_financial_markets
+        cost = 8
+        x = 0
+        y = 1
+        relative_position_id = SAU_public_healthcare_act
+        prerequisite = { focus = SAU_public_healthcare_act }
+        ai_will_do = {
+            factor = 10
+        }
+        completion_reward = {
+            add_stability = 0.05
+            add_war_support = 0.05
+            add_political_power = 100
+            add_ideas = SAU_social_welfare_idea
+        }
+        search_filters = { FOCUS_FILTER_STABILITY }
+    }
+
+    # --- Reconvergence Focus ---
+
+    focus = {
         id = SAU_constitutional_convention
         icon = GFX_focus_hol_the_foundations_of_defense
         cost = 8
         x = 0
-        y = 4
+        y = 6
         relative_position_id = SAU_civil_service_modernization
-        # Separate prerequisite blocks act as an OR condition. This prevents bugs where mutually exclusive focuses block progression.
-        prerequisite = { focus = SAU_tribal_nobility_pact }
-        prerequisite = { focus = SAU_press_and_labor_unions }
+        # Separate prerequisite blocks act as AND condition
+        prerequisite = { focus = SAU_democratic_transition }
+        prerequisite = { focus = SAU_democratic_defense_pact }
+        prerequisite = { focus = SAU_social_welfare_system }
         ai_will_do = {
             factor = 15
         }
@@ -7101,14 +7037,17 @@ focus = {
         search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
     }
 
+    # --- Final Choice ---
+
     focus = {
         id = SAU_constitutional_monarchy_act
         icon = GFX_focus_generic_reform_government
         cost = 8
-        x = 0
+        x = -1
         y = 1
         relative_position_id = SAU_constitutional_convention
         prerequisite = { focus = SAU_constitutional_convention }
+        mutually_exclusive = { focus = SAU_first_parliamentary_elections }
         ai_will_do = {
             factor = 15
         }
@@ -7131,18 +7070,26 @@ focus = {
         id = SAU_first_parliamentary_elections
         icon = GFX_goal_generic_election
         cost = 10
-        x = 0
+        x = 1
         y = 1
-        relative_position_id = SAU_constitutional_monarchy_act
-        prerequisite = { focus = SAU_constitutional_monarchy_act }
+        relative_position_id = SAU_constitutional_convention
+        prerequisite = { focus = SAU_constitutional_convention }
+        mutually_exclusive = { focus = SAU_constitutional_monarchy_act }
         ai_will_do = {
             factor = 20
         }
         completion_reward = {
             add_stability = 0.15
             add_political_power = 150
+            set_politics = {
+                ruling_party = democratic
+                elections_allowed = yes
+                long_name = "Council of Representatives"
+                name = "Majlis al-Nuwwab"
+            }
             add_ideas = SAU_parliamentary_democracy_idea
         }
         search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
     }
+}
 }
